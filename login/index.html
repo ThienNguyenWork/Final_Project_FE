@@ -7,7 +7,61 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
+<body class="bg-black min-h-screen flex items-center justify-center">
     <h1>Login</h1>
+        <div class="p-8 rounded-2xl shadow-lg w-full max-w-sm">
+            <div class="bg-[#412c3a]  p-3 rounded-xl shadow-lg text-white max-w-md mx-auto ">
+            <div class="text-center mb-6">
+                <div class="flex justify-center mb-2">
+                    <img src="./logo melodies.png" alt="Melodies Logo" class="w-16 h-16">
+                </div>
+                <h1 class="text-xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">
+                    Melodies
+                  </h1>                  
+            </div>
+    
+            <h2 class="text-xl font-semibold text-white text-center mb-4">Login To Continue</h2>
+    
+            <form action="#">
+                <div class="mb-4">
+                    <input type="email" placeholder="E-Mail" class="w-full px-4 py-3 rounded-full bg-purple-700 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                </div>
+                <div class="mb-4 relative">
+                    <input type="password" placeholder="Password" class="w-full px-4 py-3 rounded-full bg-purple-700 text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400">
+                    <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
+                        <!-- Eye Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zM10 7a3 3 0 100 6 3 3 0 000-6z" />
+                        </svg>
+                    </span>
+                </div>
+    
+                <div class="text-right mb-4">
+                    <a href="#" class="text-sm text-pink-400 hover:underline">Forgot password?</a>
+                </div>
+    
+                <button type="submit" class="w-full py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-full text-lg font-semibold">Login</button>
+            </form>
+    
+            <div class="flex items-center my-6">
+                <div class="flex-grow h-px bg-gray-600"></div>
+                <span class="px-3 text-gray-400">or</span>
+                <div class="flex-grow h-px bg-gray-600"></div>
+            </div>
+    
+            <div class="flex justify-between space-x-4">
+                <button class="flex items-center justify-center w-1/2 py-2 border border-gray-400 text-white rounded-full hover:bg-gray-700">
+                    <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo" class="w-5 h-5 mr-2"> Google Login
+                </button>
+                <button class="flex items-center justify-center w-1/2 py-2 border border-gray-400 text-white rounded-full hover:bg-gray-700">
+                    <img src="https://www.svgrepo.com/show/303161/facebook-icon-logo.svg" alt="Facebook Logo" class="w-5 h-5 mr-2"> Facebook Login
+                </button>
+            </div>
+        </div>
+            <div class="text-center mt-6">
+                <p class="text-white text-sm">Don't Have An Account?</p>
+                <a href="#" class="inline-block mt-2 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full font-semibold">Sign Up</a>
+            </div>
+        </div>
 </body>
 </html>
