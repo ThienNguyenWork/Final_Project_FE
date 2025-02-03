@@ -1,3 +1,10 @@
 :root {
     --main-bg-color: #412c3a;
+    --card-color: #1f1f1f;
+}
+.main-background{
+    background-color: var(--main-bg-color);
+}
+.card{
+    background-color: var(--card-color);
 }
