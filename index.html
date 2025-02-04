@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melodies Web System</title>
+    <meta http-equiv="refresh" content="0; URL=/home1">
+    <title>Music App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    <a href="/login/">Login</a>
-    <a href="/register/">Register</a>
-    <a href="user">User Page</a>
-    <h1>hello world</h1>
-    <h2>test</h2>
+<body class="bg-gray-900 text-white">
+    <main id="content"></main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("home1")
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("content").innerHTML = html;
+                })
+                .catch(error => console.error("Error loading home1:", error));
+        });
+        </script>
+        <script>
+            if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+                window.location.replace("/home1");
+            }
+        </script>
+        
 </body>
 </html>
