@@ -8,3 +8,8 @@
 .card{
     background-color: var(--card-color);
 }
+@media screen and (max-width: 768px){
+    .login_img{
+        height: 300px !important;
+    }
+}
