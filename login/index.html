@@ -102,9 +102,75 @@
             <img src="./logo melodies.png" alt="Melodies Logo" class="w-16 h-16">
         </div>
     </div>
+</div>
     <div>
+        <div class="p-8 rounded-2xl shadow-lg w-full max-w-md relative z-10">
+            <div class="bg-[#412c3a]/90 p-6 rounded-xl shadow-lg text-white w-full">
+                <h2 class="text-xl font-semibold text-white text-center mb-4">Login To Continue</h2>
 
+                <form action="#">
+                    <div class="mb-4">
+                        <input type="email" placeholder="E-Mail"
+                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
+                    </div>
+
+                    <div class="mb-4 relative">
+                        <input type="password" placeholder="Password"
+                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
+                        <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
+                           
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ee10b0">
+                                <path
+                                    d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zM10 7a3 3 0 100 6 3 3 0 000-6z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="flex justify-end  items-center mb-4">
+                        <div class="flex items-center w-[100%] md:space-x-24 gap-4 flex-col md:flex-row">
+                            <a href="#" class="text-sm text-white hover:underline font-bold flex items-center">
+                                Forgot password
+                                <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                            <button type="submit"
+                                class="py-1 px-8 bg-[#ee10b0] hover:bg-pink-600 text-white rounded-[10px] text-sm font-bold ">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="flex items-center my-6">
+                        <div class="flex-grow h-px bg-gray-600"></div>
+                        <span class="px-3 text-gray-400">or</span>
+                        <div class="flex-grow h-px bg-gray-600"></div>
+                    </div>
+
+                    <div class="flex justify-between items-center gap-4 md:space-x-4 flex-col md:flex-row">
+                        <button
+                            class="flex items-center justify-center w-1/2 py-2 border border-2 border-white-400 text-white rounded-full hover:bg-gray-700 text-sm">
+                            <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo"
+                                class="w-5 h-5 mr-2"> Google Login
+                        </button>
+                        <button
+                            class="flex items-center justify-center w-1/2 py-2 border border-2 border-white-400 text-white rounded-full hover:bg-gray-700 text-sm">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png"
+                                alt="Facebook Logo" class="w-5 h-5 mr-2"> Facebook Login
+                        </button>
+                    </div>
+                    <br>
+                    <br>
+            </div>
+            <br>
+            <div class="flex items-center mb-4 md:space-x-12 flex-col md:flex-row">
+                <div class="flex flex-col items-start mr-4">
+                    <p class="text-white text-lg font-bold">Dont Have An Account</p>
+                    <p class="text-white text-sm">Sign Up Here</p>
+                </div>
+                <a href="#"
+                    class="inline-block md:mt-2 px-6 py-1 bg-[#0e9eef] hover:bg-blue-600 text-white rounded-[10px] font-semibold md:ml-4">Sign
+                    Up</a>
+            </div>
     </div>
+</div>
 </div>
     <script>
         if (window.location.pathname.endsWith("index.html")) {
