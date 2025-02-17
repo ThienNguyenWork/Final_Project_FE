@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <main class=" main-background">
+        <!-- Checkbox hack để điều khiển menu mobile -->
+<input type="checkbox" id="menu-toggle" class="hidden">
+
+<div class="relative min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 mb-10">
+            <i class="fas fa-music text-pink-600 text-2xl"></i>
+            <span class="text-xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="space-y-6">
+            <!-- Menu -->
+            <div class="space-y-3">
+                
+            </div>
+
+            <!-- Menu: Discover, Albums, Artists -->
+            <div class="space-y-3">
+                
+                <h2 class=" font-semibold text-[#951476]">Menu</h2>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-compass"></i>
+                    <span>Discover</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-folder"></i>
+                    <span>Albums</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-user"></i>
+                    <span>Artists</span>
+                </a>
+            </div>
+
+            <!-- Library: Recently Added, Most Played -->
+            <div class="space-y-3">
+                <h2 class="text-[#951476] font-semibold">Library</h2>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-clock"></i>
+                    <span>Recently Added</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Most Played</span>
+                </a>
+            </div>
+
+            <!-- Playlist and Favorite: Your Favorite, Your Playlist, Add Playlist -->
+            <div class="space-y-3">
+                <h2 class="text-[#951476] font-semibold font-bold ">Playlist and Favorite</h2>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-heart"></i>
+                    <span>Your Favorite</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-list-ul"></i>
+                    <span>Your Playlist</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-[#0e9eef] font-bold hover:text-white">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Playlist</span>
+                </a>
+            </div>
+
+            <!-- General: Setting, Sign In, Sign Out -->
+            <div class="space-y-3">
+                <h2 class="text-[#951476] font-semibold">General</h2>
+                <a href="#" class="flex items-center space-x-3 text-white font-bold hover:text-white">
+                    <i class="fas fa-cogs"></i>
+                    <span>Setting</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-[#ee10b0] font-bold hover:text-white">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Sign In</span>
+                </a>
+                <a href="#" class="flex items-center space-x-3 text-[#ee10b0] font-bold hover:text-white">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+      
+        <!-- Main Content -->
+        <main class="flex-1 bg-[linear-gradient(to_right,_#24569e,_transparent)] mt-8 mb-8 ml-16 mr-8">
+            <div class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex items-center justify-between">
+                <div class="absolute top-10 left-72 p-6">
+                    <button onclick="window.history.back()"
+                        class="h-[40px] text-white focus:outline-none transition-transform duration-300 hover:scale-110">
+                    
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 fill-current" viewBox="0 0 20 20">
+                            <path d="M11 2 L7 6 L11 10 M11 8.5 L9 6.5 L14 6.5 L14 5.5 L9 5.5 L11 3.5Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="absolute top-10 right-10 p-6">
+                    <nav class="flex space-x-6">
+                        <a href="#" class="text-black-500 text-2xl font-bold">Share</a>
+                        <a href="#" class="text-black-500 text-2xl font-bold">About</a>
+                        <a href="#" class="text-black-500 text-2xl font-bold">Premium</a>
+                        <i class="fa-solid fa-user fa-2x"></i>
+                    </nav>
+                </div>
+                
+                <!-- Phần nội dung chính -->
+                <div>
+                    <h2 class="text-2xl font-bold">Trending Songs <span class="text-pink-400">mix</span></h2>
+                    <p class="text-gray-200">tate mcree, nightmares, the neighborhood, doja cat ...</p>
+                    <p class="text-sm text-gray-300">20 songs • 1h 36m</p>
+                </div>
+                <button class="bg-pink-500 px-6 py-2 rounded-full text-white flex items-center">▶ Play All</button>
+            </div>
+            
+            <!-- Song List -->
+            <div class="mt-6  p-4 rounded-lg shadow-md">
+                <div class="grid grid-cols-5 text-gray-300 border-b border-gray-600 pb-2 font-semibold">
+                    <span>#</span>
+                    <span>Title</span>
+                    <span>Release Date</span>
+                    <span>Album</span>
+                    <span>Time</span>
+                </div>
+                <div class="mt-4 space-y-3">
+                    <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
+                        <span>1</span>
+                        <span>Sorforce</span>
+                        <span>Nov 4, 2023</span>
+                        <span>Hard to Imagine</span>
+                        <span>3:26</span>
+                    </div>
+                    <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
+                        <span>2</span>
+                        <span>Skyfall Beats</span>
+                        <span>Oct 26, 2023</span>
+                        <span>Nightmares</span>
+                        <span>2:45</span>
+                    </div>
+                    <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
+                        <span>3</span>
+                        <span>Greedy</span>
+                        <span>Nov 30, 2023</span>
+                        <span>Greedy</span>
+                        <span>2:11</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+                </div>
+            </body>
+            
+        </main>
+    </div>
+    </main>
+    <script>
+        if (window.location.pathname.endsWith("index.html")) {
+            window.location.replace(window.location.pathname.replace("index.html", ""));
+        }
+    </script>
+</body>
+</html>

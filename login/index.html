@@ -7,7 +7,6 @@
     <title>Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body class="bg-black min-h-screen flex items-center justify-center" style="background: linear-gradient(to top,rgba(223, 24, 179, 1), rgba(164, 60, 192, 1), rgba(104, 95, 204, 1), rgba(65, 117, 212, 1));">
@@ -95,17 +94,21 @@
         </div>
     </div> -->
 
-<div class="flex flex-col md:flex-row">
-    <div class="login_img">
-        <div class=" w-auto min-w-[400px] h-[100%] max-w-xl p-8 bg-cover bg-center md:rounded-tl-2xl md:rounded-bl-2xl shadow-lg relative"
+<div class="flex flex-col md:flex-row shadow-2xl shadow-black">
+    <div>
+        <div class="w-auto min-w-[400px] h-[100%] max-w-xl p-8 bg-cover bg-center md:rounded-tl-2xl md:rounded-bl-2xl shadow-lg relative"
         style="background-image: url('https://r1.ilikewallpaper.net/iphone-12-pro-max-wallpapers/download-114508/electronic-music.jpg');">
     </div>
 </div>
     <div>
-        <div class=" h-[100%] md:h-[400px] min-w-[400px]  shadow-lg w-full max-w-md  relative z-10">
-            <div class="bg-[#412c3a]/90 p-6 h-[100%] md:h-[400px] md:rounded-tr-2xl md:rounded-br-2xl shadow-lg text-white w-full ">
-                <div class="flex justify-center mb-2">
+        <div class=" h-[100%] md:h-[400px] shadow-lg w-full max-w-md relative z-10">
+            <div class="bg-[#412c3a]/90 p-6 h-[100%] md:h-[400px]  md:rounded-tr-2xl md:rounded-br-2xl shadow-lg text-white w-full ">
+                <div class="flex flex-col md:flex-row justify-center w-[100%]  items-center mb-2 space-x-2">
                     <img src="./logo melodies.png" alt="Melodies Logo" class="w-16 h-16">
+                    <h1
+                        class="text-xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">
+                        Melodies
+                    </h1>
                 </div>
                 <h2 class="text-xl font-semibold text-white text-center mb-4">Login To Continue</h2>
 
@@ -127,18 +130,18 @@
                         </span>
                     </div>
                     <div class="flex justify-end  items-center mb-4">
-                        <div class="flex items-center w-[100%] md:justify-between gap-4 flex-col md:flex-row">
+                        <div class="flex items-center w-[100%] md:space-x-28 gap-4 flex-col md:flex-row">
                             <a href="#" class="text-sm text-white hover:underline font-bold flex items-center">
                                 Forgot password
                                 <i class="fas fa-chevron-right ml-1"></i>
                             </a>
-                            <div></div>
                             <button type="submit"
                                 class="py-1 px-8 bg-[#ee10b0] hover:bg-pink-600 text-white rounded-[10px] text-sm font-bold ">
                                 Login
                             </button>
                         </div>
                     </div>
+                
                     <div class="flex items-center my-3">
                         <div class="flex-grow h-px bg-gray-600"></div>
                         <span class="px-3 text-gray-400">or</span>
@@ -158,7 +161,6 @@
                         </button>
                     </div>
             </div>
-            <br>
             <div class="flex items-center mb-4 md:space-x-12 flex-col md:flex-row">
                 <div class="flex flex-col items-start mr-4">
                     <p class="text-white text-lg font-bold">Dont Have An Account</p>
