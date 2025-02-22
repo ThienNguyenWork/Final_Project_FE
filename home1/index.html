@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,166 +11,211 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="index.js"></script>
 </head>
+
 <body class="bg-gray-900 text-white">
     <main class=" main-background">
         <!-- Checkbox hack để điều khiển menu mobile -->
-<input type="checkbox" id="menu-toggle" class="hidden">
+        <input type="checkbox" id="menu-toggle" class="hidden">
 
-<div class="relative min-h-screen flex">
-    <!-- Sidebar -->
-    <aside class="fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3 mb-10">
-            <i class="fas fa-music text-pink-600 text-2xl"></i>
-            <span class="text-xl font-bold">Melodies</span>
+        <div class="relative min-h-screen flex">
+            <!-- Sidebar -->
+            <aside
+                class="fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 mb-10">
+                    <i class="fas fa-music text-pink-600 text-2xl"></i>
+                    <span class="text-xl font-bold">Melodies</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-6">
+                    <!-- Menu -->
+                    <div class="space-y-3">
+
+                    </div>
+
+                    <!-- Menu: Discover, Albums, Artists -->
+                    <div class="space-y-3">
+
+                        <h2 class="text-gray-400 font-semibold">Menu</h2>
+                        <a href="#" class="flex items-center space-x-3 text-pink-600">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-compass"></i>
+                            <span>Discover</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-folder"></i>
+                            <span>Albums</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-user"></i>
+                            <span>Artists</span>
+                        </a>
+                    </div>
+
+                    <!-- Library: Recently Added, Most Played -->
+                    <div class="space-y-3">
+                        <h2 class="text-gray-400 font-semibold">Library</h2>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-clock"></i>
+                            <span>Recently Added</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Most Played</span>
+                        </a>
+                    </div>
+
+                    <!-- Playlist and Favorite: Your Favorite, Your Playlist, Add Playlist -->
+                    <div class="space-y-3">
+                        <h2 class="text-gray-400 font-semibold">Playlist and Favorite</h2>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-heart"></i>
+                            <span>Your Favorite</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-list-ul"></i>
+                            <span>Your Playlist</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Playlist</span>
+                        </a>
+                    </div>
+
+                    <!-- General: Setting, Sign In, Sign Out -->
+                    <div class="space-y-3">
+                        <h2 class="text-gray-400 font-semibold">General</h2>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-cogs"></i>
+                            <span>Setting</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Sign In</span>
+                        </a>
+                        <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+
+            <!-- Main Content -->
+            <main class="flex-1 p-6 main-background">
+                <!-- Mobile Menu Button -->
+                <label for="menu-toggle"
+                    class="fixed top-4 left-4 z-50 p-2 bg-pink-600 rounded-lg cursor-pointer md:hidden hover:bg-pink-700 hidden">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <header class="backdrop-blur-sm flex flex-col md:flex-row w-full top-0 z-50">
+                    <div class="flex items-center justify-between w-full px-4 py-3">
+                        <!-- Mobile Menu Button (hamburger menu) - Chỉ hiển thị trên mobile -->
+                        <button class="md:hidden p-2">
+                            <i class="fas fa-bars text-white text-2xl"></i>
+                        </button>
+
+                        <!-- Logo - Chỉ hiển thị trên mobile -->
+                        <div class="md:hidden flex items-center justify-center flex-grow space-x-3">
+                            <i class="fas fa-music text-pink-600 text-2xl"></i>
+                            <span class="text-xl font-bold text-white">Melodies</span>
+                        </div>
+
+                        <!-- Search Box -->
+                        <div
+                            class="hidden md:flex items-center max-w-sm bg-gray-700/50 rounded-full px-4 py-2 flex-grow">
+                            <i class="fas fa-search text-gray-400"></i>
+                            <input type="search" placeholder="Search For Musics, Artists, Albums..."
+                                class="w-full bg-transparent border-none focus:outline-none text-white px-3 placeholder-gray-400">
+                        </div>
+
+                        <!-- Search Icon (chỉ hiển thị trên mobile) -->
+                        <button class="md:hidden p-2">
+                            <i class="fas fa-search text-gray-400 text-2xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Navigation + Auth Buttons (chỉ hiển thị trên màn hình lớn) -->
+                    <div class="hidden md:flex justify-center w-full px-4 py-3">
+                        <nav class="flex items-center space-x-6 gap-8">
+                            <a href="#" class="text-white hover:text-pink-500 transition">About</a>
+                            <a href="#" class="text-white hover:text-pink-500 transition">Contact</a>
+                            <a href="#" class="text-white hover:text-pink-500 transition">Premium</a>
+                        </nav>
+
+
+                    </div>
+                    <div class="hidden md:flex justify-end w-full px-4 py-3">
+                        <nav class="flex items-center space-x-6">
+                            <button
+                                class="bg-black text-pink-600 px-6 py-2 rounded-full hover:bg-pink-700 hover:text-black transition">Login</button>
+                            <button
+                                class="bg-pink-600 text-black px-6 py-2 rounded-full hover:bg-black hover:text-pink-600 transition">Sign
+                                Up</button>
+                        </nav>
+                    </div>
+                </header>
+
+                <body>
+                    <div>
+                        <h1 class="text-2xl font-bold mb-4">Weekly Top <span class="text-[#ee10b0]">Songs</span></h1>
+                        <div class="flex flex-col md:flex-row">
+                            <div id="product-list"
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 justify-center">
+                                <button
+                                    class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                                <span class="text-white font-bold text-lg">View All</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h1 class="text-2xl font-bold mb-4">New Release <span class="text-[#ee10b0]">Songs</span></h1>
+                        <div class="flex flex-col md:flex-row">
+                            <div id="new-release-list"
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 justify-center">
+                                <button
+                                    class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                                <span class="text-white font-bold text-lg">View All</span>
+                            </div>
+                        </div>
+                    </div>   
+                    <div>
+                        <h1 class="text-2xl font-bold mb-6">Trending <span class="text-[#ee10b0]">Songs</span></h1>
+                        <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
+                            <div class="col-span-1">Ranking</div>
+                            <div class="col-span-3">Song</div>
+                            <div class="col-span-2 text-center">Release Date</div>
+                            <div class="col-span-4">Album</div>
+                            <div class="col-span-1 text-center"></div>
+                            <div class="col-span-1 text-center">Time</div>
+                        </div>
+                        <div id="trending-list" class="space-y-2">
+                            <!-- Nội dung trending sẽ được render bằng JavaScript -->
+                        </div>
+                    
+                        <!-- Nút View All -->
+                        <button class="mt-6 px-6 py-2 rounded-lg bg-black text-white text-lg font-semibold flex items-center mx-auto">
+                            <i class="fa-solid fa-plus mr-2"></i> View All
+                        </button>
+                    </div>
+                        <!-- Gọi script ngoài -->
+                        <script src="script.js"></script>
+                </body>
+
+            </main>
         </div>
-
-        <!-- Navigation -->
-        <nav class="space-y-6">
-            <!-- Menu -->
-            <div class="space-y-3">
-                
-            </div>
-
-            <!-- Menu: Discover, Albums, Artists -->
-            <div class="space-y-3">
-                
-                <h2 class="text-gray-400 font-semibold">Menu</h2>
-                <a href="#" class="flex items-center space-x-3 text-pink-600">
-                    <i class="fas fa-home"></i>
-                    <span>Home</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-compass"></i>
-                    <span>Discover</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-folder"></i>
-                    <span>Albums</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-user"></i>
-                    <span>Artists</span>
-                </a>
-            </div>
-
-            <!-- Library: Recently Added, Most Played -->
-            <div class="space-y-3">
-                <h2 class="text-gray-400 font-semibold">Library</h2>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-clock"></i>
-                    <span>Recently Added</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-play-circle"></i>
-                    <span>Most Played</span>
-                </a>
-            </div>
-
-            <!-- Playlist and Favorite: Your Favorite, Your Playlist, Add Playlist -->
-            <div class="space-y-3">
-                <h2 class="text-gray-400 font-semibold">Playlist and Favorite</h2>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-heart"></i>
-                    <span>Your Favorite</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-list-ul"></i>
-                    <span>Your Playlist</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-plus"></i>
-                    <span>Add Playlist</span>
-                </a>
-            </div>
-
-            <!-- General: Setting, Sign In, Sign Out -->
-            <div class="space-y-3">
-                <h2 class="text-gray-400 font-semibold">General</h2>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-cogs"></i>
-                    <span>Setting</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <span>Sign In</span>
-                </a>
-                <a href="#" class="flex items-center space-x-3 text-gray-400 hover:text-white">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Sign Out</span>
-                </a>
-            </div>
-        </nav>
-    </aside>
-
-
-        <!-- Main Content -->
-        <main class="flex-1 p-6 main-background">
-            <!-- Mobile Menu Button -->
-            <label for="menu-toggle" class="fixed top-4 left-4 z-50 p-2 bg-pink-600 rounded-lg cursor-pointer md:hidden hover:bg-pink-700 hidden">
-                <i class="fas fa-bars"></i>
-            </label>
-
-            <header class="backdrop-blur-sm flex flex-col md:flex-row w-full top-0 z-50">
-                <div class="flex items-center justify-between w-full px-4 py-3">
-                    <!-- Mobile Menu Button (hamburger menu) - Chỉ hiển thị trên mobile -->
-                    <button class="md:hidden p-2">
-                        <i class="fas fa-bars text-white text-2xl"></i>
-                    </button>
-            
-                    <!-- Logo - Chỉ hiển thị trên mobile -->
-                    <div class="md:hidden flex items-center justify-center flex-grow space-x-3">
-                        <i class="fas fa-music text-pink-600 text-2xl"></i>
-                        <span class="text-xl font-bold text-white">Melodies</span>
-                    </div>
-            
-                    <!-- Search Box -->
-                    <div class="hidden md:flex items-center max-w-sm bg-gray-700/50 rounded-full px-4 py-2 flex-grow">
-                        <i class="fas fa-search text-gray-400"></i>
-                        <input 
-                            type="search" 
-                            placeholder="Search For Musics, Artists, Albums..." 
-                            class="w-full bg-transparent border-none focus:outline-none text-white px-3 placeholder-gray-400"
-                        >
-                    </div>
-            
-                    <!-- Search Icon (chỉ hiển thị trên mobile) -->
-                    <button class="md:hidden p-2">
-                        <i class="fas fa-search text-gray-400 text-2xl"></i>
-                    </button>
-                </div>
-            
-                <!-- Navigation + Auth Buttons (chỉ hiển thị trên màn hình lớn) -->
-                <div class="hidden md:flex justify-center w-full px-4 py-3">
-                    <nav class="flex items-center space-x-6 gap-8">
-                        <a href="#" class="text-white hover:text-pink-500 transition">About</a>
-                        <a href="#" class="text-white hover:text-pink-500 transition">Contact</a>
-                        <a href="#" class="text-white hover:text-pink-500 transition">Premium</a>
-                    </nav>
-                    
-                    
-                </div>
-                <div class="hidden md:flex justify-end w-full px-4 py-3">
-                    <nav class="flex items-center space-x-6">
-                        <button class="bg-black text-pink-600 px-6 py-2 rounded-full hover:bg-pink-700 hover:text-black transition">Login</button>
-                    <button class="bg-pink-600 text-black px-6 py-2 rounded-full hover:bg-black hover:text-pink-600 transition">Sign Up</button>
-                    </nav>
-                </div>
-            </header>
-
-            <body>
-                <div class="flex flex-col md:flex-row">
-                    <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center"></div>
-                <div class="flex flex-col items-center space-y-2 justify-center">
-                    <button class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
-                    <span class="text-white font-bold text-lg">View All</span>
-                </div>
-                <!-- Gọi script ngoài -->
-                <script src="script.js"></script>
-            </body>
-            
-        </main>
-    </div>
     </main>
 </body>
+
 </html>
