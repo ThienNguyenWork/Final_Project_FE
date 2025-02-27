@@ -18,11 +18,11 @@ async function loadProducts() {
 // Render danh sách Popular Songs
 function renderPopular(container, Popular) {
     container.innerHTML = Popular.map(song => `
-        <div class="bg-gray-900 p-4 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
+        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
             <!-- Desktop Layout -->
             <div class="hidden lg:grid grid-cols-12 items-center gap-4">
                 <!-- Ranking -->
-                <div class="col-span-1">
+                <div class="flex justify-content col-span-1">
                     <span class="text-white font-bold text-xl">#${song.rank}</span>
                 </div>
 
