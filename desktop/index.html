@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="index.js"></script>
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -106,7 +107,7 @@
             </aside>
 
             <!-- Main Content -->
-            <main class="flex-1 bg-[linear-gradient(to_right,_#24569e,_transparent)] mt-8 mb-8 ml-16 mr-8">
+            <main class="flex-1 bg-[linear-gradient(to_right,black,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
                 <div
                     class="h-[60vh] bg-[url('https://pbs.twimg.com/media/GRhIS_za8AAVhHh.jpg')] bg-cover bg-center from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
                     <!-- Hàng trên: Nút quay lại + Nav -->
@@ -134,44 +135,57 @@
                     <div class="h-screen flex items-end justify-start">
                         <p class="text-8xl font-bold pb-12">Eminem</p>
                     </div>
-                    
-
                 </div>
 
-                <!-- Song List -->
-                <div class="mt-6  p-4 rounded-lg shadow-md">
-                    <div class="grid grid-cols-5 text-gray-300 border-b border-gray-600 pb-2 font-semibold">
-                        <span>Number</span>
-                        <span>Title</span>
-                        <span>Release Date</span>
-                        <span>Album</span>
-                        <span>Time</span>
+                <div>
+                    <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Popular</h1>
+                    <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
+                        <div class="col-span-1 text-center">Ranking</div>
+                        <div class="col-span-3 text-center md:hidden"></div>
+                        <div class="col-span-3 text-center hidden md:block">Song</div>
+                        <div class="col-span-2 text-center">Release Date</div>
+                        <div class="col-span-4 text-center">Played</div>
+                        <div class="col-span-1 text-center "></div>
+                        <div class="col-span-1 text-center">Time</div>
                     </div>
-                    <div class="mt-4 space-y-3">
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>1</span>
-                            <span>Sorforce</span>
-                            <span>Nov 4, 2023</span>
-                            <span>Hard to Imagine</span>
-                            <span>3:26</span>
-                        </div>
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>2</span>
-                            <span>Skyfall Beats</span>
-                            <span>Oct 26, 2023</span>
-                            <span>Nightmares</span>
-                            <span>2:45</span>
-                        </div>
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>3</span>
-                            <span>Greedy</span>
-                            <span>Nov 30, 2023</span>
-                            <span>Greedy</span>
-                            <span>2:11</span>
-                        </div>
+                    <div id="popular" class="space-y-2">
+                        <!-- Nội dung trending sẽ được render bằng JavaScript -->
                     </div>
-                </div>
                 
+                    <!-- Nút View All -->
+                    <button class="mt-6 px-6 py-2 rounded-lg bg-[#ee10b0] text-white text-lg font-semibold flex items-center mx-auto">
+                     Show All
+                    </button>
+                </div>
+
+                <div>
+                    <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Artist's <span class="text-[#0e9eef]">Albums</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="new-release-list"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.85fr_0.85fr_0.85fr_0.85fr_0.85fr] gap-4 p-4 flex items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div>
+                    <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Single <span class="text-[#ee10b0]">Songs</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="weekly-top-list"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
 </body>
@@ -179,6 +193,8 @@
 </main>
 </div>
 </main>
+  <!-- Gọi script ngoài -->
+  <script src="script.js"></script>
 <script>
     if (window.location.pathname.endsWith("index.html")) {
         window.location.replace(window.location.pathname.replace("index.html", ""));

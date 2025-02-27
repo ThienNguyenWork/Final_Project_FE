@@ -1,0 +1,163 @@
+{
+    "Popular": [
+        {
+            "rank": 1,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Sorfcore",
+            "nameArtist": "The Neighbourhood",
+            "releaseDate": "Nov 4, 2023",
+            "played": "Hard",
+            "time": "3:26"
+        },
+        {
+            "rank": 2,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Skyfall Beats",
+            "nameArtist": "nightmares",
+            "releaseDate": "Oct 26, 2023",
+            "played": "nightmares",
+            "time": "2:45"
+        },
+        {
+            "rank": 3,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Greedy",
+            "nameArtist": "Tate McRae",
+            "releaseDate": "Dec 30, 2023",
+            "played": "Greedy",
+            "time": "2:11"
+        },
+        {
+            "rank": 4,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Lovin On Me",
+            "nameArtist": "Jack Harlow",
+            "releaseDate": "Dec 30, 2023",
+            "played": "Lovin On Me",
+            "time": "2:18"
+        },
+        {
+            "rank": 5,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Pain The Town Red",
+            "nameArtist": "Doja Cat",
+            "releaseDate": "Dec 29, 2023",
+            "played": "Paint The Town Red",
+            "time": "3:51"
+        },
+        {
+            "rank": 6,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Dancin On Night",
+            "nameArtist": "Dua Lipa",
+            "releaseDate": "May 27, 2023",
+            "played": "Dance The Night (From Barbie Movie)",
+            "time": "2:56"
+        },
+        {
+            "rank": 7,
+            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+            "nameProduct": "Water",
+            "nameArtist": "Tyla",
+            "releaseDate": "Dec 10, 2023",
+            "played": "Water",
+            "time": "3:20"
+        }
+    ],
+
+    "newReleaseSongs": [
+    {
+      "id": 1,
+      "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
+      "nameProduct": "Vanguard ",
+      "nameArtist": "Dru Omar"
+    },
+    {
+      "id": 2,
+      "imageLink": "http://dummyimage.com/133x100.png/cc0000/ffffff",
+      "nameProduct": "VEREIT ",
+      "nameArtist": "Irwin Masurel"
+    },
+    {
+      "id": 3,
+      "imageLink": "http://dummyimage.com/111x100.png/ff4444/ffffff",
+      "nameProduct": "Nuvectra ",
+      "nameArtist": "Hugh Wigley"
+    },
+    {
+      "id": 4,
+      "imageLink": "http://dummyimage.com/242x100.png/dddddd/000000",
+      "nameProduct": "B&G",
+      "nameArtist": "Sallyann Bruneton"
+    },
+    {
+      "id": 5,
+      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+      "nameProduct": "Immersion ",
+      "nameArtist": "Hillard Dilrew"
+    },
+    {
+      "id": 6,
+      "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+      "nameProduct": "GTT ",
+      "nameArtist": "Orren Tomeo"
+    },
+    {
+      "id": 7,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Belmond ",
+      "nameArtist": "Burnard Storre"
+    }
+  ],
+  
+    "weeklyTopSongs": [
+      {
+        "id": 1,
+        "imageLink": "http://dummyimage.com/185x100.png/cc0000/ffffff",
+        "nameProduct": "First ",
+        "nameArtist": "Georgie Goodright"
+      },
+      {
+        "id": 2,
+        "imageLink": "http://dummyimage.com/121x100.png/dddddd/000000",
+        "nameProduct": "Albireo ",
+        "nameArtist": "Caresse Dodswell"
+      },
+      {
+        "id": 3,
+        "imageLink": "http://dummyimage.com/121x100.png/ff4444/ffffff",
+        "nameProduct": "BHP ",
+        "nameArtist": "Shaun Swapp"
+      },
+      {
+        "id": 4,
+        "imageLink": "http://dummyimage.com/150x100.png/ff4444/ffffff",
+        "nameProduct": "Globant",
+        "nameArtist": "Belita Dobbson"
+      },
+      {
+        "id": 5,
+        "imageLink": "http://dummyimage.com/153x100.png/dddddd/000000",
+        "nameProduct": "51job, ",
+        "nameArtist": "Georgena Bourgeois"
+      },
+      {
+        "id": 6,
+        "imageLink": "http://dummyimage.com/192x100.png/dddddd/000000",
+        "nameProduct": "First",
+        "nameArtist": "Willis Lumox"
+      },
+      {
+        "id": 7,
+        "imageLink": "http://dummyimage.com/128x100.png/5fa2dd/ffffff",
+        "nameProduct": "Select ",
+        "nameArtist": "Jackie Duchan"
+      },
+      {
+        "id": 8,
+        "imageLink": "http://dummyimage.com/111x100.png/cc0000/ffffff",
+        "nameProduct": "Cara.",
+        "nameArtist": "Yolanthe Elphey"
+      }
+    ]
+}
