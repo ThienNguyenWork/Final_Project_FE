@@ -65,7 +65,7 @@
         }
     ],
 
-    "newReleaseSongs": [
+    "artist'sAlbums": [
     {
       "id": 1,
       "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
@@ -159,5 +159,49 @@
         "nameProduct": "Cara.",
         "nameArtist": "Yolanthe Elphey"
       }
-    ]
+    ],
+    "artist'sPlaylist": [
+    {
+      "id": 1,
+      "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
+      "nameProduct": "Vanguard ",
+      "nameArtist": "Dru Omar"
+    },
+    {
+      "id": 2,
+      "imageLink": "http://dummyimage.com/133x100.png/cc0000/ffffff",
+      "nameProduct": "VEREIT ",
+      "nameArtist": "Irwin Masurel"
+    },
+    {
+      "id": 3,
+      "imageLink": "http://dummyimage.com/111x100.png/ff4444/ffffff",
+      "nameProduct": "Nuvectra ",
+      "nameArtist": "Hugh Wigley"
+    },
+    {
+      "id": 4,
+      "imageLink": "http://dummyimage.com/242x100.png/dddddd/000000",
+      "nameProduct": "B&G",
+      "nameArtist": "Sallyann Bruneton"
+    },
+    {
+      "id": 5,
+      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+      "nameProduct": "Immersion ",
+      "nameArtist": "Hillard Dilrew"
+    },
+    {
+      "id": 6,
+      "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+      "nameProduct": "GTT ",
+      "nameArtist": "Orren Tomeo"
+    },
+    {
+      "id": 7,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Belmond ",
+      "nameArtist": "Burnard Storre"
+    }
+  ]
 }
