@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="index.js"></script>
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -104,9 +105,9 @@
                     </div>
                 </nav>
             </aside>
-
+<div>
             <!-- Main Content -->
-            <main class="flex-1 bg-[linear-gradient(to_right,_#24569e,_transparent)] mt-8 mb-8 ml-16 mr-8">
+            <main class="flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
                 <div
                     class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
                     <!-- Hàng trên: Nút quay lại + Nav -->
@@ -174,47 +175,90 @@
                 </div>
 
                 <!-- Song List -->
-                <div class="mt-6  p-4 rounded-lg shadow-md">
-                    <div class="grid grid-cols-5 text-gray-300 border-b border-gray-600 pb-2 font-semibold">
-                        <span>Number</span>
-                        <span>Title</span>
-                        <span>Release Date</span>
-                        <span>Album</span>
-                        <span>Time</span>
+                <div>
+                    <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Popular</h1>
+                    <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
+                        <div class="col-span-1 text-center">Ranking</div>
+                        <div class="col-span-3 text-center md:hidden"></div>
+                        <div class="col-span-3 text-center hidden md:block">Song</div>
+                        <div class="col-span-2 text-center">Release Date</div>
+                        <div class="col-span-4 text-center">Played</div>
+                        <div class="col-span-1 text-center "></div>
+                        <div class="col-span-1 text-center">Time</div>
                     </div>
-                    <div class="mt-4 space-y-3">
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>1</span>
-                            <span>Sorforce</span>
-                            <span>Nov 4, 2023</span>
-                            <span>Hard to Imagine</span>
-                            <span>3:26</span>
-                        </div>
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>2</span>
-                            <span>Skyfall Beats</span>
-                            <span>Oct 26, 2023</span>
-                            <span>Nightmares</span>
-                            <span>2:45</span>
-                        </div>
-                        <div class="grid grid-cols-5 p-3 rounded-lg bg-gray-700 hover:bg-gray-600 cursor-pointer">
-                            <span>3</span>
-                            <span>Greedy</span>
-                            <span>Nov 30, 2023</span>
-                            <span>Greedy</span>
-                            <span>2:11</span>
-                        </div>
+                    <div id="popular" class="space-y-2">
                     </div>
                 </div>
-               
+            </main> 
+            <footer class=" text-white py-4 px-6">
+                <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
+                  <!-- About Section -->
+                  <div class="flex flex-col items-center space-x-2">
+                    <h2 class="text-3xl font-bold">About</h2>
+                    <p class="text-sm mt-2 text-white">
+                      Melodies is a website that has been created for over <span class="text-[#ee10b0]">5 year's</span> now and it is one of the most famous music player websites in the world. In this website, you can listen and download songs for free. Also, if you want no limitation you can buy our <span class="text-[#0e9eef]">premium pass's</span>.
+                    </p>
+                  </div>
+                  
+                  <!-- Melodi Section -->
+                  <div>
+                    <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Melodi</h2>
+                    <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                      <li>Songs</li>
+                      <li>Radio</li>
+                      <li>Podcast</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Access Section -->
+                  <div>
+                    <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Access</h2>
+                    <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                      <li>Explor</li>
+                      <li>Artists</li>
+                      <li>Playlists</li>
+                      <li>Albums</li>
+                      <li>Trending</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Contact Section -->
+                  <div>
+                    <h2 class="text-3xl font-bold flex justify-center border-b border-white inline-block pb-1">Contact</h2>
+                    <ul class="mt-2 text-lg space-y-1 text-center text-white">
+                      <li>About</li>
+                      <li>Policy</li>
+                      <li>Social Media</li>
+                      <li>Soppurt</li>
+                    </ul>
+                  </div>
+              
+                <!-- Footer Branding -->
+                <div class="flex flex-col items-center space-y-24">
+                    <span
+                class="text-3xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+                    <div class="flex space-x-4 mt-4 text-4xl">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fas fa-phone"></i>
+                      </div>
+                </div>
             </div>
-            
-        </body>
+
+              </footer>
+            </div>
+              
+        </div>
         
-    </main>
-    
-</div> 
+</body>
+
 </main>
+
+</div>
+</main>
+  <!-- Gọi script ngoài -->
+  <script src="script.js"></script>
 <script>
     if (window.location.pathname.endsWith("index.html")) {
         window.location.replace(window.location.pathname.replace("index.html", ""));

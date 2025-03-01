@@ -2,48 +2,48 @@
     "Popular": [
         {
             "rank": 1,
-            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-            "nameProduct": "Sorfcore",
-            "nameArtist": "The Neighbourhood",
-            "releaseDate": "Nov 4, 2023",
-            "played": "Hard",
-            "time": "3:26"
+            "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqQGloQ6_I2iSto76jXbiKABd1Vr031zNOuQ&s",
+            "nameProduct": "Without Me",
+            "nameArtist": "Eminem",
+            "releaseDate": "May 15, 2002",
+            "played": "31,215,618",
+            "time": "4:50"
         },
         {
             "rank": 2,
-            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-            "nameProduct": "Skyfall Beats",
-            "nameArtist": "nightmares",
-            "releaseDate": "Oct 26, 2023",
-            "played": "nightmares",
-            "time": "2:45"
+            "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH2qi7v6nPYG0IYMYzSOQJpVZ8NGB0HPBFnYyJCojViLQH2MrU9NgotpU7uS-qdAI5DxY&usqp=CAU",
+            "nameProduct": "mockingbird",
+            "nameArtist": "Enimen",
+            "releaseDate": "Apr 25, 2005",
+            "played": "19,856,112",
+            "time": "4:10"
         },
         {
             "rank": 3,
-            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-            "nameProduct": "Greedy",
-            "nameArtist": "Tate McRae",
-            "releaseDate": "Dec 30, 2023",
-            "played": "Greedy",
-            "time": "2:11"
+            "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEkYTmGdrPXJrLTPMG7eTp8O4mQ1llSn1iaw&s",
+            "nameProduct": "The real slim shady",
+            "nameArtist": "Enimen",
+            "releaseDate": "Nov 30, 2023",
+            "played": "15,564,223",
+            "time": "4:44"
         },
         {
             "rank": 4,
-            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-            "nameProduct": "Lovin On Me",
-            "nameArtist": "Jack Harlow",
-            "releaseDate": "Dec 30, 2023",
-            "played": "Lovin On Me",
-            "time": "2:18"
+            "imageLink": "https://i0.wp.com/vinyldreams.co.uk/wp-content/uploads/2024/10/img_8733.jpg?fit=1982%2C2000&ssl=1",
+            "nameProduct": "Love yourself",
+            "nameArtist": "Enimen",
+            "releaseDate": "Nov 30, 2023",
+            "played": "16,240,390",
+            "time": "5:22"
         },
         {
             "rank": 5,
-            "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-            "nameProduct": "Pain The Town Red",
-            "nameArtist": "Doja Cat",
-            "releaseDate": "Dec 29, 2023",
-            "played": "Paint The Town Red",
-            "time": "3:51"
+            "imageLink": "https://i1.wp.com/cornellsun.com/wp-content/uploads/2020/01/arts-pg-6-eminem.jpg?fit=1000%2C1000&ssl=1",
+            "nameProduct": "Godzilla",
+            "nameArtist": "Enimen",
+            "releaseDate": "Nov 30, 2023",
+            "played": "14,367,500",
+            "time": "3:30"
         },
         {
             "rank": 6,
@@ -65,36 +65,36 @@
         }
     ],
 
-    "artist'sAlbums": [
+    "artistsAlbums": [
     {
       "id": 1,
-      "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
-      "nameProduct": "Vanguard ",
-      "nameArtist": "Dru Omar"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqQGloQ6_I2iSto76jXbiKABd1Vr031zNOuQ&s",
+      "nameProduct": "The Enimen Show",
+      "nameArtist": "2002"
     },
     {
       "id": 2,
-      "imageLink": "http://dummyimage.com/133x100.png/cc0000/ffffff",
-      "nameProduct": "VEREIT ",
-      "nameArtist": "Irwin Masurel"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH2qi7v6nPYG0IYMYzSOQJpVZ8NGB0HPBFnYyJCojViLQH2MrU9NgotpU7uS-qdAI5DxY&usqp=CAU",
+      "nameProduct": "Encore ",
+      "nameArtist": "2004"
     },
     {
       "id": 3,
-      "imageLink": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-      "nameProduct": "Nuvectra ",
-      "nameArtist": "Hugh Wigley"
+      "imageLink": "https://i1.wp.com/cornellsun.com/wp-content/uploads/2020/01/arts-pg-6-eminem.jpg?fit=1000%2C1000&ssl=1",
+      "nameProduct": "Music to be murdered by ",
+      "nameArtist": "2020"
     },
     {
       "id": 4,
-      "imageLink": "http://dummyimage.com/242x100.png/dddddd/000000",
-      "nameProduct": "B&G",
-      "nameArtist": "Sallyann Bruneton"
+      "imageLink": "https://i.discogs.com/jNlDQDCwoDsSV16K4P9vSV_JumS72n3flHCG4CRZns4/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzNzQ2/NDktMTUwMjE0MDE2/NC03NzM5LmpwZWc.jpeg",
+      "nameProduct": "Recovery",
+      "nameArtist": "2010"
     },
     {
       "id": 5,
-      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
-      "nameProduct": "Immersion ",
-      "nameArtist": "Hillard Dilrew"
+      "imageLink": "https://m.media-amazon.com/images/I/51X%2Bbg2z1-L._SY200_QL15_.jpg",
+      "nameProduct": "Eminem the slim shady lp ",
+      "nameArtist": "1999"
     },
     {
       "id": 6,
@@ -110,48 +110,48 @@
     }
   ],
   
-    "weeklyTopSongs": [
+    "singleSongs": [
       {
         "id": 1,
-        "imageLink": "http://dummyimage.com/185x100.png/cc0000/ffffff",
-        "nameProduct": "First ",
-        "nameArtist": "Georgie Goodright"
+        "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrorjhQpDV1tQ63-Nl3rv7oI930v7hh9Uknw&s",
+        "nameProduct": "Lace it ",
+        "nameArtist": "2023"
       },
       {
         "id": 2,
-        "imageLink": "http://dummyimage.com/121x100.png/dddddd/000000",
-        "nameProduct": "Albireo ",
-        "nameArtist": "Caresse Dodswell"
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/f/fc/Ez_Mil_and_Eminem_-_Realest.jpg",
+        "nameProduct": "Realest ",
+        "nameArtist": "2022"
       },
       {
         "id": 3,
-        "imageLink": "http://dummyimage.com/121x100.png/ff4444/ffffff",
-        "nameProduct": "BHP ",
-        "nameArtist": "Shaun Swapp"
+        "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrZO3nyBL9XYAQIdWpOttVGy7engeJKbzAjAE2advxdDaN9K4rY6phobMpmjcqtzXCTJA&usqp=CAU",
+        "nameProduct": "From the D 2 the LBC ",
+        "nameArtist": "2023"
       },
       {
         "id": 4,
-        "imageLink": "http://dummyimage.com/150x100.png/ff4444/ffffff",
-        "nameProduct": "Globant",
-        "nameArtist": "Belita Dobbson"
+        "imageLink": "https://static.wixstatic.com/media/d19e99_2fe7f1cac05c4615b6eff3ceb8fd62b6~mv2.jpeg/v1/fill/w_600,h_600,al_c,lg_1,q_80/d19e99_2fe7f1cac05c4615b6eff3ceb8fd62b6~mv2.jpeg",
+        "nameProduct": "911",
+        "nameArtist": "2022"
       },
       {
         "id": 5,
-        "imageLink": "http://dummyimage.com/153x100.png/dddddd/000000",
-        "nameProduct": "51job, ",
-        "nameArtist": "Georgena Bourgeois"
+        "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4auL764VFsjRf3B9DP--0qRSLrnd9NzWIZ-nwrdLZoPvZWyq3odguD7ki0Sc4OQqOfUw&usqp=CAU",
+        "nameProduct": "Killshot",
+        "nameArtist": "2018"
       },
       {
         "id": 6,
         "imageLink": "http://dummyimage.com/192x100.png/dddddd/000000",
         "nameProduct": "First",
-        "nameArtist": "Willis Lumox"
+        "nameArtist": "Full Collection"
       },
       {
         "id": 7,
         "imageLink": "http://dummyimage.com/128x100.png/5fa2dd/ffffff",
         "nameProduct": "Select ",
-        "nameArtist": "Jackie Duchan"
+        "nameArtist": "Best Of Eminem"
       },
       {
         "id": 8,
@@ -160,48 +160,73 @@
         "nameArtist": "Yolanthe Elphey"
       }
     ],
-    "artist'sPlaylist": [
+    "artistsPlaylist": [
     {
       "id": 1,
-      "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
-      "nameProduct": "Vanguard ",
-      "nameArtist": "Dru Omar"
+      "imageLink": "https://miro.medium.com/v2/resize:fit:1400/1*M6pRMi06dUlhxcMyT52oNQ.jpeg",
+      "nameProduct": "Full Collection "
     },
     {
       "id": 2,
-      "imageLink": "http://dummyimage.com/133x100.png/cc0000/ffffff",
-      "nameProduct": "VEREIT ",
-      "nameArtist": "Irwin Masurel"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTziU_egqhzIBlOXIh6sUygWg84gWbrUHMv3n7RFnUmlDrWDjL5HMYOm3WqQdyDK6Pakoo&usqp=CAU",
+      "nameProduct": "Best Of Eminem "
     },
     {
       "id": 3,
-      "imageLink": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-      "nameProduct": "Nuvectra ",
-      "nameArtist": "Hugh Wigley"
+      "imageLink": "https://myhotposters.com/cdn/shop/products/mHP0950_1024x1024.jpeg?v=1571444481",
+      "nameProduct": "Old Songs"
     },
     {
       "id": 4,
-      "imageLink": "http://dummyimage.com/242x100.png/dddddd/000000",
-      "nameProduct": "B&G",
-      "nameArtist": "Sallyann Bruneton"
+      "imageLink": "https://www.hollywoodreporter.com/wp-content/uploads/2011/08/radiohead_a_p.jpg",
+      "nameProduct": "Fan's Favorite"
     },
     {
       "id": 5,
-      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
-      "nameProduct": "Immersion ",
-      "nameArtist": "Hillard Dilrew"
+      "imageLink": "https://kenh14cdn.com/2019/4/9/anh-2-15548062830301327774615.jpg",
+      "nameProduct": "New Release Songs "
     },
     {
       "id": 6,
       "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
-      "nameProduct": "GTT ",
-      "nameArtist": "Orren Tomeo"
+      "nameProduct": "GTT "
     },
     {
       "id": 7,
       "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-      "nameProduct": "Belmond ",
-      "nameArtist": "Burnard Storre"
+      "nameProduct": "Belmond "
+    }
+  ],
+  "eminemFansAlsoListenTo": [
+    {
+      "id": 1,
+      "imageLink": "https://escobar300.wordpress.com/wp-content/uploads/2010/06/50cent.jpg",
+      "nameProduct": "50 Cent"
+    },
+    {
+      "id": 2,
+      "imageLink": "https://m.media-amazon.com/images/I/71AVp7KfkmL.jpg",
+      "nameProduct": "Snoop Dog"
+    },
+    {
+      "id": 3,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiQeU2hEMGYqZyDCXxLMCEjMczhRXrI00__g&s",
+      "nameProduct": "Tupac "
+    },
+    {
+      "id": 4,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHWwIwcoVhDqaZlBf1dMKPOQJnD2Aj3nBEA&s0",
+      "nameProduct": "Jay-Z"
+    },
+    {
+      "id": 5,
+      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+      "nameProduct": "Immersion "
+    },
+    {
+      "id": 6,
+      "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+      "nameProduct": "GTT "
     }
   ]
 }
