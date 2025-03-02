@@ -2,7 +2,7 @@
   "weeklyTopSongs": [
     {
       "id": 1,
-      "imageLink": "http://dummyimage.com/185x100.png/cc0000/ffffff",
+      "imageLink": "https://i.scdn.co/image/ab67616d0000b2739bef45ee387f274ea3198c55",
       "nameProduct": "First ",
       "nameArtist": "Georgie Goodright"
     },
@@ -94,69 +94,101 @@
     }
   ],
 
-    "trendingSongs": [
-      {
-        "rank": 1,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Sorfcore",
-        "nameArtist": "The Neighbourhood",
-        "releaseDate": "Nov 4, 2023",
-        "album": "Hard ",
-        "time": "3:26"
-      },
-      {
-        "rank": 2,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Skyfall Beats",
-        "nameArtist": "nightmares",
-        "releaseDate": "Oct 26, 2023",
-        "album": "nightmares",
-        "time": "2:45"
-      },
-      {
-        "rank": 3,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Greedy",
-        "nameArtist": "Tate McRae",
-        "releaseDate": "Dec 30, 2023",
-        "album": "Greedy",
-        "time": "2:11"
-      },
-      {
-        "rank": 4,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Lovin On Me",
-        "nameArtist": "Jack Harlow",
-        "releaseDate": "Dec 30, 2023",
-        "album": "Lovin On Me",
-        "time": "2:18"
-      },
-      {
-        "rank": 5,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Pain The Town Red",
-        "nameArtist": "Doja Cat",
-        "releaseDate": "Dec 29, 2023",
-        "album": "Paint The Town Red",
-        "time": "3:51"
-      },
-      {
-        "rank": 6,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Dancin On Night",
-        "nameArtist": "Dua Lipa",
-        "releaseDate": "May 27, 2023",
-        "album": "Dance The Night (From Barbie Movie)",
-        "time": "2:56"
-      },
-      {
-        "rank": 7,
-        "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-        "nameProduct": "Water",
-        "nameArtist": "Tyla",
-        "releaseDate": "Dec 10, 2023",
-        "album": "Water",
-        "time": "3:20"
-      }
-]
+  "trendingSongs": [
+    {
+      "rank": 1,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Sorfcore",
+      "nameArtist": "The Neighbourhood",
+      "releaseDate": "Nov 4, 2023",
+      "album": "Hard ",
+      "time": "3:26"
+    },
+    {
+      "rank": 2,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Skyfall Beats",
+      "nameArtist": "nightmares",
+      "releaseDate": "Oct 26, 2023",
+      "album": "nightmares",
+      "time": "2:45"
+    },
+    {
+      "rank": 3,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Greedy",
+      "nameArtist": "Tate McRae",
+      "releaseDate": "Dec 30, 2023",
+      "album": "Greedy",
+      "time": "2:11"
+    },
+    {
+      "rank": 4,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Lovin On Me",
+      "nameArtist": "Jack Harlow",
+      "releaseDate": "Dec 30, 2023",
+      "album": "Lovin On Me",
+      "time": "2:18"
+    },
+    {
+      "rank": 5,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Pain The Town Red",
+      "nameArtist": "Doja Cat",
+      "releaseDate": "Dec 29, 2023",
+      "album": "Paint The Town Red",
+      "time": "3:51"
+    },
+    {
+      "rank": 6,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Dancin On Night",
+      "nameArtist": "Dua Lipa",
+      "releaseDate": "May 27, 2023",
+      "album": "Dance The Night (From Barbie Movie)",
+      "time": "2:56"
+    },
+    {
+      "rank": 7,
+      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "nameProduct": "Water",
+      "nameArtist": "Tyla",
+      "releaseDate": "Dec 10, 2023",
+      "album": "Water",
+      "time": "3:20"
+    }
+  ],
+  "eminemFansAlsoListenTo": [
+    {
+      "id": 1,
+      "imageLink": "https://escobar300.wordpress.com/wp-content/uploads/2010/06/50cent.jpg",
+      "nameProduct": "50 Cent"
+    },
+    {
+      "id": 2,
+      "imageLink": "https://m.media-amazon.com/images/I/71AVp7KfkmL.jpg",
+      "nameProduct": "Snoop Dog"
+    },
+    {
+      "id": 3,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiQeU2hEMGYqZyDCXxLMCEjMczhRXrI00__g&s",
+      "nameProduct": "Tupac "
+    },
+    {
+      "id": 4,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHWwIwcoVhDqaZlBf1dMKPOQJnD2Aj3nBEA&s0",
+      "nameProduct": "Jay-Z"
+    },
+    {
+      "id": 5,
+      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+      "nameProduct": "Immersion "
+    },
+    {
+      "id": 6,
+      "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+      "nameProduct": "GTT "
+    }
+  ]
 }

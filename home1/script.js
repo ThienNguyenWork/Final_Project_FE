@@ -2,12 +2,13 @@
 async function loadProducts() {
     try {
         const response = await fetch('products.json');
-        const { weeklyTopSongs, newReleaseSongs, trendingSongs } = await response.json();
+        const { weeklyTopSongs, newReleaseSongs, trendingSongs,eminemFansAlsoListenTo } = await response.json();
 
         // ✅ Giới hạn 5 sản phẩm cho mỗi danh sách
         renderProducts(document.getElementById('product-list'), weeklyTopSongs.slice(0, 5));
         renderProducts(document.getElementById('new-release-list'), newReleaseSongs.slice(0, 5));
         renderTrending(document.getElementById('trending-list'), trendingSongs.slice(0, 5));
+        renderEminemFansAlsoListenTo(document.getElementById('eminemFansAlsoListenTo'), eminemFansAlsoListenTo.slice(0, 4));
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu:', error);
     }
@@ -95,6 +96,19 @@ function renderTrending(container, trendingSongs) {
                 </div>
             </div>
         </div>
+    `).join('');
+}
+// Render card sản phẩm cho Eminem Fans Also Listen To
+function renderEminemFansAlsoListenTo(container, products) {
+    container.innerHTML = products.map(product => ` 
+        <div class="flex flex-col items-center text-center">
+                                <div class="w-52 h-52 rounded-full overflow-hidden shadow-lg">
+                                    <img src="${product.imageLink}" 
+                                         alt="${product.nameProduct}" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <h2 class="text-lg font-semibold text-white mt-4">${product.nameProduct}</h2>
+                            </div>
     `).join('');
 }
 
