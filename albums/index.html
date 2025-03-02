@@ -105,160 +105,268 @@
                     </div>
                 </nav>
             </aside>
-<div>
-            <!-- Main Content -->
-            <main class="flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
-                <div
-                    class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
-                    <!-- Hàng trên: Nút quay lại + Nav -->
-                    <div class="flex items-center justify-between w-full px-6">
-                        <!-- Nút quay lại -->
-                        <div>
-                            <button onclick="window.history.back()"
-                                class="h-[40px] flex items-start justify-start text-white focus:outline-none transition-transform duration-300 hover:scale-110">
+            <div>
+                <!-- Main Content -->
+                <main
+                    class="flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
+                    <div
+                        class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
+                        <!-- Hàng trên: Nút quay lại + Nav -->
+                        <div class="flex items-center justify-between w-full px-6">
+                            <!-- Nút quay lại -->
+                            <div>
+                                <button onclick="window.history.back()"
+                                    class="h-[40px] flex items-start justify-start text-white focus:outline-none transition-transform duration-300 hover:scale-110">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 fill-current"
-                                    viewBox="0 0 20 20">
-                                    <path d="M11 2 L7 6 L11 10 M11 8.5 L9 6.5 L14 6.5 L14 5.5 L9 5.5 L11 3.5Z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 fill-current"
+                                        viewBox="0 0 20 20">
+                                        <path d="M11 2 L7 6 L11 10 M11 8.5 L9 6.5 L14 6.5 L14 5.5 L9 5.5 L11 3.5Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex md:order-2">
+                                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                                    aria-expanded="false"
+                                    class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                    </svg>
+                                    <span class="sr-only">Search</span>
+                                </button>
+                                <div class="relative hidden md:block">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                        <span class="sr-only">Search icon</span>
+                                    </div>
+                                    <input type="text" id="search-navbar"
+                                        class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Search...">
+                                </div>
+                                <div class="flex items-center justify-end space-x-8 rtl:space-x-reverse">
+                                    <span id="user-greeting" class="text-sm text-gray-700 dark:text-white"></span>
+                                    <a href="login.html" id="login-link"
+                                        class="text-sm text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+                                    <button onclick="logout()" id="logout-btn"
+                                        class="hidden bg-red-500 text-white p-2 rounded-lg">Đăng xuất</button>
+                                </div>
+
+                                <button data-collapse-toggle="navbar-search" type="button"
+                                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                                    aria-controls="navbar-search" aria-expanded="false">
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 17 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                                id="navbar-search">
+                                <div class="relative mt-3 md:hidden">
+                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </div>
+                                    <input type="text" id="search-navbar"
+                                        class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Search...">
+                                </div>
+                            </div>
+                            <!-- Navigation -->
+                            <nav class="flex space-x-6">
+                                <a href="#" class="text-white text-2xl font-bold">Share</a>
+                                <a href="#" class="text-white text-2xl font-bold">About</a>
+                                <a href="#" class="text-white text-2xl font-bold">Premium</a>
+                                <i class="fa-solid fa-user fa-2x text-white"></i>
+                            </nav>
+                        </div>
+                        <div class="grid grid-cols-2 items-center mt-12 ml-14 gap-x-2">
+                            <!-- Cột 1 -->
+                            <div>
+                                <img src="https://i0.wp.com/recordyouraudiobook.com/wp-content/uploads/2023/01/RYA-photos.png?fit=1888,1349&ssl=1"
+                                    alt="Ảnh minh họa"
+                                    class="w-[70%] h-[150%] rounded-xl shadow-black shadow-[6px_6px_15px_rgba(0,0,0,0.3)]">
+                            </div>
+
+                            <!-- Cột 2 -->
+                            <div>
+                                <!-- Hàng dưới: Nội dung chính + Play All -->
+                                <div class="flex flex-col text-left items-start justify-start space-y-4 ml-[-90px]">
+                                    <h2 class="text-4xl font-bold">Trending Songs <span
+                                            class="text-[#ee10b0]">mix</span>
+                                    </h2>
+                                    <br>
+                                    <br>
+                                    <p class="text-white font-bold text-lg">tate mcree, nightmares, the neighborhood,
+                                        <br>
+                                        doja cat and...</p>
+                                    <br>
+                                    <br>
+                                    <p class="text-lg font-bold text-white ">20 songs <span
+                                            class="text-[#ee10b0]">•</span>
+                                        1h 36m</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end space-x-3 mt-[-50px]">
+                            <!-- Văn bản "Play All" -->
+                            <span class="text-2xl font-bold text-[#ee10b0]">Play All</span>
+
+                            <!-- Nút Play -->
+                            <button
+                                class="w-16 h-16 flex items-center justify-center rounded-full border-4 border-[#ee10b0]">
+                                <svg class="w-10 h-10 text-[#ee10b0]" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"></path>
                                 </svg>
                             </button>
+
                         </div>
 
-                        <!-- Navigation -->
-                        <nav class="flex space-x-6">
-                            <a href="#" class="text-white text-2xl font-bold">Share</a>
-                            <a href="#" class="text-white text-2xl font-bold">About</a>
-                            <a href="#" class="text-white text-2xl font-bold">Premium</a>
-                            <i class="fa-solid fa-user fa-2x text-white"></i>
-                        </nav>
                     </div>
-                    <div class="grid grid-cols-2 items-center mt-12 ml-14 gap-x-2">
-                        <!-- Cột 1 -->
-                        <div>
-                            <img src="https://i0.wp.com/recordyouraudiobook.com/wp-content/uploads/2023/01/RYA-photos.png?fit=1888,1349&ssl=1"
-                                alt="Ảnh minh họa"
-                                class="w-[70%] h-[150%] rounded-xl shadow-black shadow-[6px_6px_15px_rgba(0,0,0,0.3)]">
+
+                    <!-- Song List -->
+                    <div>
+                        <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Popular</h1>
+                        <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
+                            <div class="col-span-1 text-center">Ranking</div>
+                            <div class="col-span-3 text-center md:hidden"></div>
+                            <div class="col-span-3 text-center hidden md:block">Song</div>
+                            <div class="col-span-2 text-center">Release Date</div>
+                            <div class="col-span-4 text-center">Played</div>
+                            <div class="col-span-1 text-center "></div>
+                            <div class="col-span-1 text-center">Time</div>
+                        </div>
+                        <div id="popular" class="space-y-2">
                         </div>
 
-                        <!-- Cột 2 -->
-                        <div>
-                            <!-- Hàng dưới: Nội dung chính + Play All -->
-                            <div class="flex flex-col text-left items-start justify-start space-y-4 ml-[-90px]">
-                                <h2 class="text-4xl font-bold">Trending Songs <span class="text-[#ee10b0]">mix</span>
-                                </h2>
-                                <br>
-                                <br>
-                                <p class="text-white font-bold text-lg">tate mcree, nightmares, the neighborhood, <br>
-                                    doja cat and...</p>
-                                <br>
-                                <br>
-                                <p class="text-lg font-bold text-white ">20 songs <span class="text-[#ee10b0]">•</span>
-                                    1h 36m</p>
 
+                        <!-- Quản lý sản phẩm (Chỉ admin mới thấy) -->
+                        <div id="admin-panel" class="hidden mt-10 p-5 bg-gray-100 rounded-lg">
+                            <!-- Trong script.js, chúng ta đã sử dụng logic kiểm tra vai trò (role) của người dùng để quyết định hiển thị hoặc ẩn khu vực quản
+        lý sản phẩm (admin-panel). -->
+                            <!-- Ban đầu, phần admin-panel có class="hidden", nghĩa là nó bị ẩn đi.
+        Chỉ khi nào Admin đăng nhập, script mới xóa class hidden để hiển thị nó. -->
+                            <h2 class="text-xl font-bold mb-4">Quản Lý Sản Phẩm</h2>
+                            <div class="mb-4">
+                                <input type="hidden" id="edit-id">
+                                <input type="text" id="product-rank" placeholder="Ranking"
+                                    class="p-2 border rounded w-full mb-2">
+                                <input type="text" id="product-name" placeholder="Name of Song"
+                                    class="p-2 border rounded w-full mb-2">
+                                <input type="text" id="product-date" placeholder="Release Date"
+                                    class="p-2 border rounded w-full mb-2">
+                                <input type="text" id="product-albums" placeholder="Albums"
+                                    class="p-2 border rounded w-full mb-2">
+                                <input type="text" id="product-time" placeholder="Time"
+                                    class="p-2 border rounded w-full mb-2">
+                                <button onclick="saveProduct()" class="bg-blue-600 text-white p-2 rounded w-full">Lưu
+                                    Sản Phẩm</button>
+                            </div>
+                            <table class="w-full bg-white shadow-md rounded-lg">
+                                <thead>
+                                    <tr class="bg-gray-200">
+                                        <th class="p-2">Ranking</th>
+                                        <th class="p-2">Name of Song</th>
+                                        <th class="p-2">Release Date</th>
+                                        <th class="p-2">Albums</th>
+                                        <th class="p-2">Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="product-table"></tbody>
+                            </table>
+                        </div>
+
+                        <!-- Danh sách sản phẩm (Chỉ hiển thị nếu không phải admin) -->
+                        <div id="product-list" class="space-y-2"></div>
+
+                    </div>
+                </main>
+                <footer class=" text-white py-4 px-6">
+                    <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
+                        <!-- About Section -->
+                        <div class="flex flex-col items-center space-x-2">
+                            <h2 class="text-3xl font-bold">About</h2>
+                            <p class="text-sm mt-2 text-white">
+                                Melodies is a website that has been created for over <span class="text-[#ee10b0]">5
+                                    year's</span> now and it is one of the most famous music player websites in the
+                                world. In this website, you can listen and download songs for free. Also, if you want no
+                                limitation you can buy our <span class="text-[#0e9eef]">premium pass's</span>.
+                            </p>
+                        </div>
+
+                        <!-- Melodi Section -->
+                        <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">
+                                Melodi</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                                <li>Songs</li>
+                                <li>Radio</li>
+                                <li>Podcast</li>
+                            </ul>
+                        </div>
+
+                        <!-- Access Section -->
+                        <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">
+                                Access</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                                <li>Explor</li>
+                                <li>Artists</li>
+                                <li>Playlists</li>
+                                <li>Albums</li>
+                                <li>Trending</li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Section -->
+                        <div>
+                            <h2 class="text-3xl font-bold flex justify-center border-b border-white inline-block pb-1">
+                                Contact</h2>
+                            <ul class="mt-2 text-lg space-y-1 text-center text-white">
+                                <li>About</li>
+                                <li>Policy</li>
+                                <li>Social Media</li>
+                                <li>Soppurt</li>
+                            </ul>
+                        </div>
+
+                        <!-- Footer Branding -->
+                        <div class="flex flex-col items-center space-y-24">
+                            <span
+                                class="text-3xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+                            <div class="flex space-x-4 mt-4 text-4xl">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fas fa-phone"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center justify-end space-x-3 mt-[-50px]">
-                        <!-- Văn bản "Play All" -->
-                        <span class="text-2xl font-bold text-[#ee10b0]">Play All</span>
 
-                        <!-- Nút Play -->
-                        <button
-                            class="w-16 h-16 flex items-center justify-center rounded-full border-4 border-[#ee10b0]">
-                            <svg class="w-10 h-10 text-[#ee10b0]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"></path>
-                            </svg>
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <!-- Song List -->
-                <div>
-                    <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Popular</h1>
-                    <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
-                        <div class="col-span-1 text-center">Ranking</div>
-                        <div class="col-span-3 text-center md:hidden"></div>
-                        <div class="col-span-3 text-center hidden md:block">Song</div>
-                        <div class="col-span-2 text-center">Release Date</div>
-                        <div class="col-span-4 text-center">Played</div>
-                        <div class="col-span-1 text-center "></div>
-                        <div class="col-span-1 text-center">Time</div>
-                    </div>
-                    <div id="popular" class="space-y-2">
-                    </div>
-                </div>
-            </main> 
-            <footer class=" text-white py-4 px-6">
-                <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
-                  <!-- About Section -->
-                  <div class="flex flex-col items-center space-x-2">
-                    <h2 class="text-3xl font-bold">About</h2>
-                    <p class="text-sm mt-2 text-white">
-                      Melodies is a website that has been created for over <span class="text-[#ee10b0]">5 year's</span> now and it is one of the most famous music player websites in the world. In this website, you can listen and download songs for free. Also, if you want no limitation you can buy our <span class="text-[#0e9eef]">premium pass's</span>.
-                    </p>
-                  </div>
-                  
-                  <!-- Melodi Section -->
-                  <div>
-                    <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Melodi</h2>
-                    <ul class="mt-2 text-lg text-center space-y-1 text-white">
-                      <li>Songs</li>
-                      <li>Radio</li>
-                      <li>Podcast</li>
-                    </ul>
-                  </div>
-              
-                  <!-- Access Section -->
-                  <div>
-                    <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Access</h2>
-                    <ul class="mt-2 text-lg text-center space-y-1 text-white">
-                      <li>Explor</li>
-                      <li>Artists</li>
-                      <li>Playlists</li>
-                      <li>Albums</li>
-                      <li>Trending</li>
-                    </ul>
-                  </div>
-              
-                  <!-- Contact Section -->
-                  <div>
-                    <h2 class="text-3xl font-bold flex justify-center border-b border-white inline-block pb-1">Contact</h2>
-                    <ul class="mt-2 text-lg space-y-1 text-center text-white">
-                      <li>About</li>
-                      <li>Policy</li>
-                      <li>Social Media</li>
-                      <li>Soppurt</li>
-                    </ul>
-                  </div>
-              
-                <!-- Footer Branding -->
-                <div class="flex flex-col items-center space-y-24">
-                    <span
-                class="text-3xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
-                    <div class="flex space-x-4 mt-4 text-4xl">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fas fa-phone"></i>
-                      </div>
-                </div>
+                </footer>
             </div>
 
-              </footer>
-            </div>
-              
         </div>
-        
+
 </body>
 
 </main>
 
 </div>
 </main>
-  <!-- Gọi script ngoài -->
-  <script src="script.js"></script>
+<!-- Gọi script ngoài -->
+<script src="script.js"></script>
 <script>
     if (window.location.pathname.endsWith("index.html")) {
         window.location.replace(window.location.pathname.replace("index.html", ""));
