@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="index.js"></script>
+    <style>
+        .icon-border {
+            text-shadow: 
+                -1px -1px 1px black, 
+                 1px -1px 1px black, 
+                -1px  1px 1px black, 
+                 1px  1px 1px black;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -107,9 +116,9 @@
             </aside>
 <div>
             <!-- Main Content -->
-            <main class="flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
+            <main class="flex-1 bg-[linear-gradient(to_right,black,_transparent)] rounded-xl m-8">
                 <div
-                    class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
+                    class="h-[60vh] bg-[url('https://pbs.twimg.com/media/GRhIS_za8AAVhHh.jpg')] bg-cover bg-center from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
                     <!-- Hàng trên: Nút quay lại + Nav -->
                     <div class="flex items-center justify-between w-full px-6">
                         <!-- Nút quay lại -->
@@ -132,49 +141,11 @@
                             <i class="fa-solid fa-user fa-2x text-white"></i>
                         </nav>
                     </div>
-                    <div class="grid grid-cols-2 items-center mt-12 ml-14 gap-x-2">
-                        <!-- Cột 1 -->
-                        <div>
-                            <img src="https://i0.wp.com/recordyouraudiobook.com/wp-content/uploads/2023/01/RYA-photos.png?fit=1888,1349&ssl=1"
-                                alt="Ảnh minh họa"
-                                class="w-[70%] h-[150%] rounded-xl shadow-black shadow-[6px_6px_15px_rgba(0,0,0,0.3)]">
-                        </div>
-
-                        <!-- Cột 2 -->
-                        <div>
-                            <!-- Hàng dưới: Nội dung chính + Play All -->
-                            <div class="flex flex-col text-left items-start justify-start space-y-4 ml-[-90px]">
-                                <h2 class="text-4xl font-bold">Trending Songs <span class="text-[#ee10b0]">mix</span>
-                                </h2>
-                                <br>
-                                <br>
-                                <p class="text-white font-bold text-lg">tate mcree, nightmares, the neighborhood, <br>
-                                    doja cat and...</p>
-                                <br>
-                                <br>
-                                <p class="text-lg font-bold text-white ">20 songs <span class="text-[#ee10b0]">•</span>
-                                    1h 36m</p>
-
-                            </div>
-                        </div>
+                    <div class="h-screen flex items-end justify-start">
+                        <p class="text-8xl font-bold pb-12">Eminem</p>
                     </div>
-                    <div class="flex items-center justify-end space-x-3 mt-[-50px]">
-                        <!-- Văn bản "Play All" -->
-                        <span class="text-2xl font-bold text-[#ee10b0]">Play All</span>
-
-                        <!-- Nút Play -->
-                        <button
-                            class="w-16 h-16 flex items-center justify-center rounded-full border-4 border-[#ee10b0]">
-                            <svg class="w-10 h-10 text-[#ee10b0]" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 5v14l11-7z"></path>
-                            </svg>
-                        </button>
-
-                    </div>
-
                 </div>
 
-                <!-- Song List -->
                 <div>
                     <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Popular</h1>
                     <div class="grid grid-cols-12 text-gray-400 text-sm mb-4 px-4">
@@ -187,8 +158,71 @@
                         <div class="col-span-1 text-center">Time</div>
                     </div>
                     <div id="popular" class="space-y-2">
+                        <!-- Nội dung trending sẽ được render bằng JavaScript -->
+                    </div>
+                
+                    <!-- Nút Show All -->
+                    <button class="mt-6 px-6 py-2 rounded-lg bg-[#ee10b0] text-white text-lg font-semibold flex items-center mx-auto">
+                     Show All
+                    </button>
+                </div>
+
+                <div>
+                    <h1 class="text-4xl font-bold ml-6 mt-6 mb-6">Artist's <span class="text-[#0e9eef]">Albums</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="artistsAlbums"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.85fr_0.85fr_0.85fr_0.85fr_0.85fr] gap-4 p-4 flex items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
+                    </div>
+                </div> 
+                
+                <div>
+                    <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Single <span class="text-[#ee10b0]">Songs</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="singleSongs"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
                     </div>
                 </div>
+
+                <div>
+                    <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Artist's <span class="text-[#ee10b0]">Playlist</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="artistsPlaylist"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.85fr_0.85fr_0.85fr_0.85fr_0.85fr] gap-4 p-4 flex items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
+                    </div>
+                </div> 
+
+
+                <div>
+                    <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Eminem Fans <span class="text-[#ee10b0]">Also Listen To</span></h1>
+                    <div class="flex flex-col md:flex-row">
+                        <div id="eminemFansAlsoListenTo"
+                            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr] gap-16 p-4 flex items-center">
+                        </div>
+                        <div class="flex flex-col items-center space-y-2 justify-center">
+                            <button
+                                class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                            <span class="text-white font-bold text-lg">View All</span>
+                        </div>
+                    </div>
+                </div> 
             </main> 
             <footer class=" text-white py-4 px-6">
                 <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
@@ -254,7 +288,6 @@
 </body>
 
 </main>
-
 </div>
 </main>
   <!-- Gọi script ngoài -->
