@@ -33,12 +33,13 @@ function login(event) {
 // 🧰 Kiểm tra quyền truy cập khi tải trang
 const storedUser = JSON.parse(localStorage.getItem("user"));
 
-// Nếu chưa đăng nhập và không phải trang login thì chuyển hướng về login
-if (!storedUser && window.location.pathname !== "/login") {
+// 🔹 Nếu chưa đăng nhập và không phải trang login thì chuyển hướng về login (chỉ 1 lần)
+if (!storedUser && window.location.pathname !== "/login" && !sessionStorage.getItem("redirected")) {
+    sessionStorage.setItem("redirected", "true"); // Đánh dấu đã chuyển hướng
     window.location.href = "/login";
 }
 
-// Điều hướng lại nếu đã đăng nhập mà ở trang login
+// 🔹 Điều hướng lại nếu đã đăng nhập mà ở trang login
 if (storedUser && window.location.pathname === "/login") {
     if (storedUser.role === "admin") {
         window.location.href = "/albums";
@@ -46,3 +47,4 @@ if (storedUser && window.location.pathname === "/login") {
         window.location.href = "/home1";
     }
 }
+
