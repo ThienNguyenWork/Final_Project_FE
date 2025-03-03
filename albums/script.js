@@ -1,28 +1,72 @@
-// Load dữ liệu từ products.json
+//! Kiểm tra đăng nhập & phân quyền
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+    window.location.href = "login.html";
+} else {
+    document.getElementById("user-greeting").innerText = `Xin chào, ${user.username}`;
+
+    document.getElementById("login-link").classList.add("hidden");
+    document.getElementById("logout-btn").classList.remove("hidden");
+
+    if (user.role === "admin") {
+        document.getElementById("admin-panel").classList.remove("hidden");
+        document.getElementById("popular").classList.add("hidden");
+    } else {
+        document.getElementById("admin-panel").classList.add("hidden");
+        document.getElementById("popular").classList.remove("hidden");
+    }
+}
+
+//! Load & Render danh sách sản phẩm
+
+let allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
 async function loadProducts() {
     try {
+        // First, get all stored products
+        let storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+        
+        // Load products from JSON file
         const response = await fetch('products.json');
         const { Popular } = await response.json();
 
-        // ✅ Giới hạn 5 sản phẩm cho mỗi danh sách
-        renderPopular(document.getElementById('popular'), Popular.slice(0, 20));
-      
+        // Merge products, giving priority to stored products
+        let mergedProducts = [...storedProducts];
+        
+        // Only add products from Popular that don't exist in stored products
+        Popular.forEach(popularProduct => {
+            if (!mergedProducts.some(stored => stored.nameProduct === popularProduct.nameProduct)) {
+                mergedProducts.push(popularProduct);
+            }
+        });
+
+        // Update localStorage and allProducts
+        localStorage.setItem("products", JSON.stringify(mergedProducts));
+        allProducts = mergedProducts;
+
+        // Render based on user role
+        if (user.role === "admin") {
+            renderAdminProducts();
+        } else {
+            const container = document.getElementById("popular");
+            renderPopular(container, allProducts); // This should now show all products
+        }
+        
+        console.log("Total products loaded:", mergedProducts.length); // Debug line
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu:', error);
     }
 }
-// Render danh sách Popular Songs
-function renderPopular(container, Popular) {
-    container.innerHTML = Popular.map(song => `
-        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
-            <!-- Desktop Layout -->
-            <div class="hidden lg:grid grid-cols-12 items-center gap-4">
-                <!-- Ranking -->
-                <div class="flex justify-content col-span-1">
-                    <span class="text-white font-bold text-xl">#${song.rank}</span>
-                </div>
 
-                <!-- Ảnh và thông tin bài hát -->
+function renderPopular(container, products) {
+    container.innerHTML = products.map((song, index) => `
+        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
+            <div class="hidden lg:grid grid-cols-12 items-center gap-4">
+                <div class="flex justify-content col-span-1">
+                    <span class="text-white font-bold text-xl">#${index + 1}</span>
+                </div>
                 <div class="col-span-3 flex items-center gap-4">
                     <img class="w-14 h-14 rounded-lg object-cover" src="${song.imageLink}" alt="${song.nameProduct}" />
                     <div>
@@ -30,55 +74,111 @@ function renderPopular(container, Popular) {
                         <p class="text-xs text-gray-400">${song.nameArtist}</p>
                     </div>
                 </div>
-
-                <!-- Ngày phát hành -->
                 <div class="col-span-2 text-center">
                     <span class="text-sm text-gray-400">${song.releaseDate}</span>
                 </div>
-
-                <!-- Played -->
                 <div class="col-span-4 truncate text-center">
                     <span class="text-sm text-gray-400">${song.album || 'N/A'}</span>
                 </div>
-
-                <!-- Icon trái tim -->
                 <div class="col-span-1 text-center">
                     <i class="fa-regular fa-heart text-[#ee10b0] cursor-pointer hover:scale-110 transition-transform"></i>
                 </div>
-
-                <!-- Thời gian -->
                 <div class="col-span-1 text-center">
                     <span class="text-sm text-gray-400">${song.time}</span>
-                </div>
-            </div>
-
-            <!-- Mobile/Tablet Layout -->
-            <div class="lg:hidden flex flex-col gap-3">
-                <!-- Ảnh + Tên bài hát -->
-                <div class="flex gap-4 items-center">
-                    <img class="w-16 h-16 rounded-lg object-cover" src="${song.imageLink}" alt="${song.nameProduct}" />
-                    <div>
-                        <h2 class="text-lg text-white font-semibold">${song.nameProduct}</h2>
-                        <p class="text-sm text-gray-400">${song.nameArtist}</p>
-                    </div>
-                </div>
-
-                <!-- Thông tin chi tiết -->
-                <div class="flex justify-between text-gray-400 text-sm">
-                    <span>#${song.rank}</span>
-                    <span>${song.releaseDate}</span>
-                    <span>${song.album || 'N/A'}</span>
-                    <span>${song.time}</span>
-                </div>
-
-                <!-- Icon trái tim -->
-                <div class="text-right">
-                    <i class="fa-regular fa-heart text-[#ee10b0] cursor-pointer hover:scale-110 transition-transform"></i>
                 </div>
             </div>
         </div>
     `).join('');
 }
 
-// Gọi hàm khi trang được load
+function renderAdminProducts() {
+    const productTable = document.getElementById("product-table");
+    productTable.innerHTML = allProducts.map((product, index) => `
+        <tr class="bg-gray-800 text-white">
+            <td>${index + 1}</td>
+            <td>${product.imageLink}</td>
+            <td>${product.nameProduct}</td>
+            <td>${product.nameArtist}</td>
+            <td>${product.releaseDate || 'N/A'}</td>
+            <td>${product.album || 'N/A'}</td>
+            <td>${product.time || 'N/A'}</td>
+            <td>
+                <button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>
+                <button onclick="deleteProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function saveProduct() {
+    try {
+        const id = document.getElementById("edit-id").value;
+        const rank = document.getElementById("product-rank").value;
+        const imageLink = document.getElementById("product-image").value;
+        const nameProduct = document.getElementById("product-name").value;
+        const nameArtist = document.getElementById("product-artist").value;
+        const releaseDate = document.getElementById("product-date").value;
+        const album = document.getElementById("product-albums").value;
+        const time = document.getElementById("product-time").value;
+
+        if (!rank || !imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time) {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        const product = { nameProduct, rank, imageLink, nameArtist, releaseDate, album, time };
+
+        console.log("Saving product:", product);
+
+        if (id) {
+            allProducts[id] = product;
+        } else {
+            allProducts.push(product);
+        }
+       
+        localStorage.setItem("products", JSON.stringify(allProducts));
+        renderAdminProducts();
+        renderPopular(document.getElementById("popular"), allProducts);
+        clearForm();
+    } catch (error) {
+        console.error("Error saving product:", error);
+        alert("Có lỗi xảy ra khi lưu sản phẩm!");
+    }
+}
+function clearForm() {
+    document.getElementById("edit-id").value = "";
+    document.getElementById("product-rank").value = "";
+    document.getElementById("product-image").value = "";
+    document.getElementById("product-name").value = "";
+    document.getElementById("product-artist").value = "";
+    document.getElementById("product-date").value = "";
+    document.getElementById("product-albums").value = "";
+    document.getElementById("product-time").value = "";
+}
+function deleteProduct(index) {
+    if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+        allProducts.splice(index, 1);
+        localStorage.setItem("products", JSON.stringify(allProducts));
+        renderAdminProducts();
+        renderPopular(document.getElementById("popular"), allProducts);
+    }
+}
+
+function editProduct(index) {
+    const product = allProducts[index];
+    document.getElementById("edit-id").value = index;
+    document.getElementById("product-rank").value = product.rank || "";
+    document.getElementById("product-image").value = product.imageLink || "";
+    document.getElementById("product-name").value = product.nameProduct || "";
+    document.getElementById("product-artist").value = product.nameArtist || "";
+    document.getElementById("product-date").value = product.releaseDate || "";
+    document.getElementById("product-albums").value = product.album || "";
+    document.getElementById("product-time").value = product.time || "";
+}
+
+function logout() {
+    localStorage.removeItem("user");
+    window.location.href = "/login/";
+}
+
 window.onload = loadProducts;
