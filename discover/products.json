@@ -1,0 +1,103 @@
+{
+    "musicGenres": [
+    {
+      "id": 1,
+      "imageLink": "https://mbmusicacademy.org/wp-content/uploads/2022/03/24-Rapid-Rappers.jpeg",
+      "nameProduct": "Rap Tracks"
+    },
+    {
+      "id": 2,
+      "imageLink": "https://i.ytimg.com/vi/0CWUFzbXVJg/maxresdefault.jpg",
+      "nameProduct": "Pop Tracks"
+    },
+    {
+      "id": 3,
+      "imageLink": "https://media.istockphoto.com/id/805764964/vi/anh/tay-tr%E1%BB%91ng-rock-n-roll-l%E1%BA%A5p-l%C3%A1nh-trong-kh%C3%B4ng-kh%C3%AD.jpg?s=612x612&w=0&k=20&c=8n1L48NslmmoAklDWh-BMIIYcJZWAc6ExYRBGagP9hs=",
+      "nameProduct": "Rock Tracks"
+    },
+    {
+      "id": 4,
+      "imageLink": "https://cdn-d.smehost.net/sites/33342fef016449209469a86ecd55cb00/wp-content/uploads/2016/11/Classical-Music-violin.jpeg",
+      "nameProduct": "Classic Tracks"
+    },
+    {
+      "id": 5,
+      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
+      "nameProduct": "Immersion "
+    },
+    {
+      "id": 6,
+      "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+      "nameProduct": "GTT "
+    }
+  ],
+  "moodPlaylist": [
+  {
+    "id": 1,
+    "imageLink": "https://i.ytimg.com/vi/O7DjIC9fYQA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDIGdlIHbkEFDlketUnrYaQ83EQAw",
+    "nameProduct": "Sad Playlist"
+  },
+  {
+    "id": 2,
+    "imageLink": "https://i.scdn.co/image/ab67616d0000b2733de61b8f211ff529042e63ff",
+    "nameProduct": "Chill Playlist"
+  },
+  {
+    "id": 3,
+    "imageLink": "https://www.kolibrimusic.com/wp-content/uploads/2018/05/work-out-600x600.jpg",
+    "nameProduct": "Workout Songs"
+  },
+  {
+    "id": 4,
+    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOL0mMfT8wAA28w_PsENaANEU3i80nG04eJA&s",
+    "nameProduct": "Love Playlist"
+  },
+  {
+    "id": 5,
+    "imageLink": "https://i.ytimg.com/vi/hgYlHzLIMug/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGFsgTihlMA8=&rs=AOn4CLBZJIDXWGc4RdFDuYpL_NDlEqXeJg",
+    "nameProduct": "Happy Songs"
+  },
+  {
+    "id": 6,
+    "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+    "nameProduct": "GTT "
+  },
+  {
+    "id": 7,
+    "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+    "nameProduct": "Belmond "
+  }
+],
+"popularArtists": [
+  {
+    "id": 1,
+    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhuUNkQ1uZHB4an4Ya17GAgSo_7NzpnNYRw&s",
+    "nameProduct": "Eminiem"
+  },
+  {
+    "id": 2,
+    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3Qwkavoy6Bc9Bia2F_aQ5zROCKQU2L7-8g&s",
+    "nameProduct": "Imagne Dragons"
+  },
+  {
+    "id": 3,
+    "imageLink": "https://nld.mediacdn.vn/2016/14-adele-1469973348038.jpg",
+    "nameProduct": "Adele"
+  },
+  {
+    "id": 4,
+    "imageLink": "https://hips.hearstapps.com/hmg-prod/images/singer-lana-del-rey-poses-for-a-portrait-during-a-visit-to-news-photo-1590067847.jpg",
+    "nameProduct": "Lana Del Ray"
+  },
+  {
+    "id": 5,
+    "imageLink": "https://cdn.tuoitre.vn/thumb_w/480/2022/10/2/harry-styles-grammy-1read-only-16646813671161756054564.png",
+    "nameProduct": "Harry Styles"
+  },
+  {
+    "id": 6,
+    "imageLink": "https://cdn.tuoitre.vn/thumb_w/640/471584752817336320/2023/2/12/1779579233180913863441385496237687516430409n-1676218510937366514600.jpg",
+    "nameProduct": "Billie Eilish "
+  }
+]
+}

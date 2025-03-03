@@ -170,218 +170,49 @@
             <body>
                 <div class="space-y-4">
                     <div class="mx-auto p-4">
-                        <h1 class="text-2xl font-bold mb-4">Music <span class="text-[#ee10b0]">Genres</span></h1>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.25fr_1.25fr_1.25fr_1.25fr_0.5fr] gap-4 p-4 flex items-center">
-                            <!-- Card 1 -->
-                            <div class="card relative shadow-lg rounded-lg overflow-hidden h-60">
-                                <img src="https://mbmusicacademy.org/wp-content/uploads/2022/03/24-Rapid-Rappers.jpeg" 
-                                     alt="Thumbnail" 
-                                     class="absolute inset-0 w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/50"></div>
-                                <div class="relative z-10 p-4 flex flex-col justify-end items-center h-full">
-                                    <h2 class="text-lg font-semibold text-white">Rap Tracks</h2>
+                            <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Music <span class="text-[#ee10b0]">Genres</span></h1>
+                            <div class="flex flex-col md:flex-row">
+                                <div id="musicGenres"
+                                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr] gap-7 p-4 flex items-center">
                                 </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="card relative shadow-lg rounded-lg overflow-hidden h-60">
-                                <img src="https://i.ytimg.com/vi/0CWUFzbXVJg/maxresdefault.jpg" 
-                                     alt="Thumbnail" 
-                                     class="absolute inset-0 w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/50"></div>
-                                <div class="relative z-10 p-4 flex flex-col justify-end items-center h-full">
-                                    <h2 class="text-lg font-semibold text-white">Pop Tracks</h2>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="card relative shadow-lg rounded-lg overflow-hidden h-60">
-                                <img src="https://media.istockphoto.com/id/805764964/vi/anh/tay-tr%E1%BB%91ng-rock-n-roll-l%E1%BA%A5p-l%C3%A1nh-trong-kh%C3%B4ng-kh%C3%AD.jpg?s=612x612&w=0&k=20&c=8n1L48NslmmoAklDWh-BMIIYcJZWAc6ExYRBGagP9hs=" 
-                                     alt="Thumbnail" 
-                                     class="absolute inset-0 w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/50"></div>
-                                <div class="relative z-10 p-4 flex flex-col justify-end items-center h-full">
-                                    <h2 class="text-lg font-semibold text-white">Rock Tracks</h2>
-                                </div>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="card relative shadow-lg rounded-lg overflow-hidden h-60">
-                                <img src="https://cdn-d.smehost.net/sites/33342fef016449209469a86ecd55cb00/wp-content/uploads/2016/11/Classical-Music-violin.jpeg" 
-                                     alt="Thumbnail" 
-                                     class="absolute inset-0 w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/50"></div>
-                                <div class="relative z-10 p-4 flex flex-col justify-end items-center h-full">
-                                    <h2 class="text-lg font-semibold text-white">Classic Tracks</h2>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col items-center space-y-2">
-                                <!-- Nút tròn -->
-                                <button class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">
-                                    +
-                                </button>
-                                <!-- Dòng chữ View All -->
-                                <span class="text-white font-bold text-lg">View All</span>
-                            </div>
-                            
-
-                        </div>
-                       
-                    </div>
-                
-                    <div class="mx-auto p-4">
-                        <h1 class="text-2xl font-bold mb-4">Mood <span class="text-[#ee10b0]">Playlists</span></h1>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr_0.5fr] gap-4 p-4 flex items-center">
-                            <!-- Card 1 -->
-                            <div class="card shadow-lg rounded-lg overflow-hidden">
-                                <img src="https://i.ytimg.com/vi/O7DjIC9fYQA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDIGdlIHbkEFDlketUnrYaQ83EQAw" alt="Thumbnail" class="w-full rounded-xl h-48 object-cover">
-                                <div class="p-4 flex items-center space-x-2 justify-between">
-                                    <h2 class="text-lg font-semibold text-white flex items-center">Sad Playlist</h2>
-                                    <div class="relative inline-block w-6 h-6 ml-16">
-                                        <i class="fa-solid fa-list text-2xl text-[#ee10b0]"></i>
-                                        <i class="fa-solid fa-music text-xs text-[#ee10b0] absolute top-1 right-0 icon-border"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="card shadow-lg rounded-lg overflow-hidden">
-                                <img src="https://i.scdn.co/image/ab67616d0000b2733de61b8f211ff529042e63ff" alt="Thumbnail" class="w-full rounded-xl h-48 object-cover">
-                                <div class="p-4 flex items-center space-x-2 justify-between">
-                                    <h2 class="text-lg font-semibold text-white flex items-center">Chill Playlist</h2>
-                                    <div class="relative inline-block w-6 h-6 ml-16">
-                                        <i class="fa-solid fa-list text-2xl text-[#ee10b0]"></i>
-                                        <i class="fa-solid fa-music text-xs text-[#ee10b0] absolute top-1 right-0 icon-border"></i>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 3 -->
-                            <div class="card shadow-lg rounded-lg overflow-hidden">
-                            <img src="https://www.kolibrimusic.com/wp-content/uploads/2018/05/work-out-600x600.jpg" alt="Thumbnail" class="w-full rounded-xl h-48 object-cover">
-                            <div class="p-4 flex items-center space-x-2 justify-between">
-                                <h2 class="text-lg font-semibold text-white flex items-center">Workout Songs</h2>
-                                <div class="relative inline-block w-6 h-6 ml-16">
-                                    <i class="fa-solid fa-list text-2xl text-[#ee10b0]"></i>
-                                    <i class="fa-solid fa-music text-xs text-[#ee10b0] absolute top-1 right-0 icon-border"></i>
+                                <div class="flex flex-col items-center space-y-2 ml-3 justify-center">
+                                    <button
+                                        class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                                    <span class="text-white font-bold text-lg">View All</span>
                                 </div>
                             </div>
                         </div>
-                    
-                            <!-- Card 4 -->
-                            <div class="card shadow-lg rounded-lg overflow-hidden">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOL0mMfT8wAA28w_PsENaANEU3i80nG04eJA&s" alt="Thumbnail" class="w-full rounded-xl h-48 object-cover">
-                                <div class="p-4 flex items-center space-x-2 justify-between">
-                                    <h2 class="text-lg font-semibold text-white flex items-center">Love Playlist</h2>
-                                    <div class="relative inline-block w-6 h-6 ml-16">
-                                        <i class="fa-solid fa-list text-2xl text-[#ee10b0]"></i>
-                                        <i class="fa-solid fa-music text-xs text-[#ee10b0] absolute top-1 right-0 icon-border"></i>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <!-- Card 5 -->
-                            <div class="card shadow-lg rounded-lg overflow-hidden">
-                                <img src="https://i.ytimg.com/vi/hgYlHzLIMug/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGFsgTihlMA8=&rs=AOn4CLBZJIDXWGc4RdFDuYpL_NDlEqXeJg" alt="Thumbnail" class="w-full rounded-xl h-48 object-cover">
-                                <div class="p-4 flex items-center space-x-2 justify-between">
-                                    <h2 class="text-lg font-semibold text-white flex items-center">Happy Songs</h2>
-                                    <div class="relative inline-block w-6 h-6 ml-16">
-                                        <i class="fa-solid fa-list text-2xl text-[#ee10b0]"></i>
-                                        <i class="fa-solid fa-music text-xs text-[#ee10b0] absolute top-1 right-0 icon-border"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center space-y-2">
-                                <!-- Nút tròn -->
-                                <button class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">
-                                    +
-                                </button>
-                                <!-- Dòng chữ View All -->
-                                <span class="text-white font-bold text-lg">View All</span>
-                            </div>
-                        </div>
-                       
-                    </div>
 
                     <div class="mx-auto p-4">
-                        <h1 class="text-2xl font-bold mb-4">Popular <span class="text-[#ee10b0]">Artists</span></h1>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.8fr_0.8fr_0.8fr_0.8fr_0.8fr_0.8fr_0.5fr] gap-4 p-4 flex items-center">
-                            <!-- Card 1 -->
-                            <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhuUNkQ1uZHB4an4Ya17GAgSo_7NzpnNYRw&s" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Eminiem</h2>
+                        <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Mood <span class="text-[#ee10b0]">Playlist</span></h1>
+                        <div class="flex flex-col md:flex-row">
+                            <div id="moodPlaylist"
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.85fr_0.85fr_0.85fr_0.85fr_0.85fr] gap-5 p-4 flex items-center">
                             </div>
-
-                            <!-- Card 2 -->
-                            <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3Qwkavoy6Bc9Bia2F_aQ5zROCKQU2L7-8g&s" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Imagne Dragons</h2>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://nld.mediacdn.vn/2016/14-adele-1469973348038.jpg" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Adele</h2>
-                            </div>
-
-                            <!-- Card 4 -->
-                            <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://hips.hearstapps.com/hmg-prod/images/singer-lana-del-rey-poses-for-a-portrait-during-a-visit-to-news-photo-1590067847.jpg" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Lana Del Ray</h2>
-                            </div>
-
-                             <!-- Card 5 -->
-                             <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://cdn.tuoitre.vn/thumb_w/480/2022/10/2/harry-styles-grammy-1read-only-16646813671161756054564.png" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Harry Styles</h2>
-                            </div>
-
-                             <!-- Card 6 -->
-                             <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
-                                    <img src="https://cdn.tuoitre.vn/thumb_w/640/471584752817336320/2023/2/12/1779579233180913863441385496237687516430409n-1676218510937366514600.jpg" 
-                                         alt="Thumbnail" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <h2 class="text-lg font-semibold text-white mt-4">Billie Eilish</h2>
-                            </div>
-
-                            <div class="flex flex-col items-center space-y-2">
-                                <!-- Nút tròn -->
-                                <button class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">
-                                    +
-                                </button>
-                                <!-- Dòng chữ View All -->
+                            <div class="flex flex-col items-center space-y-2 justify-center ml-4">
+                                <button
+                                    class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
                                 <span class="text-white font-bold text-lg">View All</span>
                             </div>
-                            
-
                         </div>
-                       
-                    </div>
+                    </div> 
+
+
+                    <div class="mx-auto p-4">
+                        <h1 class="text-2xl font-bold ml-6 mt-6 mb-6">Popular <span class="text-[#ee10b0]">Artists</span></h1>
+                        <div class="flex flex-col md:flex-row">
+                            <div id="popularArtists"
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.8fr_0.8fr_0.8fr_0.8fr_0.8fr_0.8fr] gap-9 p-4 flex items-center">
+                            </div>
+                            <div class="flex flex-col items-center space-y-2 justify-center ml-2">
+                                <button
+                                    class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
+                                <span class="text-white font-bold text-lg">View All</span>
+                            </div>
+                        </div>
+                    </div> 
+
+
                     <div class="mx-auto p-4">
                         <h1 class="text-2xl font-bold mb-4">Music <span class="text-[#ee10b0]">Video</span></h1>
                         
@@ -681,6 +512,8 @@
         </main>
     </div>
     </main>
+      <!-- Gọi script ngoài -->
+  <script src="script.js"></script>
     <script>
         if (window.location.pathname.endsWith("index.html")) {
             window.location.replace(window.location.pathname.replace("index.html", ""));
