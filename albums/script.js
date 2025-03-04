@@ -175,6 +175,29 @@ function editProduct(index) {
     document.getElementById("product-albums").value = product.album || "";
     document.getElementById("product-time").value = product.time || "";
 }
+// 🔹 Hàm tìm kiếm sản phẩm
+function searchProducts() {
+    const searchText = document.getElementById('search-navbar').value.toLowerCase();
+    // Lấy nội dung người dùng nhập vào ô tìm kiếm(search - navbar).
+    // Chuyển thành chữ thường(toLowerCase()) để tìm kiếm không phân biệt chữ hoa / chữ thường.
+    // Ví dụ:
+    // Người dùng nhập: "iphone".
+    // Nếu sản phẩm trong danh sách là "iPhone 14":
+    // "iPhone 14".toLowerCase() → "iphone 14".
+    // "iphone 14".includes("iphone") → Kết quả khớp.
+
+    const filteredProducts = allProducts.filter(product =>
+    // Duyệt qua toàn bộ danh sách sản phẩm (allProducts).
+    // Giữ lại sản phẩm nào có nameProduct chứa từ khóa tìm kiếm.
+        product.nameProduct.toLowerCase().includes(searchText)
+    );
+    renderPopular(document.getElementById("popular"), filteredProducts);
+    // Cập nhật giao diện, chỉ hiển thị sản phẩm khớp với từ khóa.
+}
+// 🔹 Lắng nghe sự kiện nhập vào ô tìm kiếm
+document.getElementById('search-navbar').addEventListener('input', searchProducts);
+// Mỗi lần người dùng nhập chữ vào ô tìm kiếm, hàm searchProducts() sẽ được gọi.
+// Tìm kiếm & cập nhật kết quả theo thời gian thực.
 
 function logout() {
     localStorage.removeItem("user");
