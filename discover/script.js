@@ -2,7 +2,7 @@
 async function loadProducts() {
     try {
         const response = await fetch('products.json'); // Đảm bảo đường dẫn đúng
-        const { musicGenres, moodPlaylist, popularArtists, musicVideo, newReleaseSongs } = await response.json();
+        const { musicGenres, moodPlaylist, popularArtists, musicVideo, newReleaseSongs, newAlbums } = await response.json();
 
         // ✅ Giới hạn 5 sản phẩm cho mỗi danh sách
         renderMusicGenres(document.getElementById('musicGenres'), musicGenres.slice(0, 4));
@@ -10,7 +10,7 @@ async function loadProducts() {
         renderPopularArtists(document.getElementById('popularArtists'), popularArtists.slice(0, 6));
         renderMusicVideo(document.getElementById('musicVideo'), musicVideo.slice(0, 6));
         renderNewReleaseSongs(document.getElementById('newReleaseSongs'), newReleaseSongs.slice(0, 5));
-        
+        renderNewAlbums(document.getElementById('newAlbums'), newAlbums.slice(0, 5));
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu:', error);
     }
@@ -114,5 +114,20 @@ function  renderNewReleaseSongs(container, products) {
     `).join('');
 }
 
+// Render card sản phẩm cho New Albums
+function   renderNewAlbums(container, products) {
+    container.innerHTML = products.map(product => `  <!-- Sử dụng 'products' thay vì 'artistsAlbums' -->
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
+            <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
+                <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center block">${product.nameProduct}</h2>
+            </div>
+            <div class="px-2 pb-4 flex items-center justify-between">
+                <span class="px-2 text-white text-xs">${product.nameArtist}</span>
+                <i class="fa-solid fa-compact-disc text-[#0e9eef]"></i>
+            </div>
+        </div>
+    `).join('');
+}
 // Gọi hàm khi trang được load
 window.onload = loadProducts;

@@ -174,5 +174,38 @@
       "nameProduct": "Baixo",
       "nameArtist": "XXAnteria"
     }
-  ]
-}
+  ],
+    "newAlbums": [
+      {
+        "id": 1,
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/7/72/Mannequin_Pussy_-_I_Got_Heaven.jpg",
+        "nameProduct": "I Got Heaven",
+        "nameArtist": "Mannequin"
+      },
+      {
+        "id": 2,
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/c/c9/Green_Day_-_Saviors.png",
+        "nameProduct": "Saviors",
+        "nameArtist": "Green Day"
+      },
+      {
+        "id": 3,
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/b/b4/MGMT_-_Loss_of_Life.png",
+        "nameProduct": "Loss of Life",
+        "nameArtist": "MGMT"
+      },
+      {
+        "id": 4,
+        "imageLink": "https://media.pitchfork.com/photos/6527f157ba01f0efc949d940/1:1/w_3000,h_3000,c_limit/ALBUM%20ART%20All%20Quiet%20On%20The%20Eastern%20Esplenade.jpg",
+        "nameProduct": "All Quiet on the Eastern Esplanade",
+        "nameArtist": "The Libertines"
+      },
+      {
+        "id": 5,
+        "imageLink": "https://upload.wikimedia.org/wikipedia/en/6/6c/Sleater-Kinney_-_Little_Rope.png",
+        "nameProduct": "Little Rope",
+        "nameArtist": "Sleater-Kinney"
+      }
+    ]
+  }
+  
