@@ -2,12 +2,14 @@
 async function loadProducts() {
     try {
         const response = await fetch('products.json'); // Đảm bảo đường dẫn đúng
-        const { musicGenres, moodPlaylist, popularArtists } = await response.json();
+        const { musicGenres, moodPlaylist, popularArtists, musicVideo, newReleaseSongs } = await response.json();
 
         // ✅ Giới hạn 5 sản phẩm cho mỗi danh sách
         renderMusicGenres(document.getElementById('musicGenres'), musicGenres.slice(0, 4));
         renderMoodPlaylist(document.getElementById('moodPlaylist'), moodPlaylist.slice(0, 5));
         renderPopularArtists(document.getElementById('popularArtists'), popularArtists.slice(0, 6));
+        renderMusicVideo(document.getElementById('musicVideo'), musicVideo.slice(0, 6));
+        renderNewReleaseSongs(document.getElementById('newReleaseSongs'), newReleaseSongs.slice(0, 5));
         
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu:', error);
@@ -57,6 +59,58 @@ function  renderPopularArtists(container, products) {
                                 </div>
                                 <h2 class="text-lg font-semibold text-white mt-4">${product.nameProduct}</h2>
                             </div>
+    `).join('');
+}
+
+// Render card sản phẩm cho Music Video
+function renderMusicVideo(container, products) {
+    const columns = [[], [], []]; // 3 cột video, cột 4 dành cho nút "View All"
+
+    // Phân bố video vào 3 cột
+    products.forEach((video, index) => {
+        columns[index % 3].push(video);
+    });
+
+    // Xóa nội dung cũ trước khi thêm mới
+    container.innerHTML = '';
+
+    // Render 3 cột
+    for (let i = 0; i < 3; i++) {
+        const colDiv = document.createElement("div");
+        colDiv.className = "flex flex-col space-y-4";
+
+        columns[i].forEach(video => {
+            colDiv.innerHTML += `
+                <div class="card shadow-lg rounded-lg overflow-hidden">
+                    <img src="${video.imageLink}" alt="${video.nameProduct}" class="w-80 rounded-xl h-48 object-cover">
+                    <div class="px-4 pt-4 pb-2 flex items-center justify-between">
+                        <h2 class="text-2xl font-semibold text-white">${video.nameProduct}</h2>
+                    </div>
+                    <div class="px-4 pb-4 flex items-center justify-between">
+                        <span class="text-xs text-white">${video.artist}</span>
+                        <span class="text-xs text-white">${video.views}</span>
+                    </div>
+                </div>
+            `;
+        });
+
+        container.appendChild(colDiv);
+    }
+}
+
+// Render danh sách New Realse Songs
+function  renderNewReleaseSongs(container, products) {
+    container.innerHTML = products.map(product => `
+         <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48">
+            <img class="w-full rounded-xl h-36 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
+            <div class="px-4 pt-4 pb-1 flex items-center justify-between">
+                <h2 class="mt-3 text-xl font-semibold truncate max-w-[150px] text-white">${product.nameProduct}</h2>
+            </div>
+            <div class="px-2 pb-1 flex items-center justify-between">
+                <span class="px-2 pb-0 text-white text-xs">${product.nameArtist}</span>
+                <i class="fa-solid fa-music text-[#ee10b0]"></i>
+            </div>
+        </div>
     `).join('');
 }
 

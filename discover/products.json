@@ -99,5 +99,80 @@
     "imageLink": "https://cdn.tuoitre.vn/thumb_w/640/471584752817336320/2023/2/12/1779579233180913863441385496237687516430409n-1676218510937366514600.jpg",
     "nameProduct": "Billie Eilish "
   }
-]
+],
+"musicVideo":[
+  {"id": 1,
+      "nameProduct": "Shape Of You",
+      "artist": "Ed Sheeran",
+      "views": "5M views",
+      "imageLink": "https://pic-bstarstatic.akamaized.net/ugc/f37efa5f63b9afab605483f696cb2e8df0064987.jpg"
+  },
+  {
+    "id": 2,
+      "nameProduct": "Someone Like You",
+      "artist": "Adele",
+      "views": "4M views",
+      "imageLink": "https://i.ytimg.com/vi/z7GCiVTlv04/mqdefault.jpg"
+  },
+  {
+    "id": 3,
+      "nameProduct": "Roar",
+      "artist": "Katy Perry",
+      "views": "4.6M views",
+      "imageLink": "https://i.ytimg.com/vi/5K-nNCSc9lA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDgyiIdXRGF9a57lbi8_x2lyJXojw"
+  },
+  {
+    "id": 4,
+      "nameProduct": "New Rules",
+      "artist": "Dua Lipa",
+      "views": "3.7M views",
+      "imageLink": "https://i.ytimg.com/vi/JgDq3CiCOVg/mqdefault.jpg"
+  },
+  {
+    "id": 5,
+      "nameProduct": "Shake It Off",
+      "artist": "Taylor Swift",
+      "views": "4.2M views",
+      "imageLink": "https://i.ytimg.com/vi/AXMs1Y5YQeI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAAh8j--GsG8Tdt2ImpbNMt-eRj1Q"
+  },
+  {
+    "id": 6,
+      "nameProduct": "Waka Waka",
+      "artist": "Shakira",
+      "views": "3.5M views",
+      "imageLink": "https://i.ytimg.com/vi/3kHiTdlxbKA/maxresdefault.jpg"
+  }
+],
+  "newReleaseSongs": [
+    {
+      "id": 1,
+      "imageLink": "https://i.scdn.co/image/ab67616d00001e02ccb290ccd6fae2c5789c81d7",
+      "nameProduct": "Time",
+      "nameArtist": "Luciano"
+    },
+    {
+      "id": 2,
+      "imageLink": "https://images.genius.com/0032b8af8983e929cf88cd9cbf3f7523.300x300x1.png",
+      "nameProduct": "112",
+      "nameArtist": "jazzek"
+    },
+    {
+      "id": 3,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0laNWV18kJesQ4R4JYcMa_sbIl9V8uOcGAw&s",
+      "nameProduct": "We don't care",
+      "nameArtist": "Kyanu & Dj Gullum"
+    },
+    {
+      "id": 4,
+      "imageLink": "https://upload.wikimedia.org/wikipedia/en/b/b5/Alan_Walker_-_Who_I_Am.PNG",
+      "nameProduct": "Who I Am",
+      "nameArtist": "Alan Walker & Elias"
+    },
+    {
+      "id": 5,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoE0aQWErge028OIpKztD34KyjYJU_3xrwXQ&s",
+      "nameProduct": "Baixo",
+      "nameArtist": "XXAnteria"
+    }
+  ]
 }
