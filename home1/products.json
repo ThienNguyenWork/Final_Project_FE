@@ -190,5 +190,149 @@
       "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
       "nameProduct": "GTT "
     }
-  ]
+  ],
+  "popularArtists": [
+    {
+      "id": 1,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhuUNkQ1uZHB4an4Ya17GAgSo_7NzpnNYRw&s",
+      "nameProduct": "Eminiem"
+    },
+    {
+      "id": 2,
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3Qwkavoy6Bc9Bia2F_aQ5zROCKQU2L7-8g&s",
+      "nameProduct": "Imagne Dragons"
+    },
+    {
+      "id": 3,
+      "imageLink": "https://nld.mediacdn.vn/2016/14-adele-1469973348038.jpg",
+      "nameProduct": "Adele"
+    },
+    {
+      "id": 4,
+      "imageLink": "https://hips.hearstapps.com/hmg-prod/images/singer-lana-del-rey-poses-for-a-portrait-during-a-visit-to-news-photo-1590067847.jpg",
+      "nameProduct": "Lana Del Ray"
+    },
+    {
+      "id": 5,
+      "imageLink": "https://cdn.tuoitre.vn/thumb_w/480/2022/10/2/harry-styles-grammy-1read-only-16646813671161756054564.png",
+      "nameProduct": "Harry Styles"
+    },
+    {
+      "id": 6,
+      "imageLink": "https://cdn.tuoitre.vn/thumb_w/640/471584752817336320/2023/2/12/1779579233180913863441385496237687516430409n-1676218510937366514600.jpg",
+      "nameProduct": "Billie Eilish "
+    }
+  ],
+  "musicVideo":[
+  {"id": 1,
+      "nameProduct": "Shape Of You",
+      "artist": "Ed Sheeran",
+      "views": "5M views",
+      "imageLink": "https://pic-bstarstatic.akamaized.net/ugc/f37efa5f63b9afab605483f696cb2e8df0064987.jpg"
+  },
+  {
+    "id": 2,
+      "nameProduct": "Someone Like You",
+      "artist": "Adele",
+      "views": "4M views",
+      "imageLink": "https://i.ytimg.com/vi/z7GCiVTlv04/mqdefault.jpg"
+  },
+  {
+    "id": 3,
+      "nameProduct": "Roar",
+      "artist": "Katy Perry",
+      "views": "4.6M views",
+      "imageLink": "https://i.ytimg.com/vi/5K-nNCSc9lA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDgyiIdXRGF9a57lbi8_x2lyJXojw"
+  },
+  {
+    "id": 4,
+      "nameProduct": "New Rules",
+      "artist": "Dua Lipa",
+      "views": "3.7M views",
+      "imageLink": "https://i.ytimg.com/vi/JgDq3CiCOVg/mqdefault.jpg"
+  },
+  {
+    "id": 5,
+      "nameProduct": "Shake It Off",
+      "artist": "Taylor Swift",
+      "views": "4.2M views",
+      "imageLink": "https://i.ytimg.com/vi/AXMs1Y5YQeI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAAh8j--GsG8Tdt2ImpbNMt-eRj1Q"
+  },
+  {
+    "id": 6,
+      "nameProduct": "Waka Waka",
+      "artist": "Shakira",
+      "views": "3.5M views",
+      "imageLink": "https://i.ytimg.com/vi/3kHiTdlxbKA/maxresdefault.jpg"
+  }
+],
+"newAlbums": [
+  {
+    "id": 1,
+    "imageLink": "https://upload.wikimedia.org/wikipedia/en/7/72/Mannequin_Pussy_-_I_Got_Heaven.jpg",
+    "nameProduct": "I Got Heaven",
+    "nameArtist": "Mannequin"
+  },
+  {
+    "id": 2,
+    "imageLink": "https://upload.wikimedia.org/wikipedia/en/c/c9/Green_Day_-_Saviors.png",
+    "nameProduct": "Saviors",
+    "nameArtist": "Green Day"
+  },
+  {
+    "id": 3,
+    "imageLink": "https://upload.wikimedia.org/wikipedia/en/b/b4/MGMT_-_Loss_of_Life.png",
+    "nameProduct": "Loss of Life",
+    "nameArtist": "MGMT"
+  },
+  {
+    "id": 4,
+    "imageLink": "https://media.pitchfork.com/photos/6527f157ba01f0efc949d940/1:1/w_3000,h_3000,c_limit/ALBUM%20ART%20All%20Quiet%20On%20The%20Eastern%20Esplenade.jpg",
+    "nameProduct": "All Quiet on the Eastern Esplanade",
+    "nameArtist": "The Libertines"
+  },
+  {
+    "id": 5,
+    "imageLink": "https://upload.wikimedia.org/wikipedia/en/6/6c/Sleater-Kinney_-_Little_Rope.png",
+    "nameProduct": "Little Rope",
+    "nameArtist": "Sleater-Kinney"
+  }
+],
+"moodPlaylist": [
+{
+  "id": 1,
+  "imageLink": "https://i.ytimg.com/vi/O7DjIC9fYQA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDIGdlIHbkEFDlketUnrYaQ83EQAw",
+  "nameProduct": "Sad Playlist"
+},
+{
+  "id": 2,
+  "imageLink": "https://i.scdn.co/image/ab67616d0000b2733de61b8f211ff529042e63ff",
+  "nameProduct": "Chill Playlist"
+},
+{
+  "id": 3,
+  "imageLink": "https://www.kolibrimusic.com/wp-content/uploads/2018/05/work-out-600x600.jpg",
+  "nameProduct": "Workout Songs"
+},
+{
+  "id": 4,
+  "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOL0mMfT8wAA28w_PsENaANEU3i80nG04eJA&s",
+  "nameProduct": "Love Playlist"
+},
+{
+  "id": 5,
+  "imageLink": "https://i.ytimg.com/vi/hgYlHzLIMug/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AHUBoAC4AOKAgwIABABGFsgTihlMA8=&rs=AOn4CLBZJIDXWGc4RdFDuYpL_NDlEqXeJg",
+  "nameProduct": "Happy Songs"
+},
+{
+  "id": 6,
+  "imageLink": "http://dummyimage.com/130x100.png/cc0000/ffffff",
+  "nameProduct": "GTT "
+},
+{
+  "id": 7,
+  "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+  "nameProduct": "Belmond "
+}
+]
 }
