@@ -18,7 +18,7 @@ async function loadProducts() {
 // Render card sản phẩm cho Music Genres
 function renderMusicGenres(container, products) {
     container.innerHTML = products.map(product => ` 
-<div class="card relative shadow-lg rounded-lg overflow-hidden h-52 w-60">
+<div class="card relative shadow-lg rounded-lg overflow-hidden h-52 w-60 hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
                                 <img src="${product.imageLink}" 
                                      alt="${product.nameProduct}" 
                                      class="absolute inset-0 w-full h-full object-cover">
@@ -35,7 +35,7 @@ function renderMusicGenres(container, products) {
 // Render card sản phẩm cho Mood Playlist
 function   renderMoodPlaylist(container, products) {
     container.innerHTML = products.map(product => `  
-        <div class="card w-48 shadow-lg rounded-lg overflow-hidden">
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
                 <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center">${product.nameProduct}</h2>
@@ -52,7 +52,7 @@ function   renderMoodPlaylist(container, products) {
 function  renderPopularArtists(container, products) {
     container.innerHTML = products.map(product => ` 
         <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
+                                <div class="hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] w-36 h-36 rounded-full overflow-hidden shadow-lg">
                                     <img src="${product.imageLink}" 
                                          alt="${product.nameProduct}" 
                                          class="w-full h-full object-cover">
@@ -81,7 +81,7 @@ function renderMusicVideo(container, products) {
 
         columns[i].forEach(video => {
             colDiv.innerHTML += `
-                <div class="card shadow-lg rounded-lg overflow-hidden">
+                <div class="card hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] shadow-lg rounded-lg overflow-hidden">
                     <img src="${video.imageLink}" alt="${video.nameProduct}" class="w-80 rounded-xl h-48 object-cover">
                     <div class="px-4 pt-4 pb-2 flex items-center justify-between">
                         <h2 class="text-2xl font-semibold text-white">${video.nameProduct}</h2>
@@ -101,7 +101,7 @@ function renderMusicVideo(container, products) {
 // Render danh sách New Realse Songs
 function  renderNewReleaseSongs(container, products) {
     container.innerHTML = products.map(product => `
-         <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48">
+         <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48 hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img class="w-full rounded-xl h-36 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center justify-between">
                 <h2 class="mt-3 text-xl font-semibold truncate max-w-[150px] text-white">${product.nameProduct}</h2>
@@ -117,7 +117,7 @@ function  renderNewReleaseSongs(container, products) {
 // Render card sản phẩm cho New Albums
 function   renderNewAlbums(container, products) {
     container.innerHTML = products.map(product => `  <!-- Sử dụng 'products' thay vì 'artistsAlbums' -->
-        <div class="card w-48 shadow-lg rounded-lg overflow-hidden">
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
                 <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center block">${product.nameProduct}</h2>

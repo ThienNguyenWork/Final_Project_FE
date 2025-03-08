@@ -20,7 +20,7 @@ async function loadProducts() {
 // Render card sản phẩm cho Weekly Top & New Release
 function renderProducts(container, products) {
     container.innerHTML = products.map(product => `
-        <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48">
+        <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img class="w-full rounded-xl h-36 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center justify-between">
                 <h2 class="mt-3 text-xl font-semibold truncate max-w-[150px] text-white">${product.nameProduct}</h2>
@@ -36,7 +36,7 @@ function renderProducts(container, products) {
 // Render danh sách Trending Songs
 function renderTrending(container, trendingSongs) {
     container.innerHTML = trendingSongs.map(song => `
-        <div class="bg-gray-900 p-4 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-lg hover:bg-[#1a1d29] transition  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <!-- Desktop Layout -->
             <div class="hidden lg:grid grid-cols-12 items-center gap-4">
                 <!-- Ranking -->
@@ -86,7 +86,7 @@ function renderTrending(container, trendingSongs) {
                 </div>
 
                 <!-- Thông tin chi tiết -->
-                <div class="flex justify-between text-gray-400 text-sm">
+                <div class="flex justify-between text-gray-400 text-sm ">
                     <span>#${song.rank}</span>
                     <span>${song.releaseDate}</span>
                     <span>${song.album}</span>
@@ -104,8 +104,8 @@ function renderTrending(container, trendingSongs) {
 // Render card sản phẩm cho Eminem Fans Also Listen To
 function renderEminemFansAlsoListenTo(container, products) {
     container.innerHTML = products.map(product => ` 
-        <div class="flex flex-col items-center text-center">
-                                <div class="w-52 h-52 rounded-full overflow-hidden shadow-lg">
+        <div class="flex flex-col items-center text-center ">
+                                <div class="w-52 h-52 rounded-full overflow-hidden shadow-lg ">
                                     <img src="${product.imageLink}" 
                                          alt="${product.nameProduct}" 
                                          class="w-full h-full object-cover">
@@ -118,8 +118,8 @@ function renderEminemFansAlsoListenTo(container, products) {
 // Render card sản phẩm cho Popular Artists
 function  renderPopularArtists(container, products) {
     container.innerHTML = products.map(product => ` 
-        <div class="flex flex-col items-center text-center">
-                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg">
+        <div class="flex flex-col items-center text-center ">
+                                <div class="w-36 h-36 rounded-full overflow-hidden shadow-lg hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
                                     <img src="${product.imageLink}" 
                                          alt="${product.nameProduct}" 
                                          class="w-full h-full object-cover">
@@ -143,9 +143,9 @@ function renderMusicVideo(container, products) {
     // Thêm từng video vào hàng ngang
     selectedVideos.forEach(video => {
         const videoCard = document.createElement("div");
-        videoCard.className = "card shadow-lg rounded-lg overflow-hidden w-80 flex-shrink-0"; // Giữ nguyên kích thước
-
-        videoCard.innerHTML = `
+        videoCard.className = "card shadow-lg rounded-lg w-80 flex-shrink-0 overflow-visible";
+     
+        videoCard.innerHTML = ` <div class="hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img src="${video.imageLink}" alt="${video.nameProduct}" class="w-80 rounded-xl h-48 object-cover">
             <div class="px-4 pt-4 pb-2 flex items-center justify-between">
                 <h2 class="text-2xl font-semibold text-white">${video.nameProduct}</h2>
@@ -153,6 +153,7 @@ function renderMusicVideo(container, products) {
             <div class="px-4 pb-4 flex items-center justify-between">
                 <span class="text-xs text-white">${video.artist}</span>
                 <span class="text-xs text-white">${video.views}</span>
+            </div>
             </div>
         `;
 
@@ -163,10 +164,10 @@ function renderMusicVideo(container, products) {
     container.appendChild(rowDiv);
 }
 
-// Render card sản phẩm cho New Albums
+// Render card sản phẩm cho Top Albums
 function   renderNewAlbums(container, products) {
     container.innerHTML = products.map(product => `  <!-- Sử dụng 'products' thay vì 'artistsAlbums' -->
-        <div class="card w-48 shadow-lg rounded-lg overflow-hidden">
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#0e9eef] hover:border-2 hover:border-[#99e1ec] hover:shadow-[0_0_15px_#0e9eef]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
                 <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center block">${product.nameProduct}</h2>
@@ -182,7 +183,7 @@ function   renderNewAlbums(container, products) {
 // Render card sản phẩm cho Mood Playlist
 function   renderMoodPlaylist(container, products) {
     container.innerHTML = products.map(product => `  
-        <div class="card w-48 shadow-lg rounded-lg overflow-hidden">
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
                 <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center">${product.nameProduct}</h2>
