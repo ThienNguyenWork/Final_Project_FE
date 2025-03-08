@@ -7,7 +7,7 @@ async function loadProducts() {
         // ✅ Giới hạn 5 sản phẩm cho mỗi danh sách
         renderProducts(document.getElementById('product-list'), weeklyTopSongs.slice(0, 5));
         renderProducts(document.getElementById('new-release-list'), newReleaseSongs.slice(0, 5));
-        renderTrending(document.getElementById('trending-list'), trendingSongs.slice(0, 5));
+        renderTrending(document.getElementById('trending-list'), trendingSongs.slice(0, 7));
         renderPopularArtists(document.getElementById('popularArtists'), popularArtists.slice(0, 6));
         renderMusicVideo(document.getElementById('musicVideo'), musicVideo.slice(0, 3));
         renderNewAlbums(document.getElementById('newAlbums'), newAlbums.slice(0, 5));
@@ -23,7 +23,7 @@ function renderProducts(container, products) {
         <div class="card shadow-lg rounded-2xl overflow-hidden p-4 w-48">
             <img class="w-full rounded-xl h-36 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center justify-between">
-                <h2 class="mt-3 text-xl font-semibold text-white">${product.nameProduct}</h2>
+                <h2 class="mt-3 text-xl font-semibold truncate max-w-[150px] text-white">${product.nameProduct}</h2>
             </div>
             <div class="px-2 pb-1 flex items-center justify-between">
                 <span class="px-2 pb-0 text-white text-xs">${product.nameArtist}</span>
@@ -135,7 +135,7 @@ function renderMusicVideo(container, products) {
 
     // Tạo div chứa tất cả video theo hàng ngang
     const rowDiv = document.createElement("div");
-    rowDiv.className = "flex space-x-4 gap-8"; // Hiển thị ngang
+    rowDiv.className = "flex space-x-4 gap-6"; // Hiển thị ngang
 
     // Chỉ lấy 3 video đầu tiên
     const selectedVideos = products.slice(0, 3);

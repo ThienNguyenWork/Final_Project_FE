@@ -155,9 +155,9 @@
                     <div class="hidden md:flex justify-end w-full px-4 py-3">
                         <nav class="flex items-center space-x-6">
                             <button
-                                class="bg-black text-pink-600 px-6 py-2 rounded-full hover:bg-pink-700 hover:text-black transition">Login</button>
+                                class="bg-black text-[#ee10b0] px-6 py-2 rounded-full hover:bg-[#ee10b0] hover:text-black transition">Login</button>
                             <button
-                                class="bg-pink-600 text-black px-6 py-2 rounded-full hover:bg-black hover:text-pink-600 transition">Sign
+                                class="bg-[#ee10b0] border-2 border-[#e696cf] shadow-[0_0_15px_#ee10b0] text-black px-6 py-2 rounded-full hover:bg-black hover:text-[#ee10b0] transition">Sign
                                 Up</button>
                         </nav>
                     </div>
@@ -192,12 +192,12 @@
                                 <!-- Nút hành động -->
                                 <div class="flex space-x-8 mt-8">
                                     <!-- Nút Listen Now -->
-                                    <button class="px-4 py-2 border-2 border-[#ee10b0] text-[#ee10b0] shadow-[0_0_15px_#ee10b0] rounded-md text-lg font-semibold">
+                                    <button class="px-4 py-2 border-2 border-[#e78ecc] text-[#ee10b0] shadow-[0_0_15px_#ee10b0] rounded-md text-lg font-semibold">
                                         Listen Now
                                     </button>
                         
                                     <!-- Nút Follow -->
-                                    <button class="px-8 py-2 border-2 border-[#15d1ef] text-[#0e9eef] shadow-[0_0_15px_#15d1ef] rounded-md text-lg font-semibold">
+                                    <button class="px-8 py-2 border-2 border-[#99e1ec] text-[#0e9eef] shadow-[0_0_15px_#15d1ef] rounded-md text-lg font-semibold">
                                         Follow
                                     </button>
                                 </div>
@@ -212,13 +212,13 @@
                     </div>
                     
 
-                    <div>
+                    <div class="mx-auto p-4">
                         <h1 class="text-2xl font-bold mb-4 ml-4">Weekly Top <span class="text-[#ee10b0]">Songs</span></h1>                                          
                         <div class="flex flex-col md:flex-row">
                             <div id="product-list"
-                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-5 p-4 flex items-center justify-items-center">
                             </div>
-                            <div class="flex flex-col items-center space-y-2 justify-center">
+                            <div class="flex flex-col items-center space-y-2 justify-center ml-4">
                                 <button
                                     class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
                                 <span class="text-white font-bold text-lg">View All</span>
@@ -226,13 +226,13 @@
                         </div>
                     </div>
                     
-                    <div>
+                    <div class="mx-auto p-4"> 
                         <h1 class="text-2xl font-bold mb-4 ml-4 mt-4">New Release <span class="text-[#ee10b0]">Songs</span></h1>
                         <div class="flex flex-col md:flex-row">
                             <div id="new-release-list"
-                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-4 p-4 flex items-center justify-items-center">
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_1fr_1fr] gap-5 p-4 flex items-center justify-items-center">
                             </div>
-                            <div class="flex flex-col items-center space-y-2 justify-center">
+                            <div class="flex flex-col items-center space-y-2 justify-center ml-4">
                                 <button
                                     class="w-12 h-12 flex items-center justify-center font-bold bg-black text-white rounded-full text-2xl shadow-lg hover:bg-gray-800 transition">+</button>
                                 <span class="text-white font-bold text-lg">View All</span>
@@ -277,7 +277,7 @@
 
                     <div class="mx-auto p-4">
                         <h1 class="text-4xl font-bold ml-6 mb-6">Music <span class="text-[#ee10b0]">Video</span></h1>
-                        <div class="flex flex-row items-center space-x-7">
+                        <div class=" ml-4 flex flex-row items-center space-x-8">
                             <div id="musicVideo" class="flex space-x-4">
                             </div>
                             <div class="flex flex-col items-center justify-center ml-2">
@@ -290,7 +290,7 @@
                     </div>
 
                     <div class="mx-auto p-4">
-                        <h1 class="text-4xl font-bold ml-6 mb-6">New <span class="text-[#0e9eef]">Albums</span></h1>
+                        <h1 class="text-4xl font-bold ml-6 mb-6">Top <span class="text-[#0e9eef]">Albums</span></h1>
                         <div class="flex flex-col md:flex-row">
                             <div id="newAlbums"
                                 class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[0.85fr_0.85fr_0.85fr_0.85fr_0.85fr] gap-5 p-4 flex items-center">
@@ -317,13 +317,104 @@
                         </div>
                     </div> 
 
-                        <!-- Gọi script ngoài -->
-                        <script src="script.js"></script>
-                </body>
+                    <div class="max-w-6xl mx-auto grid grid-cols-[2fr_1fr_1fr] gap-6">
+                        <!-- About Section -->
+                        <div class="flex flex-col items-start space-x-2">
+                          <h2 class="text-3xl font-bold ">Join Our Platform</h2>
+                          <p class="text-sm mt-2 text-white">
+                            You can be one of the<span class="text-[#ee10b0]">members</span> of our platform by just adding some necessarily information. if you already have an account on our website, you can just hit the  <span class="text-[#0e9eef]">Login button.</span>.
+                          </p>
+                        </div>
+                        
+                        <!-- Melodi Section -->
+                        <div class="text-xl flex justify-end items-center font-bold pb-1" >
+                            <button
+                            class="bg-[#ee10b0] border-2 border-[#e696cf] shadow-[0_0_15px_#ee10b0] text-black px-6 py-2 rounded-full hover:bg-black hover:text-[#ee10b0] transition">Sign
+                            Up</button>
+                        </div>
+                    
+                        <!-- Access Section -->
+                        <div class="text-xl flex justify-start items-center font-bold pb-1">
+                           <button
+                                class="bg-black text-[#ee10b0] px-6 py-2 rounded-full hover:bg-[#ee10b0] hover:text-black transition">Login</button>
+                        </div>
+                    
+                 
+                    
+                  </div>
 
-            </main>
-        </div>
+                    
+                    <footer class=" text-white py-4 px-6 mt-16">
+                        <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
+                          <!-- About Section -->
+                          <div class="flex flex-col items-center space-x-2">
+                            <h2 class="text-3xl font-bold">About</h2>
+                            <p class="text-sm mt-2 text-white">
+                              Melodies is a website that has been created for over <span class="text-[#ee10b0]">5 year's</span> now and it is one of the most famous music player websites in the world. In this website, you can listen and download songs for free. Also, if you want no limitation you can buy our <span class="text-[#0e9eef]">premium pass's</span>.
+                            </p>
+                          </div>
+                          
+                          <!-- Melodi Section -->
+                          <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Melodi</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                              <li>Songs</li>
+                              <li>Radio</li>
+                              <li>Podcast</li>
+                            </ul>
+                          </div>
+                      
+                          <!-- Access Section -->
+                          <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Access</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                              <li>Explor</li>
+                              <li>Artists</li>
+                              <li>Playlists</li>
+                              <li>Albums</li>
+                              <li>Trending</li>
+                            </ul>
+                          </div>
+                      
+                          <!-- Contact Section -->
+                          <div>
+                            <h2 class="text-3xl font-bold flex justify-center border-b border-white inline-block pb-1">Contact</h2>
+                            <ul class="mt-2 text-lg space-y-1 text-center text-white">
+                              <li>About</li>
+                              <li>Policy</li>
+                              <li>Social Media</li>
+                              <li>Soppurt</li>
+                            </ul>
+                          </div>
+                      
+                        <!-- Footer Branding -->
+                        <div class="flex flex-col items-center space-y-24">
+                            <span
+                        class="text-3xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+                            <div class="flex space-x-4 mt-4 text-4xl">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fas fa-phone"></i>
+                              </div>
+                        </div>
+                    </div>
+
+                      </footer>
+                      
+                </div>
+            </body>
+            
+        </main>
+    </div>
     </main>
+      <!-- Gọi script ngoài -->
+  <script src="script.js"></script>
+  <script>
+      if (window.location.pathname.endsWith("index.html")) {
+          window.location.replace(window.location.pathname.replace("index.html", ""));
+      }
+  </script>
 </body>
 
 </html>

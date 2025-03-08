@@ -2,33 +2,33 @@
   "weeklyTopSongs": [
     {
       "id": 1,
-      "imageLink": "https://i.scdn.co/image/ab67616d0000b2739bef45ee387f274ea3198c55",
-      "nameProduct": "First ",
-      "nameArtist": "Georgie Goodright"
+      "imageLink": "https://upload.wikimedia.org/wikipedia/en/2/20/Whatever_It_Takes_Imagine_Dragons.jpg",
+      "nameProduct": "Whatever It Takes",
+      "nameArtist": "Imagne Dragons"
     },
     {
       "id": 2,
-      "imageLink": "http://dummyimage.com/121x100.png/dddddd/000000",
-      "nameProduct": "Albireo ",
-      "nameArtist": "Caresse Dodswell"
+      "imageLink": "https://upload.wikimedia.org/wikipedia/vi/4/45/Skyfall_cover.png",
+      "nameProduct": "Skyfall",
+      "nameArtist": "Adele"
     },
     {
       "id": 3,
-      "imageLink": "http://dummyimage.com/121x100.png/ff4444/ffffff",
-      "nameProduct": "BHP ",
-      "nameArtist": "Shaun Swapp"
+      "imageLink": "https://i1.sndcdn.com/artworks-rcv3xmUnFwf6-0-t500x500.jpg",
+      "nameProduct": "Superman",
+      "nameArtist": "Eminiem"
     },
     {
       "id": 4,
-      "imageLink": "http://dummyimage.com/150x100.png/ff4444/ffffff",
-      "nameProduct": "Globant",
-      "nameArtist": "Belita Dobbson"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0VAA84moqMCNMVpd34V3duDIq2yuipa3fgTAIlHmtRz6ZWpGigMsOolh2KCzXvnSMOWc&usqp=CAU",
+      "nameProduct": "Softcore",
+      "nameArtist": "The neighberhood"
     },
     {
       "id": 5,
-      "imageLink": "http://dummyimage.com/153x100.png/dddddd/000000",
-      "nameProduct": "51job, ",
-      "nameArtist": "Georgena Bourgeois"
+      "imageLink": "https://i1.sndcdn.com/artworks-YagQ4ilKX5vlDXGJ-6kWEUg-t500x500.jpg",
+      "nameProduct": "The Lonliest",
+      "nameArtist": "Maneskin"
     },
     {
       "id": 6,
@@ -52,33 +52,33 @@
   "newReleaseSongs": [
     {
       "id": 1,
-      "imageLink": "http://dummyimage.com/214x100.png/dddddd/000000",
-      "nameProduct": "Vanguard ",
-      "nameArtist": "Dru Omar"
+      "imageLink": "https://i.scdn.co/image/ab67616d00001e02ccb290ccd6fae2c5789c81d7",
+      "nameProduct": "Time",
+      "nameArtist": "Luciano"
     },
     {
       "id": 2,
-      "imageLink": "http://dummyimage.com/133x100.png/cc0000/ffffff",
-      "nameProduct": "VEREIT ",
-      "nameArtist": "Irwin Masurel"
+      "imageLink": "https://images.genius.com/0032b8af8983e929cf88cd9cbf3f7523.300x300x1.png",
+      "nameProduct": "112",
+      "nameArtist": "jazzek"
     },
     {
       "id": 3,
-      "imageLink": "http://dummyimage.com/111x100.png/ff4444/ffffff",
-      "nameProduct": "Nuvectra ",
-      "nameArtist": "Hugh Wigley"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0laNWV18kJesQ4R4JYcMa_sbIl9V8uOcGAw&s",
+      "nameProduct": "We don't care",
+      "nameArtist": "Kyanu & Dj Gullum"
     },
     {
       "id": 4,
-      "imageLink": "http://dummyimage.com/242x100.png/dddddd/000000",
-      "nameProduct": "B&G",
-      "nameArtist": "Sallyann Bruneton"
+      "imageLink": "https://upload.wikimedia.org/wikipedia/en/b/b5/Alan_Walker_-_Who_I_Am.PNG",
+      "nameProduct": "Who I Am",
+      "nameArtist": "Alan Walker & Elias"
     },
     {
       "id": 5,
-      "imageLink": "http://dummyimage.com/215x100.png/5fa2dd/ffffff",
-      "nameProduct": "Immersion ",
-      "nameArtist": "Hillard Dilrew"
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoE0aQWErge028OIpKztD34KyjYJU_3xrwXQ&s",
+      "nameProduct": "Baixo",
+      "nameArtist": "XXAnteria"
     },
     {
       "id": 6,
@@ -96,68 +96,75 @@
 
   "trendingSongs": [
     {
+      "id": 1,
       "rank": 1,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0VAA84moqMCNMVpd34V3duDIq2yuipa3fgTAIlHmtRz6ZWpGigMsOolh2KCzXvnSMOWc&usqp=CAU",
       "nameProduct": "Sorfcore",
-      "nameArtist": "The Neighbourhood",
+      "nameArtist": "The neighberhood",
       "releaseDate": "Nov 4, 2023",
-      "album": "Hard ",
+      "album": "Hard to Imagine Neighbourhood Ever Changing",
       "time": "3:26"
-    },
-    {
+  },
+  {
+      "id": 2,
       "rank": 2,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "imageLink": "https://i1.sndcdn.com/artworks-SpxmLAhBO3BcjAbR-oZf7mA-large.jpg",
       "nameProduct": "Skyfall Beats",
       "nameArtist": "nightmares",
       "releaseDate": "Oct 26, 2023",
       "album": "nightmares",
       "time": "2:45"
-    },
-    {
+  },
+  {   
+      "id": 3,
       "rank": 3,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-      "nameProduct": "Greedy",
-      "nameArtist": "Tate McRae",
-      "releaseDate": "Dec 30, 2023",
-      "album": "Greedy",
+      "imageLink": "https://i1.sndcdn.com/artworks-CjMRqRFRXGZJOnxm-lDMoTQ-t500x500.jpg",
+      "nameProduct": "Greendy",
+      "nameArtist": "tate mcrae",
+      "releaseDate": "Nov 30, 2023",
+      "album": "Greendy",
       "time": "2:11"
-    },
-    {
+  },
+  {   
+      "id": 4,
       "rank": 4,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-      "nameProduct": "Lovin On Me",
-      "nameArtist": "Jack Harlow",
-      "releaseDate": "Dec 30, 2023",
-      "album": "Lovin On Me",
+      "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmmt3rfTWxvo8ILkc86mAeVDEumP1KyaWusQ&s",
+      "nameProduct": "Lovin On me",
+      "nameArtist": "jack harlow",
+      "releaseDate": "Dec 15, 2023",
+      "album": "Lovin On me",
       "time": "2:18"
-    },
-    {
+  },
+  {
+      "id": 5,
       "rank": 5,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
-      "nameProduct": "Pain The Town Red",
+      "imageLink": "https://i1.sndcdn.com/artworks-KN90SxaTzzjzWEDF-SOupaw-t500x500.png",
+      "nameProduct": "pain the town red",
       "nameArtist": "Doja Cat",
       "releaseDate": "Dec 29, 2023",
       "album": "Paint The Town Red",
       "time": "3:51"
-    },
-    {
+  },
+  {
+      "id": 6,
       "rank": 6,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "imageLink": "https://i1.sndcdn.com/artworks-RoOUmGyis9pqb19B-5J015g-t500x500.jpg",
       "nameProduct": "Dancin On Night",
       "nameArtist": "Dua Lipa",
       "releaseDate": "May 27, 2023",
       "album": "Dance The Night (From Barbie Movie)",
       "time": "2:56"
-    },
-    {
+  },
+  {
+      "id": 7,
       "rank": 7,
-      "imageLink": "http://dummyimage.com/110x100.png/ff4444/ffffff",
+      "imageLink": "https://linkstorage.linkfire.com/medialinks/images/e08339c8-f6c5-4ffc-94b2-22a827c08bb0/artwork-440x440.jpg",
       "nameProduct": "Water",
       "nameArtist": "Tyla",
-      "releaseDate": "Dec 10, 2023",
+      "releaseDate": "Oct 21, 2023",
       "album": "Water",
       "time": "3:20"
-    }
+  }
   ],
   "eminemFansAlsoListenTo": [
     {
@@ -224,25 +231,25 @@
     }
   ],
   "musicVideo":[
-  {"id": 1,
+    {
+      "id": 1,
+        "nameProduct": "Gossip",
+        "artist": "Maneskin",
+        "views": "231K views",
+        "imageLink": "https://i.pinimg.com/736x/c9/1e/48/c91e48fb6057568089eb4f9b962482ab.jpg"
+    },
+  {"id": 2,
       "nameProduct": "Shape Of You",
       "artist": "Ed Sheeran",
       "views": "5M views",
       "imageLink": "https://pic-bstarstatic.akamaized.net/ugc/f37efa5f63b9afab605483f696cb2e8df0064987.jpg"
   },
   {
-    "id": 2,
+    "id": 3,
       "nameProduct": "Someone Like You",
       "artist": "Adele",
       "views": "4M views",
       "imageLink": "https://i.ytimg.com/vi/z7GCiVTlv04/mqdefault.jpg"
-  },
-  {
-    "id": 3,
-      "nameProduct": "Roar",
-      "artist": "Katy Perry",
-      "views": "4.6M views",
-      "imageLink": "https://i.ytimg.com/vi/5K-nNCSc9lA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDgyiIdXRGF9a57lbi8_x2lyJXojw"
   },
   {
     "id": 4,
@@ -269,33 +276,33 @@
 "newAlbums": [
   {
     "id": 1,
-    "imageLink": "https://upload.wikimedia.org/wikipedia/en/7/72/Mannequin_Pussy_-_I_Got_Heaven.jpg",
-    "nameProduct": "I Got Heaven",
-    "nameArtist": "Mannequin"
+    "imageLink": "https://upload.wikimedia.org/wikipedia/vi/f/f1/Adele_21.jpg",
+    "nameProduct": "Adele 21",
+    "nameArtist": "Adele"
   },
   {
     "id": 2,
-    "imageLink": "https://upload.wikimedia.org/wikipedia/en/c/c9/Green_Day_-_Saviors.png",
-    "nameProduct": "Saviors",
-    "nameArtist": "Green Day"
+    "imageLink": "https://upload.wikimedia.org/wikipedia/vi/b/bd/The_Weeknd_-_Beauty_Behind_the_Madness.png",
+    "nameProduct": "Beauty Behind the Madnesse 21",
+    "nameArtist": "The Weekend"
   },
   {
     "id": 3,
-    "imageLink": "https://upload.wikimedia.org/wikipedia/en/b/b4/MGMT_-_Loss_of_Life.png",
-    "nameProduct": "Loss of Life",
-    "nameArtist": "MGMT"
+    "imageLink": "https://upload.wikimedia.org/wikipedia/vi/5/58/Scorpion_album_cua_Drake.jpg",
+    "nameProduct": "Scorpion",
+    "nameArtist": "Drake"
   },
   {
     "id": 4,
-    "imageLink": "https://media.pitchfork.com/photos/6527f157ba01f0efc949d940/1:1/w_3000,h_3000,c_limit/ALBUM%20ART%20All%20Quiet%20On%20The%20Eastern%20Esplenade.jpg",
-    "nameProduct": "All Quiet on the Eastern Esplanade",
-    "nameArtist": "The Libertines"
+    "imageLink": "https://upload.wikimedia.org/wikipedia/vi/d/d5/Harry_Styles_-_Harry%27s_House.png",
+    "nameProduct": "Harry's House",
+    "nameArtist": "Harry Styles"
   },
   {
     "id": 5,
-    "imageLink": "https://upload.wikimedia.org/wikipedia/en/6/6c/Sleater-Kinney_-_Little_Rope.png",
-    "nameProduct": "Little Rope",
-    "nameArtist": "Sleater-Kinney"
+    "imageLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRnoz12xTFnwuH24cZ32NkhcVT4n00uGLeOg&s",
+    "nameProduct": "Born To Die",
+    "nameArtist": "Lara Del Ray"
   }
 ],
 "moodPlaylist": [
