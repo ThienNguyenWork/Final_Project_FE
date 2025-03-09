@@ -62,7 +62,7 @@ async function loadProducts() {
 
 function renderPopular(container, products) {
     container.innerHTML = products.map((song, index) => `
-        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
+        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1b638c] hover:border-2 hover:border-[#99e1ec] hover:shadow-[0_0_15px_#0e9eef] transition">
             <div class="hidden lg:grid grid-cols-12 items-center gap-4">
                 <div class="flex justify-content col-span-1">
                     <span class="text-white font-bold text-xl">#${index + 1}</span>

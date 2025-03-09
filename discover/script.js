@@ -117,7 +117,7 @@ function  renderNewReleaseSongs(container, products) {
 // Render card sản phẩm cho New Albums
 function   renderNewAlbums(container, products) {
     container.innerHTML = products.map(product => `  <!-- Sử dụng 'products' thay vì 'artistsAlbums' -->
-        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
+        <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#0e9eef] hover:border-2 hover:border-[#99e1ec] hover:shadow-[0_0_15px_#0e9eef]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
                 <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center block">${product.nameProduct}</h2>
