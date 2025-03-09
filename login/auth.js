@@ -1,17 +1,18 @@
-// Hàm kiểm tra đăng nhập
+// 🛑 Hàm kiểm tra đăng nhập
 function login(event) {
     event.preventDefault();
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const errorMsg = document.getElementById("error-msg");
 
-    // 🛑 Danh sách tài khoản mẫu
+    // 🔍 Danh sách tài khoản mẫu
     const users = [
         { username: "admin", password: "123", role: "admin" },
-        { username: "user", password: "123", role: "user" }
+        { username: "user", password: "123", role: "user" },
+        { username: "artist", password: "123", role: "artist" } // 🎨 Thêm role artist
     ];
 
-    // 🔍 Kiểm tra thông tin đăng nhập
+    // 🔎 Kiểm tra thông tin đăng nhập
     const user = users.find(u => u.username === username && u.password === password);
 
     if (user) {
@@ -21,6 +22,8 @@ function login(event) {
         // 📌 Điều hướng theo vai trò (role)
         if (user.role === "admin") {
             window.location.href = "/albums"; // Admin vào trang albums
+        } else if (user.role === "artist") {
+            window.location.href = "/discover"; // Artist vào trang dashboard riêng
         } else {
             window.location.href = "/home1"; // User vào trang home1
         }
@@ -43,8 +46,9 @@ if (!storedUser && window.location.pathname !== "/login" && !sessionStorage.getI
 if (storedUser && window.location.pathname === "/login") {
     if (storedUser.role === "admin") {
         window.location.href = "/albums";
+    } else if (storedUser.role === "artist") {
+        window.location.href = "/discover";
     } else {
         window.location.href = "/home1";
     }
 }
-

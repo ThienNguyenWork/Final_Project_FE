@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Song Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <div id="song-detail" class="container mx-auto p-6">
+        <button onclick="goBack()" class="bg-gray-700 p-2 rounded">⬅️ Quay lại</button>
+        <div id="detail-content" class="mt-6"></div>
+    </div>
+
+    <script>
+        // Lấy dữ liệu bài hát từ localStorage
+        const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
+        function getSongDetail() {
+            const params = new URLSearchParams(window.location.search);
+            const songIndex = params.get('id');
+
+            // Kiểm tra xem có dữ liệu hay không
+            if (!songIndex || !allProducts[songIndex]) {
+                document.getElementById('detail-content').innerHTML = '<p>Không tìm thấy bài hát!</p>';
+                return;
+            }
+
+            const song = allProducts[songIndex];
+
+            // Hiển thị thông tin bài hát
+            document.getElementById('detail-content').innerHTML = `
+                <h1 class="text-4xl font-bold">${song.nameProduct}</h1>
+                <p class="text-lg mt-2">Nghệ sĩ: ${song.nameArtist}</p>
+                <p>Album: ${song.album || 'N/A'}</p>
+                <p>Ngày phát hành: ${song.releaseDate}</p>
+                <p>Thời lượng: ${song.time}</p>
+
+                <img src="${song.imageLink}" alt="${song.nameProduct}" class="mt-4 rounded-lg w-64">
+
+                <div class="col-span-2 hidden lg:block">
+                    ${song.audioLink ? `
+                        <audio controls onclick="event.stopPropagation()">
+                            <source src="${song.audioLink}" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    ` : `<p class="text-sm text-gray-400">No Audio</p>`}
+                </div>
+            `;
+
+            // Đảm bảo audio phát đúng bài
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = song.audioLink;
+            audioPlayer.load(); // Load lại để đảm bảo phát nhạc
+        }
+
+        // Quay lại trang trước đó
+        function goBack() {
+            window.history.back();
+        }
+
+        // Khởi động trang
+        window.onload = getSongDetail;
+    </script>
+
+</body>
+
+</html>
