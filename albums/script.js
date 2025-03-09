@@ -19,77 +19,93 @@ if (!user) {
     }
 }
 
-//! Load & Render danh sách sản phẩm
-
+// Load & Render danh sách sản phẩm
 let allProducts = JSON.parse(localStorage.getItem("products")) || [];
 
 async function loadProducts() {
     try {
-        // First, get all stored products
+        // Lấy sản phẩm đã lưu trữ
         let storedProducts = JSON.parse(localStorage.getItem("products")) || [];
-        
-        // Load products from JSON file
+
+        // Fetch sản phẩm từ JSON
         const response = await fetch('products.json');
         const { Popular } = await response.json();
 
-        // Merge products, giving priority to stored products
+        // Merge dữ liệu, ưu tiên dữ liệu mới nhất
         let mergedProducts = [...storedProducts];
-        
-        // Only add products from Popular that don't exist in stored products
+
         Popular.forEach(popularProduct => {
-            if (!mergedProducts.some(stored => stored.nameProduct === popularProduct.nameProduct)) {
+            const existingProduct = mergedProducts.find(stored => stored.nameProduct === popularProduct.nameProduct);
+            if (!existingProduct) {
                 mergedProducts.push(popularProduct);
+            } else {
+                // Cập nhật thông tin thiếu
+                Object.assign(existingProduct, popularProduct);
             }
         });
 
-        // Update localStorage and allProducts
+        // Cập nhật localStorage và biến allProducts
         localStorage.setItem("products", JSON.stringify(mergedProducts));
         allProducts = mergedProducts;
 
-        // Render based on user role
+        // Render dựa vào role
         if (user.role === "admin") {
             renderAdminProducts();
         } else {
             const container = document.getElementById("popular");
-            renderPopular(container, allProducts); // This should now show all products
+            renderPopular(container, allProducts);
         }
-        
-        console.log("Total products loaded:", mergedProducts.length); // Debug line
+
+        console.log("Tổng số sản phẩm đã tải:", mergedProducts.length);
     } catch (error) {
         console.error('Lỗi khi tải dữ liệu:', error);
     }
 }
 
+// Render danh sách bài hát
 function renderPopular(container, products) {
     container.innerHTML = products.map((song, index) => `
-        <div class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition">
-            <div class="hidden lg:grid grid-cols-12 items-center gap-4">
-                <div class="flex justify-content col-span-1">
-                    <span class="text-white font-bold text-xl">#${index + 1}</span>
-                </div>
+        <div onclick="navigateToDetail(${index})" class="bg-gray-900 p-4 ml-5 rounded-xl shadow-lg hover:bg-[#1a1d29] transition cursor-pointer">
+            <div class="lg:grid grid-cols-12 items-center gap-4">
+                <span class="text-white font-bold text-xl">#${index + 1}</span>
                 <div class="col-span-3 flex items-center gap-4">
                     <img class="w-14 h-14 rounded-lg object-cover" src="${song.imageLink}" alt="${song.nameProduct}" />
                     <div>
-                        <h2 class="text-base text-white font-semibold leading-snug">${song.nameProduct}</h2>
+                        <h2 class="text-base text-white font-semibold">${song.nameProduct}</h2>
                         <p class="text-xs text-gray-400">${song.nameArtist}</p>
                     </div>
                 </div>
-                <div class="col-span-2 text-center">
-                    <span class="text-sm text-gray-400">${song.releaseDate}</span>
+                <div class="col-span-3 hidden lg:block">
+                    <p class="text-sm text-gray-400">${song.album}</p>
                 </div>
-                <div class="col-span-4 truncate text-center">
-                    <span class="text-sm text-gray-400">${song.album || 'N/A'}</span>
+                <div class="col-span-2 hidden lg:block">
+                    <p class="text-sm text-gray-400">${song.releaseDate}</p>
                 </div>
-                <div class="col-span-1 text-center">
-                    <i class="fa-regular fa-heart text-[#ee10b0] cursor-pointer hover:scale-110 transition-transform"></i>
+                <div class="col-span-2 hidden lg:block">
+                    <p class="text-sm text-gray-400">${song.time}</p>
                 </div>
-                <div class="col-span-1 text-center">
-                    <span class="text-sm text-gray-400">${song.time}</span>
+                <div class="col-span-2 hidden lg:block">
+                    ${song.audioLink ? `
+                        <audio controls onclick="event.stopPropagation()">
+                            <source src="${song.audioLink}" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    ` : `<p class="text-sm text-gray-400">No Audio</p>`}
                 </div>
             </div>
         </div>
     `).join('');
 }
+
+
+// Chuyển đến trang chi tiết
+function navigateToDetail(index) {
+    window.location.href = `detail.html?id=${index}`;
+}
+
+
+
+
 
 function renderAdminProducts() {
     const productTable = document.getElementById("product-table");
