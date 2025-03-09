@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support Page</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const user = JSON.parse(localStorage.getItem("user"));
+
+            if (!user) {
+                window.location.href = "/login";
+                return;
+            }
+
+            if (user.role === "user") {
+                document.getElementById("user-support").classList.remove("hidden");
+            } else if (user.role === "artist") {
+                document.getElementById("artist-support").classList.remove("hidden");
+            } else if (user.role === "admin") {
+                document.getElementById("admin-support").classList.remove("hidden");
+            }
+
+            const requests = JSON.parse(localStorage.getItem("supportRequests")) || [];
+            renderRequests(requests);
+        });
+
+        function submitRequest(role) {
+            const content = document.getElementById(`${role}-content`).value;
+            const category = document.getElementById(`${role}-category`).value;
+
+            if (!content) return alert("Vui lòng nhập nội dung yêu cầu.");
+
+            const user = JSON.parse(localStorage.getItem("user"));
+            const requests = JSON.parse(localStorage.getItem("supportRequests")) || [];
+
+            requests.push({
+                id: Date.now(),
+                role: user.role,
+                username: user.username,
+                category: category,
+                content: content,
+                status: "Pending",
+                timestamp: new Date().toLocaleString()
+            });
+
+            localStorage.setItem("supportRequests", JSON.stringify(requests));
+            alert("Yêu cầu đã được gửi!");
+            location.reload();
+        }
+
+        function renderRequests(requests) {
+            const adminTable = document.getElementById("admin-table-body");
+            adminTable.innerHTML = "";
+
+            requests.forEach(req => {
+                const row = `<tr class="border-b hover:bg-gray-100 transition">
+                    <td class="p-2">${req.username}</td>
+                    <td class="p-2">${req.role}</td>
+                    <td class="p-2">${req.category}</td>
+                    <td class="p-2">${req.content}</td>
+                    <td class="p-2">${req.status}</td>
+                    <td class="p-2">${req.timestamp}</td>
+                    <td class="p-2 flex gap-2">
+                        <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded shadow hover:scale-105 transition-transform" onclick="resolveRequest(${req.id})">Xử lý</button>
+                        <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded shadow hover:scale-105 transition-transform" onclick="deleteRequest(${req.id})">Xoá</button>
+                    </td>
+                </tr>`;
+                adminTable.innerHTML += row;
+            });
+        }
+
+        function resolveRequest(id) {
+            const requests = JSON.parse(localStorage.getItem("supportRequests")) || [];
+            const updatedRequests = requests.map(req => {
+                if (req.id === id) req.status = "Resolved";
+                return req;
+            });
+
+            localStorage.setItem("supportRequests", JSON.stringify(updatedRequests));
+            alert("Đã xử lý yêu cầu.");
+            location.reload();
+        }
+
+        function deleteRequest(id) {
+            const requests = JSON.parse(localStorage.getItem("supportRequests")) || [];
+            const updatedRequests = requests.filter(req => req.id !== id);
+
+            localStorage.setItem("supportRequests", JSON.stringify(updatedRequests));
+            alert("Đã xoá yêu cầu.");
+            location.reload();
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-300 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-4xl bg-white rounded-lg shadow-xl p-8 animate-fadeIn">
+        <h1 class="text-4xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600">Support Page</h1>
+
+        <div id="user-support" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">User: Gửi yêu cầu hỗ trợ</h2>
+            <select id="user-category" class="mb-4 p-2 border rounded">
+                <option value="Lỗi tài khoản">Lỗi tài khoản</option>
+                <option value="Lỗi nghe nhạc">Lỗi nghe nhạc</option>
+                <option value="Lỗi download nhạc">Lỗi download nhạc</option>
+            </select>
+            <textarea id="user-content" placeholder="Nhập nội dung yêu cầu..." class="w-full p-2 border rounded mb-4"></textarea>
+            <button onclick="submitRequest('user')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Gửi yêu cầu</button>
+        </div>
+
+        <div id="artist-support" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Artist: Gửi yêu cầu hỗ trợ</h2>
+            <select id="artist-category" class="mb-4 p-2 border rounded">
+                <option value="Lỗi tạo nhạc">Lỗi tạo nhạc</option>
+                <option value="Lỗi tên bài hát">Lỗi tên bài hát</option>
+                <option value="Lỗi bài hát">Lỗi bài hát</option>
+            </select>
+            <textarea id="artist-content" placeholder="Nhập nội dung yêu cầu..." class="w-full p-2 border rounded mb-4"></textarea>
+            <button onclick="submitRequest('artist')" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Gửi yêu cầu</button>
+        </div>
+
+        <div id="admin-support" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Admin: Xử lý yêu cầu</h2>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2">Người gửi</th>
+                        <th class="p-2">Vai trò</th>
+                        <th class="p-2">Loại hỗ trợ</th>
+                        <th class="p-2">Nội dung</th>
+                        <th class="p-2">Trạng thái</th>
+                        <th class="p-2">Thời gian</th>
+                        <th class="p-2">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
