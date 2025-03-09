@@ -9,7 +9,7 @@
         "releaseDate": "Nov 4, 2023",
         "album": "Hard to Imagine Neighbourhood Ever Changing",
         "time": "3:26",
-        "audioLink": "https://example.com/song1.mp3"
+        "audioLink": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
     },
     {
         "id": 2,
@@ -19,7 +19,8 @@
         "nameArtist": "nightmares",
         "releaseDate": "Oct 26, 2023",
         "album": "nightmares",
-        "time": "2:45"
+        "time": "2:45",
+        "audioLink": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
     },
     {   
         "id": 3,
@@ -29,7 +30,8 @@
         "nameArtist": "tate mcrae",
         "releaseDate": "Nov 30, 2023",
         "album": "Greendy",
-        "time": "2:11"
+        "time": "2:11",
+        "audioLink": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
     }
 ]
 }

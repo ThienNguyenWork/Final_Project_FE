@@ -39,10 +39,14 @@
 
                 <img src="${song.imageLink}" alt="${song.nameProduct}" class="mt-4 rounded-lg w-64">
 
-                <audio id="audioPlayer" controls class="mt-6">
-                    <source src="${song.audioLink}" type="audio/mp3">
-                    Trình duyệt của bạn không hỗ trợ phát nhạc.
-                </audio>
+                <div class="col-span-2 hidden lg:block">
+                    ${song.audioLink ? `
+                        <audio controls onclick="event.stopPropagation()">
+                            <source src="${song.audioLink}" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    ` : `<p class="text-sm text-gray-400">No Audio</p>`}
+                </div>
             `;
 
             // Đảm bảo audio phát đúng bài

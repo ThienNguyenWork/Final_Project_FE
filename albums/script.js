@@ -84,14 +84,7 @@ function renderPopular(container, products) {
                 <div class="col-span-2 hidden lg:block">
                     <p class="text-sm text-gray-400">${song.time}</p>
                 </div>
-                <div class="col-span-2 hidden lg:block">
-                    ${song.audioLink ? `
-                        <audio controls onclick="event.stopPropagation()">
-                            <source src="${song.audioLink}" type="audio/mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    ` : `<p class="text-sm text-gray-400">No Audio</p>`}
-                </div>
+                
             </div>
         </div>
     `).join('');
