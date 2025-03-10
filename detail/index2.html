@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="index.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <main class=" main-background">
+        <!-- Checkbox hack để điều khiển menu mobile -->
+        <input type="checkbox" id="menu-toggle" class="hidden">
+
+        <div class="relative min-h-screen flex">
+            <!-- Sidebar -->
+            <aside
+                class="fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 mb-10">
+                    <i class="fas fa-music text-pink-600 text-2xl"></i>
+                    <span
+                        class="text-xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-6">
+                    <!-- Menu -->
+                    <div class="space-y-3">
+
+                    </div>
+
+                    <!-- Menu: Discover, Albums, Artists -->
+                    <div class="space-y-3">
+
+                        <h2 class=" font-semibold text-[#951476]">Menu</h2>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-compass"></i>
+                            <span>Discover</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-folder"></i>
+                            <span>Albums</span>
+                        </a>
+                        <a href="#" class="  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-user"></i>
+                            <span>Artists</span>
+                        </a>
+                    </div>
+
+                    <!-- Library: Recently Added, Most Played -->
+                    <div class="space-y-3">
+                        <h2 class="text-[#951476] font-semibold">Library</h2>
+                        <a href="#" class="  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-clock"></i>
+                            <span>Recently Added</span>
+                        </a>
+                        <a href="#" class="  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Most Played</span>
+                        </a>
+                    </div>
+
+                    <!-- Playlist and Favorite: Your Favorite, Your Playlist, Add Playlist -->
+                    <div class="space-y-3">
+                        <h2 class="text-[#951476] font-semibold font-bold ">Playlist and Favorite</h2>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-heart"></i>
+                            <span>Your Favorite</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-list-ul"></i>
+                            <span>Your Playlist</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-[#0e9eef] font-bold hover:text-white">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Playlist</span>
+                        </a>
+                    </div>
+
+                    <!-- General: Setting, Sign In, Sign Out -->
+                    <div class="space-y-3">
+                        <h2 class="text-[#951476] font-semibold">General</h2>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                            <i class="fas fa-cogs"></i>
+                            <span>Setting</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-[#ee10b0] font-bold hover:text-white">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Sign In</span>
+                        </a>
+                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-[#ee10b0] font-bold hover:text-white">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+
+
+            <!-- Main Content -->
+            <main class="flex-1 p-6 main-background">
+                <!-- Mobile Menu Button -->
+                <label for="menu-toggle"
+                    class="fixed top-4 left-4 z-50 p-2 bg-pink-600 rounded-lg cursor-pointer md:hidden hover:bg-pink-700 hidden">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <header class="backdrop-blur-sm flex flex-col md:flex-row w-full top-0 z-50">
+                    <div class="flex items-center justify-between w-full px-4 py-3">
+                        <!-- Mobile Menu Button (hamburger menu) - Chỉ hiển thị trên mobile -->
+                        <button class="md:hidden p-2">
+                            <i class="fas fa-bars text-white text-2xl"></i>
+                        </button>
+
+                        <!-- Logo - Chỉ hiển thị trên mobile -->
+                        <div class="md:hidden flex items-center justify-center flex-grow space-x-3">
+                            <i class="fas fa-music text-pink-600 text-2xl"></i>
+                            <span class="text-xl font-bold text-white">Melodies</span>
+                        </div>
+
+                        <!-- Search Box -->
+                        <div
+                            class="hidden md:flex items-center max-w-sm bg-gray-700/50 rounded-full px-4 py-2 flex-grow">
+                            <i class="fas fa-search text-gray-400"></i>
+                            <input type="search" placeholder="Search For Musics, Artists, Albums..."
+                                class="w-full bg-transparent border-none focus:outline-none text-white px-3 placeholder-gray-400">
+                        </div>
+
+                        <!-- Search Icon (chỉ hiển thị trên mobile) -->
+                        <button class="md:hidden p-2">
+                            <i class="fas fa-search text-gray-400 text-2xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- Navigation + Auth Buttons (chỉ hiển thị trên màn hình lớn) -->
+                    <div class="hidden md:flex justify-center w-full px-4 py-3">
+                        <nav class="flex items-center space-x-6 gap-8">
+                            <a href="#" class="text-white  hover:text-[#ee10b0] transition">About</a>
+                            <a href="#" class="text-white hover:text-[#ee10b0] transition">Contact</a>
+                            <a href="#" class="text-white  hover:text-[#ee10b0] transition">Premium</a>
+                        </nav>
+
+
+                    </div>
+                    <div class="hidden md:flex justify-end w-full px-4 py-3">
+                        <nav class="flex items-center space-x-6">
+                            <button
+                                class="bg-black text-[#ee10b0] font-semibold px-6 py-2 rounded-full hover:bg-[#ee10b0] hover:text-black transition">Login</button>
+                            <button
+                                class="bg-[#ee10b0] border-2 border-[#e696cf] shadow-[0_0_15px_#ee10b0] font-semibold text-black px-6 py-2 rounded-full hover:bg-black hover:text-[#ee10b0] transition">Sign
+                                Up</button>
+                        </nav>
+                    </div>
+                </header>
+
+                <!--Nội dung bài hát-->
+                <div>
+                <main class="flex flex-col justify-center items-center min-h-screen bg-[linear-gradient(to_bottom,black,_transparent)] rounded-xl m-8">
+
+                    <div class="flex flex-col items-center w-full text-white rounded-xl p-4 relative 
+                                bg-[url('https://upload.wikimedia.org/wikipedia/en/3/35/The_Eminem_Show.jpg')] 
+                                bg-cover bg-center bg-no-repeat 
+                                before:content-[''] before:absolute before:inset-0 
+                                before:bg-black before:bg-opacity-50 before:backdrop-blur-sm 
+                                before:rounded-xl before:z-0">
+                                
+                        
+                        <!-- Nội dung nằm trên lớp mờ -->
+                        <div class="relative z-10 w-full">
+                            <div class="relative flex items-center justify-between w-full px-4">
+                                <!-- Nút quay lại (bên trái) -->
+                                <button onclick="window.history.back()"
+                                    class="h-[40px] flex items-center text-white focus:outline-none transition-transform duration-300 hover:scale-110">
+                                    <i class="fa-solid fa-arrow-left text-3xl text-[#0e9eef]"></i>
+                                </button>
+                            
+                                <!-- Tiêu đề Music (ở giữa) -->
+                                <h2 class="absolute left-1/2 transform -translate-x-1/2 text-[#0e9eef] text-4xl font-bold">
+                                    Mu<span class="text-[#ee10b0]">sic</span>
+                                </h2>
+                            
+                                <!-- Icon ba chấm (bên phải) -->
+                                <i class="fa-solid fa-ellipsis-vertical text-2xl text-[#ee10b0]"></i>
+                            </div>
+                            <div class="flex items-start ml-32"> <!-- Flex container để hình ảnh và lyrics nằm cạnh nhau -->
+                                <!-- Hình ảnh Album -->
+                                <div class="mt-8 mb-8 flex justify-center">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/3/35/The_Eminem_Show.jpg" class="w-80 rounded-lg shadow-lg">
+                                </div>
+                            
+                                <!-- Phần Lyric -->
+                                <div class="ml-16 mt-8 max-w-lg p-4 text-white text-lg leading-relaxed overflow-y-auto h-[300px] relative"
+                                style="mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent); 
+                                -webkit-mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);">
+                                <p class="whitespace-pre-line">
+                                    Powered by Genius
+                                    [Intro]
+                                    (The white zone is for immediate loading and unloading of passengers only, no parking)
+                                    America! Ha ha ha! We love you
+                                    How many people are proud to be citizens
+                                </p>
+                            </div>
+                                                      
+                            </div>
+                            
+                              <div class="mt-4 flex justify-center gap-4">
+                                <button class="bg-[#ee10b0] border-2 border-[#e696cf] shadow-[0_0_15px_#ee10b0] px-4 py-1 rounded-full text-white text-lg">Song</button>
+                                <button class="border border-gray-500 px-4 py-1 rounded-full text-white-400 text-lg">Lyrics</button>
+                            </div>
+
+                            
+                            <div class="mt-4 ml-4">
+                                <h3 class="text-3xl font-bold mb-2">White America</h3>
+                                <div class="flex items-center justify-between w-full">
+                                    <p class="text-white-400 text-lg">Eminem</p>
+                                    <i class="fa-regular fa-heart text-3xl text-[#ee10b0] cursor-pointer"></i>
+                                </div>                                
+                            </div>
+                            <div class="w-full flex flex-col items-center mt-4 px-4">
+                                <!-- Hiển thị thời gian -->
+                                <div class="flex justify-between w-full text-white text-sm">
+                                    <span id="current-time">0:00</span>
+                                    <span id="total-duration">3:45</span>
+                                </div>
+                            
+                                <!-- Thanh thời gian -->
+                                <input type="range" id="progress-bar" value="0" min="0" max="100" class="w-full mt-2 h-2 bg-gray-500 rounded-lg 
+                                    appearance-none cursor-pointer accent-[#ee10b0]">
+                            </div>
+                            
+                            <div class="w-full flex justify-center mt-8 mb-16">
+                                <div class="flex justify-center items-center gap-x-12 p-4 rounded-full w-fit">
+                                    <!-- Nút Repeat -->
+                                    <button class="text-[#ee10b0]  text-2xl p-3 rounded-full hover:bg-[#0e9eef]">
+                                        <i class="fa-solid fa-repeat"></i>
+                                    </button>
+                                    <!-- Nút Previous -->
+                                    <button class="text-[#f5ade0] bg-[#ee10b0] bg-opacity-50 text-2xl p-3 rounded-full hover:bg-[#0e9eef]">
+                                        <i class="fa-solid fa-backward"></i>
+                                    </button>
+                                    <!-- Nút Play -->
+                                    <button class="text-[#f5ade0] bg-[#c60476] bg-opacity-50 border-2 border-[#e696cf] shadow-[0_0_15px_#c60476] text-5xl p-4 rounded-full hover:bg-[#0e9eef]">
+                                        <i class="fa-regular fa-circle-play"></i>
+                                    </button>
+                                    <!-- Nút Next -->
+                                    <button class="text-[#f5ade0] bg-[#ee10b0] bg-opacity-50 text-2xl p-3 rounded-full hover:bg-[#0e9eef]">
+                                        <i class="fa-solid fa-forward"></i>
+                                    </button>
+                                    <!-- Nút Playlist -->
+                                    <button class="text-[#ee10b0]  text-2xl p-3 rounded-full hover:bg-[#0e9eef]">
+                                        <i class="fa-solid fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+</div>
+
+
+
+                    <footer class=" text-white py-4 px-6 mt-16">
+                        <div class="max-w-6xl mx-auto grid grid-cols-[1.25fr_1fr_1fr_1fr_1fr] gap-6">
+                          <!-- About Section -->
+                          <div class="flex flex-col items-center space-x-2">
+                            <h2 class="text-3xl font-bold">About</h2>
+                            <p class="text-sm mt-2 text-white">
+                              Melodies is a website that has been created for over <span class="text-[#ee10b0]">5 year's</span> now and it is one of the most famous music player websites in the world. In this website, you can listen and download songs for free. Also, if you want no limitation you can buy our <span class="text-[#0e9eef]">premium pass's</span>.
+                            </p>
+                          </div>
+                          
+                          <!-- Melodi Section -->
+                          <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Melodi</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                              <li>Songs</li>
+                              <li>Radio</li>
+                              <li>Podcast</li>
+                            </ul>
+                          </div>
+                      
+                          <!-- Access Section -->
+                          <div>
+                            <h2 class="text-3xl flex justify-center font-bold border-b border-white inline-block pb-1">Access</h2>
+                            <ul class="mt-2 text-lg text-center space-y-1 text-white">
+                              <li>Explor</li>
+                              <li>Artists</li>
+                              <li>Playlists</li>
+                              <li>Albums</li>
+                              <li>Trending</li>
+                            </ul>
+                          </div>
+                      
+                          <!-- Contact Section -->
+                          <div>
+                            <h2 class="text-3xl font-bold flex justify-center border-b border-white inline-block pb-1">Contact</h2>
+                            <ul class="mt-2 text-lg space-y-1 text-center text-white">
+                              <li>About</li>
+                              <li>Policy</li>
+                              <li>Social Media</li>
+                              <li>Soppurt</li>
+                            </ul>
+                          </div>
+                      
+                        <!-- Footer Branding -->
+                        <div class="flex flex-col items-center space-y-24">
+                            <span
+                        class="text-3xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">Melodies</span>
+                            <div class="flex space-x-4 mt-4 text-4xl">
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fas fa-phone"></i>
+                              </div>
+                        </div>
+                    </div>
+
+                      </footer>
+                    </main>    
+                </div>
+                      </main>
+                      
+    </div>
+    </main>
+      <!-- Gọi script ngoài -->
+  <script src="script.js"></script>
+  <script>
+      if (window.location.pathname.endsWith("index.html")) {
+          window.location.replace(window.location.pathname.replace("index.html", ""));
+      }
+  </script>
+</body>
+
+</html>
