@@ -36,7 +36,7 @@ function renderProducts(container, products) {
 // Render danh sách Trending Songs
 function renderTrending(container, trendingSongs) {
     container.innerHTML = trendingSongs.map(song => `
-        <div class="bg-gray-900 p-4 rounded-xl shadow-lg hover:bg-[#1a1d29] transition  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-lg transition  hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0]">
             <!-- Desktop Layout -->
             <div class="hidden lg:grid grid-cols-12 items-center gap-4">
                 <!-- Ranking -->
@@ -170,7 +170,7 @@ function   renderNewAlbums(container, products) {
         <div class="card w-48 shadow-lg rounded-lg overflow-hidden hover:bg-[#0e9eef] hover:border-2 hover:border-[#99e1ec] hover:shadow-[0_0_15px_#0e9eef]">
             <img class="w-full rounded-xl h-48 object-cover" src="${product.imageLink}" alt="${product.nameProduct}" />
             <div class="px-4 pt-4 pb-1 flex items-center space-x-2 justify-between">
-                <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center block">${product.nameProduct}</h2>
+                <h2 class="text-lg font-semibold text-white flex truncate max-w-[150px] items-center ">${product.nameProduct}</h2>
             </div>
             <div class="px-2 pb-4 flex items-center justify-between">
                 <span class="px-2 text-white text-xs">${product.nameArtist}</span>
