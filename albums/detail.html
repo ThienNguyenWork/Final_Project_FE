@@ -2,68 +2,310 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Detail</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen">
+    <div id="song-detail" class="container mx-auto p-4 md:p-6 max-w-4xl">
+        <button onclick="goBack()" class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 transition-colors p-2 px-4 rounded-full shadow-md">
+            <i class="fas fa-arrow-left"></i> <span class="hidden sm:inline">Quay lại</span>
+        </button>
 
-    <div id="song-detail" class="container mx-auto p-6">
-        <button onclick="goBack()" class="bg-gray-700 p-2 rounded">⬅️ Quay lại</button>
-        <div id="detail-content" class="mt-6"></div>
+        <!-- Song Details Card -->
+        <div id="detail-content" class="mt-6 bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg"></div>
+
+        <!-- User Review Section -->
+        <div id="user-section" class="hidden mt-8">
+            <div class="bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold border-b border-gray-700 pb-2 mb-4">Đánh giá của bạn</h2>
+                <form id="review-form" class="mt-4 space-y-4" onsubmit="submitReview(event)">
+                    <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                        <label for="rating" class="md:w-1/4">Chọn số sao:</label>
+                        <select id="rating" required class="bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-3/4">
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                        <label for="comment" class="md:w-1/4">Bình luận:</label>
+                        <input type="text" id="comment" placeholder="Nhập bình luận" required
+                            class="bg-gray-700 text-white p-2 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-3/4">
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition-colors p-2 px-6 rounded-md shadow-md">
+                            Gửi đánh giá
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- All Reviews Section -->
+        <div id="artist-section" class="hidden mt-8">
+            <div class="bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold border-b border-gray-700 pb-2 mb-4">Tất cả đánh giá</h2>
+                <div id="reviews-list" class="space-y-4"></div>
+            </div>
+        </div>
+
+        <!-- Admin Section -->
+        <div id="admin-section" class="hidden mt-8">
+            <div class="bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold border-b border-gray-700 pb-2 mb-4">Quản lý đánh giá</h2>
+                <div id="admin-reviews-list" class="space-y-4"></div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Lấy dữ liệu bài hát từ localStorage
         const allProducts = JSON.parse(localStorage.getItem("products")) || [];
 
         function getSongDetail() {
             const params = new URLSearchParams(window.location.search);
             const songIndex = params.get('id');
 
-            // Kiểm tra xem có dữ liệu hay không
             if (!songIndex || !allProducts[songIndex]) {
-                document.getElementById('detail-content').innerHTML = '<p>Không tìm thấy bài hát!</p>';
+                document.getElementById('detail-content').innerHTML = '<p class="text-center py-8">Không tìm thấy bài hát!</p>';
                 return;
             }
 
             const song = allProducts[songIndex];
 
-            // Hiển thị thông tin bài hát
             document.getElementById('detail-content').innerHTML = `
-                <h1 class="text-4xl font-bold">${song.nameProduct}</h1>
-                <p class="text-lg mt-2">Nghệ sĩ: ${song.nameArtist}</p>
-                <p>Album: ${song.album || 'N/A'}</p>
-                <p>Ngày phát hành: ${song.releaseDate}</p>
-                <p>Thời lượng: ${song.time}</p>
-
-                <img src="${song.imageLink}" alt="${song.nameProduct}" class="mt-4 rounded-lg w-64">
-
-                <div class="col-span-2 hidden lg:block">
-                    ${song.audioLink ? `
-                        <audio controls onclick="event.stopPropagation()">
-                            <source src="${song.audioLink}" type="audio/mp3">
-                            Your browser does not support the audio element.
-                        </audio>
-                    ` : `<p class="text-sm text-gray-400">No Audio</p>`}
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="md:w-1/3">
+                        <img src="${song.imageLink}" alt="${song.nameProduct}" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    </div>
+                    <div class="md:w-2/3 space-y-3">
+                        <h1 class="text-2xl md:text-4xl font-bold">${song.nameProduct}</h1>
+                        <p class="text-lg md:text-xl text-blue-400">${song.nameArtist}</p>
+                        <div class="py-2 space-y-2 text-gray-300">
+                            <p><span class="font-medium text-white">Album:</span> ${song.album || 'N/A'}</p>
+                            <p><span class="font-medium text-white">Ngày phát hành:</span> ${song.releaseDate}</p>
+                            <p><span class="font-medium text-white">Thời lượng:</span> ${song.time}</p>
+                        </div>
+                        ${song.audioLink ? `
+                            <div class="mt-4 pt-4 border-t border-gray-700">
+                                <p class="text-sm text-gray-400 mb-2">Nghe thử:</p>
+                                <audio controls class="w-full">
+                                    <source src="${song.audioLink}" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        ` : `<p class="text-sm text-gray-400 mt-4 pt-4 border-t border-gray-700">Không có bản nghe thử</p>`}
+                    </div>
                 </div>
             `;
 
-            // Đảm bảo audio phát đúng bài
-            const audioPlayer = document.getElementById('audioPlayer');
-            audioPlayer.src = song.audioLink;
-            audioPlayer.load(); // Load lại để đảm bảo phát nhạc
+            renderReviews(songIndex);
         }
 
-        // Quay lại trang trước đó
+        // Hiển thị bảng phản hồi
+        function toggleReplyForm(index) {
+            const replyForm = document.getElementById(`reply-form-${index}`);
+            replyForm.classList.toggle("hidden");
+        }
+
+        function showRoleSection(role) {
+            const userSection = document.getElementById("user-section");
+            const artistSection = document.getElementById("artist-section");
+            const adminSection = document.getElementById("admin-section");
+
+            // Reset all sections to hidden
+            userSection.style.display = "none";
+            artistSection.style.display = "none";
+            adminSection.style.display = "none";
+
+            // Show only appropriate sections based on role
+            switch (role) {
+                case "artist":
+                    artistSection.style.display = "block";  // Only show "Tất cả đánh giá"
+                    break;
+                case "user":
+                    userSection.style.display = "block";    // Show "Đánh giá của bạn"
+                    artistSection.style.display = "block";  // Show "Tất cả đánh giá"
+                    break;
+                case "admin":
+                    artistSection.style.display = "block";  // Show "Tất cả đánh giá"
+                    adminSection.style.display = "block";   // Show "Quản lý đánh giá"
+                    break;
+            }
+        }
+
+        function renderStars(rating) {
+            let stars = '';
+            for (let i = 0; i < rating; i++) {
+                stars += '<i class="fas fa-star text-yellow-400"></i>';
+            }
+            for (let i = rating; i < 5; i++) {
+                stars += '<i class="far fa-star text-gray-500"></i>';
+            }
+            return stars;
+        }
+
+        function renderReviews(songIndex) {
+            const reviews = JSON.parse(localStorage.getItem(`reviews_${songIndex}`)) || [];
+            const userList = document.getElementById("reviews-list");
+            const adminList = document.getElementById("admin-reviews-list");
+            const role = JSON.parse(localStorage.getItem("user"))?.role || "user";
+
+            // Clear previous content
+            userList.innerHTML = '';
+            adminList.innerHTML = '';
+
+            if (reviews.length === 0) {
+                userList.innerHTML = '<p class="text-gray-400 text-center py-4">Chưa có đánh giá nào</p>';
+                if (adminList) {
+                    adminList.innerHTML = '<p class="text-gray-400 text-center py-4">Chưa có đánh giá nào</p>';
+                }
+                showRoleSection(role);
+                return;
+            }
+
+            // Render reviews based on role
+            reviews.forEach((r, i) => {
+                const stars = renderStars(parseInt(r.rating));
+                
+                const reviewHTML = `
+                    <div class="review-item bg-gray-700/50 rounded-lg p-4 hover:bg-gray-700/80 transition-colors">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="flex mb-1">${stars}</div>
+                                <p class="text-white">${r.comment}</p>
+                            </div>
+                            ${(role === "artist" || role === "admin") ? `
+                                <button onclick="toggleReplyForm(${i})" class="text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                                    <i class="fas fa-reply"></i> <span class="hidden sm:inline">Phản hồi</span>
+                                </button>
+                            ` : ''}
+                        </div>
+                        
+                        ${r.replies && r.replies.length > 0 ? `
+                            <div class="mt-3 pt-3 border-t border-gray-600 space-y-2">
+                                ${r.replies.map(reply => `
+                                    <div class="flex items-start gap-2 bg-gray-800/70 p-2 rounded">
+                                        <i class="fas fa-comment-dots text-blue-400 mt-1"></i>
+                                        <p class="text-gray-300">${reply}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        <!-- Form phản hồi -->
+                        ${(role === "artist" || role === "admin") ? `
+                            <div id="reply-form-${i}" class="hidden mt-3 pt-3 border-t border-gray-600">
+                                <textarea id="reply-input-${i}" class="bg-gray-800 text-white p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nhập phản hồi..."></textarea>
+                                <div class="flex justify-end mt-2">
+                                    <button onclick="submitReply(${i}, '${songIndex}')" class="bg-green-600 hover:bg-green-700 transition-colors p-2 px-4 rounded text-sm">
+                                        <i class="fas fa-paper-plane mr-1"></i> Gửi phản hồi
+                                    </button>
+                                </div>
+                            </div>` : ''}
+                    </div>
+                `;
+
+                userList.innerHTML += reviewHTML;
+
+                if (role === "admin") {
+                    adminList.innerHTML += `
+                        <div class="review-item bg-gray-700/50 rounded-lg p-4">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="flex mb-1">${stars}</div>
+                                    <p>${r.comment}</p>
+                                </div>
+                                <button onclick="deleteReview(${i}, '${songIndex}')" class="bg-red-600 hover:bg-red-700 transition-colors p-1 px-3 h-8 rounded text-sm flex items-center gap-1">
+                                    <i class="fas fa-trash"></i> <span class="hidden sm:inline">Xóa</span>
+                                </button>
+                            </div>
+                            
+                            ${r.replies && r.replies.length > 0 ? `
+                                <div class="mt-3 pt-3 border-t border-gray-600 space-y-2">
+                                    ${r.replies.map(reply => `
+                                        <div class="flex items-start gap-2 bg-gray-800/70 p-2 rounded">
+                                            <i class="fas fa-comment-dots text-blue-400 mt-1"></i>
+                                            <p class="text-gray-300">${reply}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+            });
+
+            showRoleSection(role);
+        }
+
+        // Lưu phản hồi vào localStorage
+        function submitReply(index, songIndex) {
+            const reviews = JSON.parse(localStorage.getItem(`reviews_${songIndex}`)) || [];
+            const replyInput = document.getElementById(`reply-input-${index}`).value;
+
+            if (!replyInput.trim()) {
+                alert("Phản hồi không được để trống!");
+                return;
+            }
+
+            // Khởi tạo mảng phản hồi nếu chưa có
+            if (!reviews[index].replies) {
+                reviews[index].replies = [];
+            }
+
+            // Thêm phản hồi mới vào mảng
+            reviews[index].replies.push(replyInput);
+            localStorage.setItem(`reviews_${songIndex}`, JSON.stringify(reviews));
+
+            // Làm mới giao diện
+            renderReviews(songIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const role = JSON.parse(localStorage.getItem("user"))?.role || "user";
+            const songIndex = new URLSearchParams(window.location.search).get('id');
+            renderReviews(songIndex);
+        });
+
+        function submitReview(event) {
+            event.preventDefault();
+            const params = new URLSearchParams(window.location.search);
+            const songIndex = params.get('id');
+
+            const rating = document.getElementById("rating").value;
+            const comment = document.getElementById("comment").value;
+
+            const reviews = JSON.parse(localStorage.getItem(`reviews_${songIndex}`)) || [];
+            reviews.push({ rating, comment });
+
+            localStorage.setItem(`reviews_${songIndex}`, JSON.stringify(reviews));
+
+            document.getElementById("review-form").reset();
+            renderReviews(songIndex);
+        }
+
+        function deleteReview(index, songIndex) {
+            const reviews = JSON.parse(localStorage.getItem(`reviews_${songIndex}`)) || [];
+            reviews.splice(index, 1);
+            localStorage.setItem(`reviews_${songIndex}`, JSON.stringify(reviews));
+            renderReviews(songIndex);
+        }
+
         function goBack() {
             window.history.back();
         }
 
-        // Khởi động trang
-        window.onload = getSongDetail;
+        window.onload = () => {
+            getSongDetail();
+            const role = JSON.parse(localStorage.getItem("user"))?.role || "user";
+            showRoleSection(role); // Gọi hàm để hiển thị bảng theo vai trò
+        };
     </script>
-
 </body>
-
 </html>
