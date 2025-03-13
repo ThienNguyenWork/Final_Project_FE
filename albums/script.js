@@ -104,13 +104,17 @@ function renderAdminProducts() {
     const productTable = document.getElementById("product-table");
     productTable.innerHTML = allProducts.map((product, index) => `
         <tr class="bg-gray-800 text-white">
-            <td>${index + 1}</td>
-            <td>${product.imageLink}</td>
-            <td>${product.nameProduct}</td>
-            <td>${product.nameArtist}</td>
-            <td>${product.releaseDate || 'N/A'}</td>
-            <td>${product.album || 'N/A'}</td>
-            <td>${product.time || 'N/A'}</td>
+            <td class="p-2 w-16 text-center">${index + 1}</td>
+           <td class="p-2 w-24 text-center">
+    <div class="flex justify-center">
+        <img src="${product.imageLink}" alt="Hình ảnh" width="50" height="50" class="rounded-lg">
+    </div>
+</td>
+            <td class="p-2 w-32 break-words">${product.nameProduct}</td>
+            <td class="p-2 w-32 break-words">${product.nameArtist}</td>
+            <td class="p-2 w-32 text-center">${product.releaseDate || 'N/A'}</td>
+            <td class="p-2 w-48">${product.album || 'N/A'}</td>
+            <td class="p-2 w-24 text-center">${product.time || 'N/A'}</td>
             <td>
                 <button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>
                 <button onclick="deleteProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
@@ -208,6 +212,8 @@ document.getElementById('search-navbar').addEventListener('input', searchProduct
 // Mỗi lần người dùng nhập chữ vào ô tìm kiếm, hàm searchProducts() sẽ được gọi.
 // Tìm kiếm & cập nhật kết quả theo thời gian thực.
 
+
+//Đăng xuất
 function logout() {
     localStorage.removeItem("user");
     window.location.href = "/login/";

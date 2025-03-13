@@ -293,7 +293,7 @@
         lý sản phẩm (admin-panel). -->
                             <!-- Ban đầu, phần admin-panel có class="hidden", nghĩa là nó bị ẩn đi.
         Chỉ khi nào Admin đăng nhập, script mới xóa class hidden để hiển thị nó. -->
-                            <h2 class="text-xl font-bold mb-4">Quản Lý Sản Phẩm</h2>
+                            <h2 class="text-xl font-bold mb-4 text-black">Quản Lý Sản Phẩm</h2>
                             <div class="mb-4 ">
                                 <input type="hidden" id="edit-id">
                                 <input type="text" id="product-rank" placeholder="Ranking"
@@ -314,11 +314,13 @@
                                     Sản Phẩm</button>
                             </div>
                             <div class="overflow-auto">
-                                <table class="table-fixed w-full min-w-[600px] bg-white shadow-md rounded-lg border border-gray-300">
+                                <table class="table-fixed w-full min-w-[600px] text-black bg-gray-300 shadow-md rounded-lg border border-gray-300">
                                     <thead>
-                                        <tr class="bg-gray-200 text-left">
-                                            <th class="p-2 w-16 text-center">Ranking</th>
-                                            <th class="p-2 w-32 break-words">Name of Song</th> <!-- Thu hẹp cột này -->
+                                        <tr class="bg-gray-300 text-left">
+                                            <th class="p-2 w-20 text-center">Ranking</th>
+                                            <th class="p-2 w-16 text-center">Image</th>
+                                            <th class="p-2 w-32 break-words">Name of Song</th> 
+                                            <th class="p-2 w-32 break-words">Name Artist</th> 
                                             <th class="p-2 w-32 text-center">Release Date</th>
                                             <th class="p-2 w-48">Albums</th>
                                             <th class="p-2 w-24 text-center">Time</th>
