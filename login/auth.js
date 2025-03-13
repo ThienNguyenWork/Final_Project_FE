@@ -42,13 +42,34 @@ if (!storedUser && window.location.pathname !== "/login" && !sessionStorage.getI
     window.location.href = "/login";
 }
 
+// // 🔹 Điều hướng lại nếu đã đăng nhập mà ở trang login
+// if (storedUser && window.location.pathname === "/login") {
+//     if (storedUser.role === "admin") {
+//         window.location.href = "/albums";
+//     } else if (storedUser.role === "artist") {
+//         window.location.href = "/discover";
+//     } else {
+//         window.location.href = "/home1";
+//     }
+// }
+
 // 🔹 Điều hướng lại nếu đã đăng nhập mà ở trang login
-if (storedUser && window.location.pathname === "/login") {
-    if (storedUser.role === "admin") {
-        window.location.href = "/albums";
-    } else if (storedUser.role === "artist") {
-        window.location.href = "/discover";
-    } else {
-        window.location.href = "/home1";
+document.addEventListener("DOMContentLoaded", function () {
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+        if (user.role === "admin") {
+            window.location.href = "/albums"; // Admin vào trang albums
+        } else if (user.role === "artist") {
+            window.location.href = "/discover"; // Artist vào trang discover
+        } else {
+            window.location.href = "/home1"; // User thông thường vào trang home1
+        }
     }
-}
+});
+
+
+
+
+
+

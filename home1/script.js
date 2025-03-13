@@ -196,6 +196,5 @@ function   renderMoodPlaylist(container, products) {
     `).join('');
 }
 
-
 // Gọi hàm khi trang được load
 window.onload = loadProducts;

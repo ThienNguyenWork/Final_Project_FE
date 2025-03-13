@@ -213,4 +213,5 @@ function logout() {
     window.location.href = "/login/";
 }
 
+
 window.onload = loadProducts;

@@ -12,82 +12,7 @@
 <body class="bg-black min-h-screen flex items-center justify-center"
     style="background: linear-gradient(to top,rgba(223, 24, 179, 1), rgba(164, 60, 192, 1), rgba(104, 95, 204, 1), rgba(65, 117, 212, 1));">
      <div class="fixed inset-0 w-full h-full bg-black opacity-70 z-0"></div>
-    <!-- <div class="w-full max-w-lg p-8 bg-cover bg-center rounded-lg shadow-lg relative"
-        style="background-image: url('https://r1.ilikewallpaper.net/iphone-12-pro-max-wallpapers/download-114508/electronic-music.jpg');">
-        <div class="absolute inset-0 bg-[#412c3a] opacity-70 rounded-lg"></div>
-
-        <div class="p-8 rounded-2xl shadow-lg w-full relative z-10">
-            <div class=" text-white w-full">
-                <div class="bg-[#412c3a]/90 p-8 rounded-xl shadow-lg flex text-center mb-6 mt-4 w-full">
-                    <div class="flex flex-col md:flex-row justify-center w-[100%]  items-center mb-2 space-x-2">
-                        <img src="./logo melodies.png" alt="Melodies Logo" class="w-16 h-16">
-                        <h1
-                            class="text-xl font-bold bg-[linear-gradient(to_right,_#ee10b0,_#a43cc0,_#685fcc,_#4175d4)] bg-clip-text text-transparent">
-                            Melodies
-                        </h1>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="flex justify-start items-center mb-4">
-                    <button onclick="window.history.back()"
-                        class="text-[#0e9eef] hover:text-blue-500 focus:outline-none transition-transform duration-300 hover:scale-110">
-                    
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 fill-current" viewBox="0 0 20 20">
-                            <path d="M11 2 L7 6 L11 10 M11 8.5 L9 6.5 L14 6.5 L14 5.5 L9 5.5 L11 3.5Z" />
-                        </svg>
-                    </button>
-                </div>
-
-                <h2 class="text-xl font-semibold text-white text-center mb-4">Sign In To Continue</h2>
-
-                <form action="#" class="max-w-sm mx-auto">
-                    <div class="mb-4">
-                        <input type="name" placeholder="Name"
-                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" placeholder="E-Mail"
-                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
-                    </div>
-
-                    <div class="mb-4 relative">
-                        <input type="password" placeholder="Password"
-                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
-                        <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
-                           
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ee10b0">
-                                <path
-                                    d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zM10 7a3 3 0 100 6 3 3 0 000-6z" />
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="mb-4 relative">
-                        <input type="phone number" placeholder="Phone number"
-                            class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
-                        <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
-                       
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#ee10b0">
-                                <path
-                                    d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zM10 7a3 3 0 100 6 3 3 0 000-6z" />
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="flex justify-end  items-center mb-4">
-                        <div class="flex justify-end items-center w-[100%] md:space-x-24 gap-4 flex-col md:flex-row">
-                            <button type="submit"
-                                class="py-2 px-8 bg-[#ee10b0] hover:bg-pink-600 text-white rounded-[10px] text-sm font-bold ">
-                                Create an account
-                            </button>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-            </div>
-        </div> -->
-
+ 
         <div class="flex flex-col md:flex-row shadow-2xl shadow-black ">
             <div>
                 <div class=" h-[100%] md:h-[500px] min-w-[400px]  w-full max-w-md  relative z-10">
@@ -110,18 +35,18 @@
                         </div>
                         <h2 class="text-xl font-semibold text-white text-center mb-4">Sign In To Continue</h2>
         
-                        <form action="#" class="max-w-sm mx-auto">
+                        <form onsubmit="register(event)" class="max-w-sm mx-auto">
                             <div class="mb-4">
-                                <input type="name" placeholder="Name"
+                                <input id="username" type="name" placeholder="Name"
                                     class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
                             </div>
                             <div class="mb-4">
-                                <input type="email" placeholder="E-Mail"
+                                <input id ="email" type="email" placeholder="E-Mail"
                                     class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
                             </div>
         
                             <div class="mb-4 relative">
-                                <input type="password" placeholder="Password"
+                                <input id="password" type="password" placeholder="Password"
                                     class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
                                 <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
                                    
@@ -132,7 +57,7 @@
                                 </span>
                             </div>
                             <div class="mb-4 relative">
-                                <input type="phone number" placeholder="Phone number"
+                                <input id="phonenumber" type="phone number" placeholder="Phone number"
                                     class="w-full px-4 py-3 rounded-full bg-[#612c4f] text-[#c0abb9] placeholder-[#c0abb9] focus:outline-none focus:ring-2 focus:ring-pink-400  text-sm font-bold">
                                 <span class="absolute inset-y-0 right-4 flex items-center text-pink-400 cursor-pointer">
                                
@@ -144,7 +69,7 @@
                             </div>
                             <div class="flex justify-end  items-center mb-4">
                                 <div class="flex justify-end items-center w-[100%] md:space-x-24 gap-4 flex-col md:flex-row">
-                                    <button type="submit"
+                                    <button onclick="register()" type="submit"
                                         class="py-2 px-8 bg-[#ee10b0] hover:bg-pink-600 text-white rounded-[10px] text-sm font-bold ">
                                         Create an account
                                     </button>
@@ -167,6 +92,10 @@
                 window.location.replace(window.location.pathname.replace("index.html", ""));
             }
         </script>
+            <!-- Thông báo hiển thị khi đăng ký hoặc đăng nhập thành công -->
+    <div id="toast-container" class="fixed top-5 right-5 space-y-2 z-50"></div>
+
+    <script src="auth.js"></script>
 </body>
 
 </html>
