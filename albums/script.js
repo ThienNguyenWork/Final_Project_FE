@@ -10,7 +10,8 @@ if (!user) {
     document.getElementById("login-link").classList.add("hidden");
     document.getElementById("logout-btn").classList.remove("hidden");
 
-    if (user.role === "admin") {
+    // Kiểm tra role và cập nhật giao diện tương ứng
+    if (user.role === "admin" || user.role === "artist") {
         document.getElementById("admin-panel").classList.remove("hidden");
         document.getElementById("popular").classList.add("hidden");
     } else {
@@ -48,8 +49,8 @@ async function loadProducts() {
         localStorage.setItem("products", JSON.stringify(mergedProducts));
         allProducts = mergedProducts;
 
-        // Render dựa vào role
-        if (user.role === "admin") {
+        // Render dựa vào role - sửa để hỗ trợ cả admin và artist
+        if (user.role === "admin" || user.role === "artist") {
             renderAdminProducts();
         } else {
             const container = document.getElementById("popular");
