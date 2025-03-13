@@ -46,9 +46,9 @@
       width: 100%;
       overflow: hidden;
     }
-  </style>
+  </style> 
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-white max-w-[100%]">
     <main class=" main-background">
         <!-- Checkbox hack để điều khiển menu mobile -->
         <input type="checkbox" id="menu-toggle" class="hidden">
@@ -56,7 +56,7 @@
         <div class="relative min-h-screen flex">
             <!-- Sidebar -->
             <aside
-                class="fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
+                class="min-w-[16.7%] fixed inset-y-0 left-0 transform -translate-x-full bg-black p-6 transition duration-200 ease-in-out md:translate-x-0 md:relative md:w-1/5 lg:w-1/6">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3 mb-10">
                     <i class="fas fa-music text-pink-600 text-2xl"></i>
@@ -108,7 +108,7 @@
 
                     <!-- Playlist and Favorite: Your Favorite, Your Playlist, Add Playlist -->
                     <div class="space-y-3">
-                        <h2 class="text-[#951476] font-semibold font-bold ">Playlist and Favorite</h2>
+                        <h2 class="text-[#951476] font-semibold  ">Playlist and Favorite</h2>
                         <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
                             <i class="fas fa-heart"></i>
                             <span>Your Favorite</span>
@@ -144,7 +144,7 @@
             <div>
                 <!-- Main Content -->
                 <main
-                    class="flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
+                    class="  flex-1 pb-24 bg-[linear-gradient(to_right,_#24569e,_transparent)] rounded-xl mt-8 mb-8 ml-16 mr-8">
                     <div
                         class="h-[60vh] bg-[linear-gradient(to_right,_#1071e2,_#2475ca,_#3a6998,_#424a63)] from-blue-600 to-purple-500 p-6 rounded-2xl shadow-[6px_6px_15px_rgba(0,0,0,0.3)] flex flex-col justify-start">
                         <!-- Hàng trên: Nút quay lại + Nav -->
@@ -223,7 +223,7 @@
                                 <a href="#" class="text-white text-2xl font-bold">Share</a>
                                 <a href="#" class="text-white text-2xl font-bold">About</a>
                                 <a href="#" class="text-white text-2xl font-bold">Premium</a>
-                                <i class="fa-solid fa-user fa-2x text-white"></i>
+                                <!-- <i class="fa-solid fa-user fa-2x text-white"></i> -->
                             </nav>
                         </div>
                         <div class="grid grid-cols-2 items-center mt-12 ml-14 gap-x-2">
@@ -288,13 +288,13 @@
 
 
                         <!-- Quản lý sản phẩm (Chỉ admin mới thấy) -->
-                        <div id="admin-panel" class="hidden mt-10 p-5 bg-gray-100 rounded-lg">
+                        <div id="admin-panel" class="hidden mt-10 p-5 bg-gray-100 rounded-lg max-w-full">
                             <!-- Trong script.js, chúng ta đã sử dụng logic kiểm tra vai trò (role) của người dùng để quyết định hiển thị hoặc ẩn khu vực quản
         lý sản phẩm (admin-panel). -->
                             <!-- Ban đầu, phần admin-panel có class="hidden", nghĩa là nó bị ẩn đi.
         Chỉ khi nào Admin đăng nhập, script mới xóa class hidden để hiển thị nó. -->
                             <h2 class="text-xl font-bold mb-4">Quản Lý Sản Phẩm</h2>
-                            <div class="mb-4">
+                            <div class="mb-4 ">
                                 <input type="hidden" id="edit-id">
                                 <input type="text" id="product-rank" placeholder="Ranking"
                                     class="p-2 border rounded w-full mb-2 text-black">
@@ -313,18 +313,22 @@
                                 <button onclick="saveProduct()" class="bg-blue-600 text-white p-2 rounded w-full">Lưu
                                     Sản Phẩm</button>
                             </div>
-                            <table class="w-full bg-white shadow-md rounded-lg">
-                                <thead>
-                                    <tr class="bg-gray-200">
-                                        <th class="p-2">Ranking</th>
-                                        <th class="p-2">Name of Song</th>
-                                        <th class="p-2">Release Date</th>
-                                        <th class="p-2">Albums</th>
-                                        <th class="p-2">Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="product-table"></tbody>
-                            </table>
+                            <div class="overflow-auto">
+                                <table class="table-fixed w-full min-w-[600px] bg-white shadow-md rounded-lg border border-gray-300">
+                                    <thead>
+                                        <tr class="bg-gray-200 text-left">
+                                            <th class="p-2 w-16 text-center">Ranking</th>
+                                            <th class="p-2 w-32 break-words">Name of Song</th> <!-- Thu hẹp cột này -->
+                                            <th class="p-2 w-32 text-center">Release Date</th>
+                                            <th class="p-2 w-48">Albums</th>
+                                            <th class="p-2 w-24 text-center">Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="product-table"></tbody>
+                                </table>
+                            </div>
+                            
+                            
                         </div>
 
                         <!-- Danh sách sản phẩm (Chỉ hiển thị nếu không phải admin) -->
