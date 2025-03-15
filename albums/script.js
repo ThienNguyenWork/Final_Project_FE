@@ -150,7 +150,7 @@ function renderAdminProducts() {
     }).join('');
 }
 
-//Thêm sản phẩm mới
+//Thêm hoặc cập nhật sản phẩm
 function saveProduct() {
     try {
         const id = document.getElementById("edit-id").value;
@@ -162,27 +162,57 @@ function saveProduct() {
         const time = document.getElementById("product-time").value;
         const audioLink = document.getElementById("product-audio").value;
 
-        if (!imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time || !audioLink ) {
+        if (!imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time || !audioLink) {
             alert("Vui lòng nhập đầy đủ thông tin!");
             return;
         }
 
-        const product = { nameProduct, imageLink, nameArtist, releaseDate, album, time, audioLink, createdBy: user.username };
+        const product = { 
+            nameProduct, 
+            imageLink, 
+            nameArtist, 
+            releaseDate, 
+            album, 
+            time, 
+            audioLink, 
+            createdBy: user.username 
+        };
 
         console.log("Saving product:", product);
 
-        if (user.role === "artist") {
+        // Nếu là nghệ sĩ đang tạo sản phẩm mới (không có ID)
+        if (user.role === "artist" && !id) {
             let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
             pendingProducts.push(product);
             localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
             alert("Sản phẩm đã gửi chờ duyệt!");
-        } else {
-            if (id) {
-                allProducts[id] = product;
-            } else {
+        }
+        // Nếu là admin hoặc nghệ sĩ đang sửa sản phẩm đã tồn tại
+        else {
+            // Lấy danh sách sản phẩm hiện có
+            let allProducts = JSON.parse(localStorage.getItem("products")) || [];
+            
+            // Kiểm tra nếu là chỉnh sửa sản phẩm
+            if (id !== "" && !isNaN(parseInt(id))) {
+                const index = parseInt(id);
+                if (index >= 0 && index < allProducts.length) {
+                    // Cập nhật sản phẩm hiện có
+                    allProducts[index] = product;
+                    localStorage.setItem("products", JSON.stringify(allProducts));
+                    alert("Cập nhật sản phẩm thành công!");
+                } else {
+                    alert("ID sản phẩm không hợp lệ!");
+                    return;
+                }
+            } 
+            // Nếu là admin đang thêm mới sản phẩm
+            else if (user.role !== "artist") {
                 allProducts.push(product);
+                localStorage.setItem("products", JSON.stringify(allProducts));
+                alert("Thêm sản phẩm mới thành công!");
             }
-            localStorage.setItem("products", JSON.stringify(allProducts));
+            
+            // Render lại danh sách sản phẩm
             renderAdminProducts();
             renderPopular(document.getElementById("popular"), allProducts);
         }
@@ -197,6 +227,11 @@ function saveProduct() {
 //Render danh sách duyệt sản phẩm
 function renderPendingProducts(pendingProducts) {
     const pendingTable = document.getElementById("pending-table");
+    if (!pendingProducts || pendingProducts.length === 0) {
+        pendingTable.innerHTML = `<tr><td colspan="8" class="text-center p-4">Không có sản phẩm nào đang chờ duyệt</td></tr>`;
+        return;
+    }
+    
     pendingTable.innerHTML = pendingProducts.map((product, index) => `
         <tr class="bg-gray-800 text-white">
             <td class="p-2 w-16 text-center">${index + 1}</td>
@@ -228,19 +263,29 @@ function approveProduct(index) {
         return;
     }
 
-    let approvedProduct = pendingProducts.splice(index, 1)[0]; // Lấy sản phẩm được duyệt
-    allProducts.push(approvedProduct); // Thêm vào danh sách sản phẩm chính
+    // Lấy sản phẩm được duyệt
+    let approvedProduct = pendingProducts[index];
+    
+    // Xóa sản phẩm khỏi danh sách pending
+    pendingProducts.splice(index, 1);
+    
+    // Thêm vào danh sách sản phẩm chính
+    allProducts.push(approvedProduct);
 
     // Cập nhật lại localStorage
     localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
     localStorage.setItem("products", JSON.stringify(allProducts));
 
+    // Thông báo thành công
+    alert("Đã duyệt sản phẩm thành công!");
+
     // Render lại danh sách
-    renderPendingProducts(pendingProducts);  // Cập nhật danh sách sản phẩm chờ duyệt
-    renderAdminProducts(allProducts);        // Cập nhật danh sách sản phẩm admin
+    renderPendingProducts(pendingProducts);
+    renderAdminProducts();
+    renderPopular(document.getElementById("popular"), allProducts);
 }
 
-//xóa sản phẩm đang chờ duyệt
+//Xóa sản phẩm đang chờ duyệt
 function rejectProduct(index) {
     if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
         let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
@@ -248,11 +293,11 @@ function rejectProduct(index) {
 
         localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
         renderPendingProducts(pendingProducts);
+        alert("Đã xóa sản phẩm khỏi danh sách chờ duyệt!");
     }
 }
 
-
-//Xóa sản phẩm trong ds sản phẩm
+//Xóa form nhập liệu
 function clearForm() {
     document.getElementById("edit-id").value = "";
     document.getElementById("product-image").value = "";
@@ -263,18 +308,29 @@ function clearForm() {
     document.getElementById("product-time").value = "";
     document.getElementById("product-audio").value = "";
 }
+
+//Xóa sản phẩm trong danh sách sản phẩm
 function deleteProduct(index) {
     if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+        let allProducts = JSON.parse(localStorage.getItem("products")) || [];
         allProducts.splice(index, 1);
         localStorage.setItem("products", JSON.stringify(allProducts));
         renderAdminProducts();
         renderPopular(document.getElementById("popular"), allProducts);
+        alert("Đã xóa sản phẩm thành công!");
     }
 }
 
 //Sửa sản phẩm
 function editProduct(index) {
+    const allProducts = JSON.parse(localStorage.getItem("products")) || [];
     const product = allProducts[index];
+    
+    if (!product) {
+        alert("Không tìm thấy sản phẩm!");
+        return;
+    }
+    
     document.getElementById("edit-id").value = index;
     document.getElementById("product-image").value = product.imageLink || "";
     document.getElementById("product-name").value = product.nameProduct || "";
