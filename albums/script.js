@@ -126,6 +126,8 @@ function renderAdminProducts() {
 
     const productTable = document.getElementById("product-table");
     productTable.innerHTML = allProducts.map((product, index) => {
+        // Kiểm tra vai trò của người dùng
+        const showEditButton = user.role !== "admin"; // Ẩn nút "Sửa" nếu là admin
         return `
             <tr class="bg-gray-800 text-white">
                 <td class="p-2 w-16 text-center">${index + 1}</td>
@@ -140,7 +142,7 @@ function renderAdminProducts() {
                 <td class="p-2 w-48">${product.album || 'N/A'}</td>
                 <td class="p-2 w-24 text-center">${product.time || 'N/A'}</td>
                 <td class="p-2 text-center">
-                    <button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>
+                    ${showEditButton ? `<button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>` : ''}
                     <button onclick="deleteProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
                 </td>
             </tr>
@@ -282,6 +284,7 @@ function editProduct(index) {
     document.getElementById("product-albums").value = product.album || "";
     document.getElementById("product-time").value = product.time || "";
 }
+
 // 🔹 Hàm tìm kiếm sản phẩm
 function searchProducts() {
     const searchText = document.getElementById('search-navbar').value.toLowerCase();
