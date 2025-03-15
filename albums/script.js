@@ -154,20 +154,20 @@ function renderAdminProducts() {
 function saveProduct() {
     try {
         const id = document.getElementById("edit-id").value;
-        const rank = document.getElementById("product-rank").value;
         const imageLink = document.getElementById("product-image").value;
         const nameProduct = document.getElementById("product-name").value;
         const nameArtist = document.getElementById("product-artist").value;
         const releaseDate = document.getElementById("product-date").value;
         const album = document.getElementById("product-albums").value;
         const time = document.getElementById("product-time").value;
+        const audioLink = document.getElementById("product-audio").value;
 
-        if (!rank || !imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time) {
+        if (!imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time || !audioLink ) {
             alert("Vui lòng nhập đầy đủ thông tin!");
             return;
         }
 
-        const product = { nameProduct, rank, imageLink, nameArtist, releaseDate, album, time, createdBy: user.username };
+        const product = { nameProduct, imageLink, nameArtist, releaseDate, album, time, audioLink, createdBy: user.username };
 
         console.log("Saving product:", product);
 
@@ -255,13 +255,13 @@ function rejectProduct(index) {
 //Xóa sản phẩm trong ds sản phẩm
 function clearForm() {
     document.getElementById("edit-id").value = "";
-    document.getElementById("product-rank").value = "";
     document.getElementById("product-image").value = "";
     document.getElementById("product-name").value = "";
     document.getElementById("product-artist").value = "";
     document.getElementById("product-date").value = "";
     document.getElementById("product-albums").value = "";
     document.getElementById("product-time").value = "";
+    document.getElementById("product-audio").value = "";
 }
 function deleteProduct(index) {
     if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
@@ -276,13 +276,13 @@ function deleteProduct(index) {
 function editProduct(index) {
     const product = allProducts[index];
     document.getElementById("edit-id").value = index;
-    document.getElementById("product-rank").value = product.rank || "";
     document.getElementById("product-image").value = product.imageLink || "";
     document.getElementById("product-name").value = product.nameProduct || "";
     document.getElementById("product-artist").value = product.nameArtist || "";
     document.getElementById("product-date").value = product.releaseDate || "";
     document.getElementById("product-albums").value = product.album || "";
     document.getElementById("product-time").value = product.time || "";
+    document.getElementById("product-audio").value = product.rank || "";
 }
 
 // 🔹 Hàm tìm kiếm sản phẩm
