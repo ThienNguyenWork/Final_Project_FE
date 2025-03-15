@@ -282,7 +282,7 @@ function editProduct(index) {
     document.getElementById("product-date").value = product.releaseDate || "";
     document.getElementById("product-albums").value = product.album || "";
     document.getElementById("product-time").value = product.time || "";
-    document.getElementById("product-audio").value = product.rank || "";
+    document.getElementById("product-audio").value = product.audioLink || "";
 }
 
 // 🔹 Hàm tìm kiếm sản phẩm
