@@ -293,7 +293,8 @@
         lý sản phẩm (admin-panel). -->
                             <!-- Ban đầu, phần admin-panel có class="hidden", nghĩa là nó bị ẩn đi.
         Chỉ khi nào Admin đăng nhập, script mới xóa class hidden để hiển thị nó. -->
-                            <h2 class="text-xl font-bold mb-4 text-black">Quản Lý Sản Phẩm</h2>
+                        <div id="product-management">
+                            <h2 class="text-xl font-bold mb-4 text-black">Tạo Bài hát</h2>
                             <div class="mb-4 ">
                                 <input type="hidden" id="edit-id">
                                 <input type="text" id="product-rank" placeholder="Ranking"
@@ -311,9 +312,29 @@
                                 <input type="text" id="product-time" placeholder="Time"
                                     class="p-2 border rounded w-full mb-2 text-black">
                                 <button onclick="saveProduct()" class="bg-blue-600 text-white p-2 rounded w-full">Lưu
-                                    Sản Phẩm</button>
+                                    Bài hát</button>
                             </div>
-                            <div class="overflow-auto">
+                        </div>
+                        <div id="pending-section" class="hidden">
+                            <h2 class="text-xl font-bold mt-4 text-black">Danh sách chờ duyệt</h2>
+                            <table class="table-auto w-full text-white bg-gray-900 mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="p-2">#</th>
+                                        <th class="p-2">Hình ảnh</th>
+                                        <th class="p-2">Tên sản phẩm</th>
+                                        <th class="p-2">Nghệ sĩ</th>
+                                        <th class="p-2">Ngày phát hành</th>
+                                        <th class="p-2">Album</th>
+                                        <th class="p-2">Thời gian</th>
+                                        <th class="p-2">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pending-table"></tbody>
+                            </table>
+                        </div>
+                                         <div class="overflow-auto">
+                                            <h2 class="text-xl font-bold mt-4 text-black">Danh sách bài hát</h2>
                                 <table class="table-fixed w-full min-w-[600px] text-black bg-gray-300 shadow-md rounded-lg border border-gray-300">
                                     <thead>
                                         <tr class="bg-gray-300 text-left">

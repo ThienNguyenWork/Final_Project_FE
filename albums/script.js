@@ -18,21 +18,85 @@ if (!user) {
         document.getElementById("admin-panel").classList.add("hidden");
         document.getElementById("popular").classList.remove("hidden");
     }
+    
+    if (user && (user.role === "admin" || user.role === "artist")) {
+        renderAdminProducts(); // Hiển thị danh sách sản phẩm cho admin & artist
+    }
+
+    // Kiểm tra quyền và hiển thị phần "Quản Lý Sản Phẩm"
+const productManagementSection = document.getElementById("product-management");
+
+if (user.role === "artist") {
+    productManagementSection.classList.remove("hidden");
+} else {
+    productManagementSection.classList.add("hidden");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const pendingSection = document.getElementById("pending-section");
+
+    if (user && user.role === "admin") {
+        pendingSection.classList.remove("hidden"); // Hiển thị danh sách cho admin
+    } else {
+        pendingSection.classList.add("hidden"); // Ẩn danh sách cho artist và user khác
+    }
+});
+
+
 }
 
 // Load & Render danh sách sản phẩm
 let allProducts = JSON.parse(localStorage.getItem("products")) || [];
 
+// async function loadProducts() {
+//     try {
+//         // Lấy sản phẩm đã lưu trữ
+//         let storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+
+//         // Fetch sản phẩm từ JSON
+//         const response = await fetch('products.json');
+//         const { Popular } = await response.json();
+
+//         // Merge dữ liệu, ưu tiên dữ liệu mới nhất
+//         let mergedProducts = [...storedProducts];
+
+//         Popular.forEach(popularProduct => {
+//             const existingProduct = mergedProducts.find(stored => stored.nameProduct === popularProduct.nameProduct);
+//             if (!existingProduct) {
+//                 mergedProducts.push(popularProduct);
+//             } else {
+//                 // Cập nhật thông tin thiếu
+//                 Object.assign(existingProduct, popularProduct);
+//             }
+//         });
+
+//         // Cập nhật localStorage và biến allProducts
+//         localStorage.setItem("products", JSON.stringify(mergedProducts));
+//         allProducts = mergedProducts;
+
+//         // Render dựa vào role - sửa để hỗ trợ cả admin và artist
+//         if (user.role === "admin" || user.role === "artist") {
+//             renderAdminProducts();
+//         } else {
+//             const container = document.getElementById("popular");
+//             renderPopular(container, allProducts);
+//         }
+
+//         console.log("Tổng số sản phẩm đã tải:", mergedProducts.length);
+//     } catch (error) {
+//         console.error('Lỗi khi tải dữ liệu:', error);
+//     }
+// }
+
 async function loadProducts() {
     try {
-        // Lấy sản phẩm đã lưu trữ
         let storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+        let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
 
-        // Fetch sản phẩm từ JSON
         const response = await fetch('products.json');
         const { Popular } = await response.json();
 
-        // Merge dữ liệu, ưu tiên dữ liệu mới nhất
         let mergedProducts = [...storedProducts];
 
         Popular.forEach(popularProduct => {
@@ -40,21 +104,20 @@ async function loadProducts() {
             if (!existingProduct) {
                 mergedProducts.push(popularProduct);
             } else {
-                // Cập nhật thông tin thiếu
                 Object.assign(existingProduct, popularProduct);
             }
         });
 
-        // Cập nhật localStorage và biến allProducts
         localStorage.setItem("products", JSON.stringify(mergedProducts));
         allProducts = mergedProducts;
 
-        // Render dựa vào role - sửa để hỗ trợ cả admin và artist
-        if (user.role === "admin" || user.role === "artist") {
+        if (user.role === "admin") {
             renderAdminProducts();
+            renderPendingProducts(pendingProducts); // Hiển thị danh sách chờ duyệt
+        } else if (user.role === "artist") {
+            renderPendingProducts(pendingProducts.filter(p => p.createdBy === user.username));
         } else {
-            const container = document.getElementById("popular");
-            renderPopular(container, allProducts);
+            renderPopular(document.getElementById("popular"), allProducts);
         }
 
         console.log("Tổng số sản phẩm đã tải:", mergedProducts.length);
@@ -62,6 +125,7 @@ async function loadProducts() {
         console.error('Lỗi khi tải dữ liệu:', error);
     }
 }
+
 
 // Render danh sách bài hát
 function renderPopular(container, products) {
@@ -97,32 +161,69 @@ function navigateToDetail(index) {
     window.location.href = `detail.html?id=${index}`;
 }
 
-
-
-
-
 function renderAdminProducts() {
+    let allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
     const productTable = document.getElementById("product-table");
-    productTable.innerHTML = allProducts.map((product, index) => `
-        <tr class="bg-gray-800 text-white">
-            <td class="p-2 w-16 text-center">${index + 1}</td>
-           <td class="p-2 w-24 text-center">
-    <div class="flex justify-center">
-        <img src="${product.imageLink}" alt="Hình ảnh" width="50" height="50" class="rounded-lg">
-    </div>
-</td>
-            <td class="p-2 w-32 break-words">${product.nameProduct}</td>
-            <td class="p-2 w-32 break-words">${product.nameArtist}</td>
-            <td class="p-2 w-32 text-center">${product.releaseDate || 'N/A'}</td>
-            <td class="p-2 w-48">${product.album || 'N/A'}</td>
-            <td class="p-2 w-24 text-center">${product.time || 'N/A'}</td>
-            <td>
-                <button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>
-                <button onclick="deleteProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
-            </td>
-        </tr>
-    `).join('');
+    productTable.innerHTML = allProducts.map((product, index) => {
+        return `
+            <tr class="bg-gray-800 text-white">
+                <td class="p-2 w-16 text-center">${index + 1}</td>
+                <td class="p-2 w-24 text-center">
+                    <div class="flex justify-center">
+                        <img src="${product.imageLink}" alt="Hình ảnh" width="50" height="50" class="rounded-lg">
+                    </div>
+                </td>
+                <td class="p-2 w-32 break-words">${product.nameProduct}</td>
+                <td class="p-2 w-32 break-words">${product.nameArtist}</td>
+                <td class="p-2 w-32 text-center">${product.releaseDate || 'N/A'}</td>
+                <td class="p-2 w-48">${product.album || 'N/A'}</td>
+                <td class="p-2 w-24 text-center">${product.time || 'N/A'}</td>
+                <td class="p-2 text-center">
+                    <button onclick="editProduct(${index})" class="bg-yellow-500 text-white px-4 py-2 rounded-lg">Sửa</button>
+                    <button onclick="deleteProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
+
+
+// function saveProduct() {
+//     try {
+//         const id = document.getElementById("edit-id").value;
+//         const rank = document.getElementById("product-rank").value;
+//         const imageLink = document.getElementById("product-image").value;
+//         const nameProduct = document.getElementById("product-name").value;
+//         const nameArtist = document.getElementById("product-artist").value;
+//         const releaseDate = document.getElementById("product-date").value;
+//         const album = document.getElementById("product-albums").value;
+//         const time = document.getElementById("product-time").value;
+
+//         if (!rank || !imageLink || !nameProduct || !nameArtist || !releaseDate || !album || !time) {
+//             alert("Vui lòng nhập đầy đủ thông tin!");
+//             return;
+//         }
+
+//         const product = { nameProduct, rank, imageLink, nameArtist, releaseDate, album, time };
+
+//         console.log("Saving product:", product);
+
+//         if (id) {
+//             allProducts[id] = product;
+//         } else {
+//             allProducts.push(product);
+//         }
+       
+//         localStorage.setItem("products", JSON.stringify(allProducts));
+//         renderAdminProducts();
+//         renderPopular(document.getElementById("popular"), allProducts);
+//         clearForm();
+//     } catch (error) {
+//         console.error("Error saving product:", error);
+//         alert("Có lỗi xảy ra khi lưu sản phẩm!");
+//     }
+// }
 
 function saveProduct() {
     try {
@@ -140,25 +241,90 @@ function saveProduct() {
             return;
         }
 
-        const product = { nameProduct, rank, imageLink, nameArtist, releaseDate, album, time };
+        const product = { nameProduct, rank, imageLink, nameArtist, releaseDate, album, time, createdBy: user.username };
 
         console.log("Saving product:", product);
 
-        if (id) {
-            allProducts[id] = product;
+        if (user.role === "artist") {
+            let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
+            pendingProducts.push(product);
+            localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
+            alert("Sản phẩm đã gửi chờ duyệt!");
         } else {
-            allProducts.push(product);
+            if (id) {
+                allProducts[id] = product;
+            } else {
+                allProducts.push(product);
+            }
+            localStorage.setItem("products", JSON.stringify(allProducts));
+            renderAdminProducts();
+            renderPopular(document.getElementById("popular"), allProducts);
         }
-       
-        localStorage.setItem("products", JSON.stringify(allProducts));
-        renderAdminProducts();
-        renderPopular(document.getElementById("popular"), allProducts);
+
         clearForm();
     } catch (error) {
         console.error("Error saving product:", error);
         alert("Có lỗi xảy ra khi lưu sản phẩm!");
     }
 }
+
+function renderPendingProducts(pendingProducts) {
+    const pendingTable = document.getElementById("pending-table");
+    pendingTable.innerHTML = pendingProducts.map((product, index) => `
+        <tr class="bg-gray-800 text-white">
+            <td class="p-2 w-16 text-center">${index + 1}</td>
+            <td class="p-2 w-24 text-center">
+                <div class="flex justify-center">
+                    <img src="${product.imageLink}" alt="Hình ảnh" width="50" height="50" class="rounded-lg">
+                </div>
+            </td>
+            <td class="p-2 w-32 break-words">${product.nameProduct}</td>
+            <td class="p-2 w-32 break-words">${product.nameArtist}</td>
+            <td class="p-2 w-32 text-center">${product.releaseDate || 'N/A'}</td>
+            <td class="p-2 w-48">${product.album || 'N/A'}</td>
+            <td class="p-2 w-24 text-center">${product.time || 'N/A'}</td>
+            <td>
+                <button onclick="approveProduct(${index})" class="bg-green-500 text-white px-4 py-2 rounded-lg">Duyệt</button>
+                <button onclick="rejectProduct(${index})" class="bg-red-500 text-white px-4 py-2 rounded-lg">Xóa</button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function approveProduct(index) {
+    let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
+    let allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
+    if (index < 0 || index >= pendingProducts.length) {
+        console.error("Index không hợp lệ.");
+        return;
+    }
+
+    let approvedProduct = pendingProducts.splice(index, 1)[0]; // Lấy sản phẩm được duyệt
+    allProducts.push(approvedProduct); // Thêm vào danh sách sản phẩm chính
+
+    // Cập nhật lại localStorage
+    localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
+    localStorage.setItem("products", JSON.stringify(allProducts));
+
+    // Render lại danh sách
+    renderPendingProducts(pendingProducts);  // Cập nhật danh sách sản phẩm chờ duyệt
+    renderAdminProducts(allProducts);        // Cập nhật danh sách sản phẩm admin
+}
+
+
+function rejectProduct(index) {
+    if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+        let pendingProducts = JSON.parse(localStorage.getItem("pendingProducts")) || [];
+        pendingProducts.splice(index, 1);
+
+        localStorage.setItem("pendingProducts", JSON.stringify(pendingProducts));
+        renderPendingProducts(pendingProducts);
+    }
+}
+
+
+
 function clearForm() {
     document.getElementById("edit-id").value = "";
     document.getElementById("product-rank").value = "";
@@ -218,6 +384,37 @@ document.getElementById('search-navbar').addEventListener('input', searchProduct
 function logout() {
     localStorage.removeItem("user");
     window.location.href = "/login/";
+}
+
+function downloadSong(index) {
+    const song = allProducts.Popular[index];
+
+    if (!song.audioLink) {
+        alert("Bài hát này không có đường dẫn tải xuống!");
+        return;
+    }
+
+    fetch(song.audioLink)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Lỗi HTTP: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${song.nameProduct}.mp3`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            console.error("Lỗi tải bài hát:", error);
+            alert("Không thể tải bài hát, vui lòng thử lại sau.");
+        });
 }
 
 
