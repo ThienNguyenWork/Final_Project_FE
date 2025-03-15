@@ -75,11 +75,11 @@
                     <div class="space-y-3">
 
                         <h2 class=" font-semibold text-[#951476]">Menu</h2>
-                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold">
+                        <a href="/home1/index.html" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold">
                             <i class="fas fa-home"></i>
                             <span>Home</span>
                         </a>
-                        <a href="#" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
+                        <a href="/discover/index.html" class=" hover:bg-[#ee10b0] hover:border-2 hover:border-[#e696cf] hover:shadow-[0_0_15px_#ee10b0] flex items-center space-x-3 text-white font-bold hover:text-white">
                             <i class="fas fa-compass"></i>
                             <span>Discover</span>
                         </a>
@@ -189,7 +189,7 @@
                                     <a href="login.html" id="login-link"
                                         class="text-sm text-blue-600 dark:text-blue-500 hover:underline">Login</a>
                                     <button onclick="logout()" id="logout-btn"
-                                        class="hidden bg-red-500 text-white p-2 rounded-lg">Đăng xuất</button>
+                                        class="hidden bg-[#ee10b0] text-white p-2 rounded-lg">Đăng xuất</button>
                                 </div>
 
                                 <button data-collapse-toggle="navbar-search" type="button"
@@ -293,11 +293,10 @@
         lý sản phẩm (admin-panel). -->
                             <!-- Ban đầu, phần admin-panel có class="hidden", nghĩa là nó bị ẩn đi.
         Chỉ khi nào Admin đăng nhập, script mới xóa class hidden để hiển thị nó. -->
-                            <h2 class="text-xl font-bold mb-4 text-black">Quản Lý Sản Phẩm</h2>
+                        <div id="product-management">
+                            <h2 class="text-xl font-bold mb-4 text-black">Tạo Bài hát</h2>
                             <div class="mb-4 ">
                                 <input type="hidden" id="edit-id">
-                                <input type="text" id="product-rank" placeholder="Ranking"
-                                    class="p-2 border rounded w-full mb-2 text-black">
                                 <input type="text" id="product-image" placeholder="Image"
                                     class="p-2 border rounded w-full mb-2 text-black">
                                 <input type="text" id="product-name" placeholder="Name of Song"
@@ -310,10 +309,32 @@
                                     class="p-2 border rounded w-full mb-2 text-black">
                                 <input type="text" id="product-time" placeholder="Time"
                                     class="p-2 border rounded w-full mb-2 text-black">
+                                <input type="text" id="product-audio" placeholder="Audio Link"
+                                    class="p-2 border rounded w-full mb-2 text-black">
                                 <button onclick="saveProduct()" class="bg-blue-600 text-white p-2 rounded w-full">Lưu
-                                    Sản Phẩm</button>
+                                    Bài hát</button>
                             </div>
-                            <div class="overflow-auto">
+                        </div>
+                        <div id="pending-section" class="hidden">
+                            <h2 class="text-xl font-bold mt-4 text-black">Danh sách chờ duyệt</h2>
+                            <table class="table-auto w-full text-white bg-gray-900 mt-2">
+                                <thead>
+                                    <tr>
+                                        <th class="p-2">#</th>
+                                        <th class="p-2">Hình ảnh</th>
+                                        <th class="p-2">Tên sản phẩm</th>
+                                        <th class="p-2">Nghệ sĩ</th>
+                                        <th class="p-2">Ngày phát hành</th>
+                                        <th class="p-2">Album</th>
+                                        <th class="p-2">Thời gian</th>
+                                        <th class="p-2">Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pending-table"></tbody>
+                            </table>
+                        </div>
+                                         <div class="overflow-auto">
+                                            <h2 class="text-xl font-bold mt-4 text-black">Danh sách bài hát</h2>
                                 <table class="table-fixed w-full min-w-[600px] text-black bg-gray-300 shadow-md rounded-lg border border-gray-300">
                                     <thead>
                                         <tr class="bg-gray-300 text-left">

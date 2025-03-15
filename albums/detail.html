@@ -7,6 +7,7 @@
     <title>Song Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body class="bg-gradient-to-b from-gray-900 to-black text-white min-h-screen">
@@ -17,8 +18,21 @@
         </button>
 
         <!-- Song Details Card -->
-        <div id="detail-content" class="mt-6 bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg">
+        <div id="detail-content" class="mt-6 bg-gray-800/50 backdrop-blur rounded-xl p-4 md:p-6 shadow-lg flex justify-between items-center">
+            
         </div>
+       <div class="flex justify-end">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-600 transition ">
+            <i class id="download-btn" fa-solid fa-arrow-down"></i>
+            <span>Tải xuống</span>
+        </button>
+        
+        <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
+            <i class="fa-solid fa-share"></i>
+            <span>Chia sẻ</span>
+        </button>
+       </div>
+        
 
         <!-- User Review Section -->
         <div id="user-section" class="hidden mt-8">
